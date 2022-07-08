@@ -1,0 +1,23 @@
+.cursor-p {
+    cursor: pointer;
+}
+
+.btn {
+    width: 100%;
+    border: none;
+    border-radius: 999px;
+    outline: none;
+    font-weight: 700;
+    cursor: pointer;
+
+    padding: 1rem 0;
+
+    &--primary {
+        background-color: $gold-light;
+        color: $purple-light;
+
+        &:hover {
+            background-color: $gold-dark;
+        }
+    }
+}

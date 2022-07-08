@@ -1,0 +1,42 @@
+.p-login {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__logo img {
+        height: 30vh;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        input {
+            height: 3rem;
+            width: 100%;
+            border: 0.125rem solid $purple-light;
+            border-radius: 999px;
+            background-color: $purple-light;
+            margin: 0.75rem;
+            color: white;
+            padding: 0 1.25rem;
+
+            &::placeholder {
+                color: $white-50;
+            }
+
+            &:focus {
+                outline: none;
+                border: 0.125rem solid $gold-light;
+            }
+        }
+
+        p {
+            color: $gold-light;
+        }
+    }
+}
