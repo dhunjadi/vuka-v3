@@ -16,6 +16,11 @@
         background-color: $gold-light;
         color: $purple-light;
 
+        &.is-disabled {
+            background-color: $gold-dark;
+            cursor: default;
+        }
+
         &:hover {
             background-color: $gold-dark;
         }

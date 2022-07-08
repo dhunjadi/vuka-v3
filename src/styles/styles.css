@@ -15,6 +15,10 @@
   background-color: #eba904;
   color: #870f54;
 }
+.btn--primary.is-disabled {
+  background-color: #c48d03;
+  cursor: default;
+}
 .btn--primary:hover {
   background-color: #c48d03;
 }

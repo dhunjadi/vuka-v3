@@ -15,6 +15,8 @@ const LoginPage = (): JSX.Element => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+    const isDisabled = !email || !password;
+
     useEffect(() => {
         inputRef.current?.focus();
     }, []);
@@ -22,10 +24,6 @@ const LoginPage = (): JSX.Element => {
     useEffect(() => {
         setShowError(false);
     }, [email, password]);
-
-    if (showError && email.length === 0) {
-        setShowError(false);
-    }
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
         e.preventDefault();
@@ -48,7 +46,7 @@ const LoginPage = (): JSX.Element => {
                 <input ref={inputRef} type="text" placeholder="example@vuka.hr" value={email} onChange={(e) => setEmail(e.target.value)} />
                 <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 {showError && <p>Incorrect Email or password</p>}
-                <button className="btn btn--primary" type="submit">
+                <button className={`btn btn--primary ${isDisabled && 'is-disabled'}`} type="submit" disabled={isDisabled}>
                     Login
                 </button>
             </form>
