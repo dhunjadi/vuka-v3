@@ -1,17 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import {Provider} from 'react-redux';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import {PersistGate} from 'redux-persist/es/integration/react';
+import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
+import {persistor, store} from './store/store';
 import './styles/styles.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
     <React.StrictMode>
-        <Router>
-            <Routes>
-                <Route path="/" element={<LoginPage />} />
-            </Routes>
-        </Router>
+        <Provider store={store}>
+            <PersistGate loading={null} persistor={persistor}>
+                <Router>
+                    <Routes>
+                        <Route path="/" element={<LoginPage />} />
+                        <Route path="/home" element={<HomePage />} />
+                    </Routes>
+                </Router>
+            </PersistGate>
+        </Provider>
     </React.StrictMode>
 );
 
