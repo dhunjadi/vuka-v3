@@ -1,0 +1,14 @@
+.p-home {
+    height: 100vh;
+    margin: 0 auto;
+    overflow-y: auto;
+
+    .container {
+        width: 80vw;
+        margin: 0 auto;
+
+        @media screen and (min-width: 768px) {
+            width: 60vw;
+        }
+    }
+}

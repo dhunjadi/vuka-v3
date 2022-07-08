@@ -1,0 +1,181 @@
+.c-navbar {
+    background-color: $purple-dark;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    right: 0;
+    z-index: 99;
+
+    &__logo {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        color: white;
+
+        & img {
+            width: 6rem;
+            margin-right: 1rem;
+
+            @media screen and (min-width: 768px) {
+                width: 7rem;
+            }
+        }
+    }
+
+    &__burgerMenu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 3rem;
+
+        @media screen and (min-width: 768px) {
+            display: none;
+        }
+    }
+
+    &__icons {
+        position: absolute;
+        right: 1rem;
+        top: 6.25rem;
+        visibility: hidden;
+        opacity: 0%;
+        display: flex;
+        flex-direction: column;
+        background-color: $purple-light;
+        border: 0.125rem solid $gold-light;
+        border-radius: 0.25rem;
+        align-items: center;
+        transition: all 0.5s ease-in-out;
+
+        @media screen and (min-width: 768px) {
+            background-color: transparent;
+            border: none;
+            flex-direction: row;
+            justify-content: center;
+            top: 1rem;
+            left: 0;
+            right: 0;
+        }
+
+        &.is-open {
+            opacity: 100%;
+            visibility: initial;
+        }
+
+        button {
+            background-color: transparent;
+            border: none;
+            width: 3rem;
+            transition: all 0.2s ease-in-out;
+            margin: 1rem 0.5rem;
+
+            @media screen and (min-width: 768px) {
+                margin: 1rem 1rem;
+            }
+
+            @media screen and (min-width: 1024px) {
+                margin: 1rem 1.5rem;
+            }
+        }
+
+        &_home {
+            &::before {
+                content: url('../assets/navbar/home.svg');
+            }
+
+            &.is-active::before {
+                content: url('../assets/navbar/homeHover.svg');
+            }
+
+            &:hover::before {
+                content: url('../assets/navbar/homeHover.svg');
+            }
+        }
+
+        &_tasks {
+            &::before {
+                content: url('../assets/navbar/tasks.svg');
+            }
+
+            &.is-active::before {
+                content: url('../assets/navbar/tasksHover.svg');
+            }
+
+            &:hover::before {
+                content: url('../assets/navbar/tasksHover.svg');
+            }
+        }
+
+        &_schedule {
+            &::before {
+                content: url('../assets/navbar/schedule.svg');
+            }
+
+            &.is-active::before {
+                content: url('../assets/navbar/scheduleHover.svg');
+            }
+
+            &:hover::before {
+                content: url('../assets/navbar/scheduleHover.svg');
+            }
+        }
+
+        &_library {
+            &::before {
+                content: url('../assets/navbar/library.svg');
+            }
+
+            &.is-active::before {
+                content: url('../assets/navbar/libraryHover.svg');
+            }
+
+            &:hover::before {
+                content: url('../assets/navbar/libraryHover.svg');
+            }
+        }
+
+        &_grades {
+            &::before {
+                content: url('../assets/navbar/grades.svg');
+            }
+
+            &.is-active::before {
+                content: url('../assets/navbar/gradesHover.svg');
+            }
+
+            &:hover::before {
+                content: url('../assets/navbar/gradesHover.svg');
+            }
+        }
+
+        &_settings {
+            &::before {
+                content: url('../assets/navbar/settings.svg');
+            }
+
+            &.is-active::before {
+                content: url('../assets/navbar/settingsHover.svg');
+            }
+
+            &:hover::before {
+                content: url('../assets/navbar/settingsHover.svg');
+            }
+        }
+
+        &_logout {
+            &::before {
+                content: url('../assets/navbar/logout.svg');
+            }
+
+            &.is-active::before {
+                content: url('../assets/navbar/logoutHover.svg');
+            }
+
+            &:hover::before {
+                content: url('../assets/navbar/logoutHover.svg');
+            }
+        }
+    }
+}
