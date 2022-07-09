@@ -58,7 +58,7 @@ const Navbar = (): JSX.Element => {
             <Modal
                 isOpen={isOpen}
                 onCancel={() => setIsOpen(false)}
-                onConfirm={() => handleLogout}
+                onConfirm={handleLogout}
                 header="Log out?"
                 showConfirm
                 showCancel

@@ -33,7 +33,6 @@ const Modal = (props: PropsWithChildren<ModalProps>): JSX.Element => {
                 <div className="c-modal__body" role="dialog" aria-modal="true" ref={dropdownRef}>
                     {/* HEADER */}
                     <div className="c-modal__header">
-                        <button type="button" className="c-modal__close e-close is-lg" aria-label="Zatvori" onClick={onCancel} />
                         <h2 className="c-modal__header_title">{header}</h2>
                     </div>
 
@@ -44,9 +43,17 @@ const Modal = (props: PropsWithChildren<ModalProps>): JSX.Element => {
                     <div className="c-modal__footer">
                         {(showCancel || showConfirm) && (
                             <div className="c-group c-modal__footer_buttons">
-                                {showCancel && <button onClick={onCancel}>{cancelText}</button>}
+                                {showCancel && (
+                                    <button className="btn btn--primary" onClick={onCancel}>
+                                        {cancelText}
+                                    </button>
+                                )}
 
-                                {showConfirm && <button onClick={onConfirm}>{confirmText}</button>}
+                                {showConfirm && (
+                                    <button className="btn btn--primary" onClick={onConfirm}>
+                                        {confirmText}
+                                    </button>
+                                )}
                             </div>
                         )}
                     </div>

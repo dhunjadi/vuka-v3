@@ -1,5 +1,4 @@
 // BACKGROUND COLORS
-
 $purple-light: #870f54;
 $purple-dark: #4e0930;
 
@@ -7,5 +6,9 @@ $gold-light: #eba904;
 $gold-dark: #c48d03;
 
 //PLACEHOLDER COLOR
-
 $white-50: rgba(255, 255, 255, 0.5);
+
+// Breakpoints - Mobile first, so no breakpoint for mobile
+$bp-min-width-tablet: 767px; // Mobile
+$bp-min-width-desktop: 1160px; // Tablet
+$bp-min-width-desktop-wide: 1440px; // Large desktop screens (wide screen)
