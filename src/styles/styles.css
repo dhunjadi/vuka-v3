@@ -81,7 +81,7 @@ body {
   width: 80vw;
   margin: 0 auto;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 767px) {
   .p-home .container {
     width: 60vw;
   }
@@ -107,7 +107,7 @@ body {
   width: 6rem;
   margin-right: 1rem;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 767px) {
   .c-navbar__logo img {
     width: 7rem;
   }
@@ -118,7 +118,7 @@ body {
   align-items: center;
   margin-right: 3rem;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 767px) {
   .c-navbar__burgerMenu {
     display: none;
   }
@@ -137,7 +137,7 @@ body {
   align-items: center;
   transition: all 0.5s ease-in-out;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 767px) {
   .c-navbar__icons {
     background-color: transparent;
     border: none;
@@ -159,12 +159,12 @@ body {
   transition: all 0.2s ease-in-out;
   margin: 1rem 0.5rem;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 767px) {
   .c-navbar__icons button {
     margin: 1rem 1rem;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1160px) {
   .c-navbar__icons button {
     margin: 1rem 1.5rem;
   }
