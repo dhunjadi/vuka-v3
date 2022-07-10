@@ -1,0 +1,19 @@
+.c-tabs {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+    &__tab {
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        font-weight: 700;
+        color: $gold-light;
+        padding: 1rem;
+
+        &--active {
+            border: 0.125rem solid $gold-light;
+            border-radius: 0.5rem;
+        }
+    }
+}

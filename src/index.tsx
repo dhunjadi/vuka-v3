@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import {Provider} from 'react-redux';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import {PersistGate} from 'redux-persist/es/integration/react';
-import HomePage from './pages/HomePage';
+import NewsPage from './pages/NewsPage';
 import LoginPage from './pages/LoginPage';
 import {persistor, store} from './store/store';
 import './styles/styles.css';
@@ -16,7 +16,7 @@ root.render(
                 <Router>
                     <Routes>
                         <Route path="/" element={<LoginPage />} />
-                        <Route path="/home" element={<HomePage />} />
+                        <Route path="/news" element={<NewsPage />} />
                     </Routes>
                 </Router>
             </PersistGate>

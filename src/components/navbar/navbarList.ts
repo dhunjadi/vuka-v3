@@ -1,8 +1,8 @@
 export const navbarList = [
     {
         id: '1',
-        title: 'home',
-        url: '/home',
+        title: 'news',
+        url: '/news',
     },
     {
         id: '2',

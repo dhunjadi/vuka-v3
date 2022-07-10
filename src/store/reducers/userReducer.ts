@@ -14,7 +14,7 @@ const initialState = {
         email: '',
         password: '',
         status: '',
-        study: '',
+        studyProgram: '',
         year: 0,
         books: [],
         classes: [],

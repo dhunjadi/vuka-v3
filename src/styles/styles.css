@@ -317,3 +317,36 @@ body {
   display: flex;
   justify-content: flex-end;
 }
+
+.c-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #870f54;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+.c-card__header {
+  color: #eba904;
+  font-weight: 700;
+}
+
+.c-tabs {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.c-tabs__tab {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  font-weight: 700;
+  color: #eba904;
+  padding: 1rem;
+}
+.c-tabs__tab--active {
+  border: 0.125rem solid #eba904;
+  border-radius: 0.5rem;
+}
