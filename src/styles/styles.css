@@ -169,13 +169,13 @@ body {
     margin: 1rem 1.5rem;
   }
 }
-.c-navbar__icons_home::before {
+.c-navbar__icons_news::before {
   content: url("../assets/navbar/home.svg");
 }
-.c-navbar__icons_home.is-active::before {
+.c-navbar__icons_news.is-active::before {
   content: url("../assets/navbar/homeHover.svg");
 }
-.c-navbar__icons_home:hover::before {
+.c-navbar__icons_news:hover::before {
   content: url("../assets/navbar/homeHover.svg");
 }
 .c-navbar__icons_tasks::before {

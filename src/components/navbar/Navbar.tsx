@@ -49,7 +49,15 @@ const Navbar = (): JSX.Element => {
                             <button
                                 className={`c-navbar__icons_${item.title} ${item.id === activeID && `is-active`} cursor-p`}
                                 key={item.id}
-                                onClick={() => setIsOpen(true)}
+                                onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+                                    const isLogout = e.currentTarget.className.includes('logout');
+                                    if (!isLogout) {
+                                        navigate(item.url);
+                                        setActiveID(item.id);
+                                    } else {
+                                        setIsOpen(true);
+                                    }
+                                }}
                             />
                         );
                     })}

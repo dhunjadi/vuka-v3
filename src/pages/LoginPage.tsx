@@ -33,7 +33,7 @@ const LoginPage = (): JSX.Element => {
 
         if (found) {
             dispatch(userLoginAction(found));
-            navigate('/home');
+            navigate('/news');
         }
     };
 
