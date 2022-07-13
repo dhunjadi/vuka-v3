@@ -1,0 +1,17 @@
+.p-newsDetails {
+    @include pageLayout;
+
+    .container {
+        width: 80vw;
+        margin: 0 auto;
+
+        @media screen and (min-width: 768px) {
+            width: 60vw;
+        }
+    }
+
+    &__btns {
+        display: flex;
+        margin-top: 2rem;
+    }
+}

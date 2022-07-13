@@ -87,6 +87,25 @@ body {
   }
 }
 
+.p-newsDetails {
+  height: 100vh;
+  margin: 0 auto;
+  overflow-y: auto;
+}
+.p-newsDetails .container {
+  width: 80vw;
+  margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .p-newsDetails .container {
+    width: 60vw;
+  }
+}
+.p-newsDetails__btns {
+  display: flex;
+  margin-top: 2rem;
+}
+
 .c-navbar {
   background-color: #4e0930;
   width: 100%;
