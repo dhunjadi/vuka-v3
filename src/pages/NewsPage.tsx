@@ -20,9 +20,9 @@ const NewsPage = (): JSX.Element => {
         return news.type === newsType.toLowerCase() && news.published === true;
     });
     return (
-        <div className="p-home">
+        <>
             <Navbar />
-            <div className="container">
+            <div className="p-news">
                 <Tabs tabList={newsTypes} selectedTab={newsType} handleSelect={(tab) => setNewsType(tab)} />
                 {newsForStudents.map((news) => {
                     return (
@@ -32,7 +32,7 @@ const NewsPage = (): JSX.Element => {
                     );
                 })}
             </div>
-        </div>
+        </>
     );
 };
 

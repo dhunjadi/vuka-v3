@@ -8,6 +8,7 @@ import LoginPage from './pages/LoginPage';
 import {persistor, store} from './store/store';
 import './styles/styles.css';
 import NewsDetailsPage from './pages/NewsDetailsPage';
+import TasksPage from './pages/TasksPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
@@ -19,6 +20,7 @@ root.render(
                         <Route path="/" element={<LoginPage />} />
                         <Route path="/news" element={<NewsPage />} />
                         <Route path="/news/:id" element={<NewsDetailsPage />} />
+                        <Route path="/tasks" element={<TasksPage />} />
                     </Routes>
                 </Router>
             </PersistGate>

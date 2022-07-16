@@ -72,17 +72,14 @@ body {
   color: #eba904;
 }
 
-.p-home {
+.p-news {
   height: 100vh;
+  width: 80vw;
   margin: 0 auto;
   overflow-y: auto;
 }
-.p-home .container {
-  width: 80vw;
-  margin: 0 auto;
-}
 @media screen and (min-width: 767px) {
-  .p-home .container {
+  .p-news {
     width: 60vw;
   }
 }
@@ -104,6 +101,18 @@ body {
 .p-newsDetails__btns {
   display: flex;
   margin-top: 2rem;
+}
+
+.p-tasks {
+  height: 100vh;
+  width: 80vw;
+  margin: 0 auto;
+  overflow-y: auto;
+}
+@media screen and (min-width: 767px) {
+  .p-tasks {
+    width: 60vw;
+  }
 }
 
 .c-navbar {
