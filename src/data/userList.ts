@@ -21,13 +21,15 @@ interface IClasses {
     ects: number;
 }
 
+export type UserRole = 'student' | 'professor' | 'admin' | undefined;
+
 export interface IUser {
     id: string;
     fName: string;
     lName: string;
     email: string;
     password: string;
-    status: string;
+    role: UserRole;
     studyProgram: string;
     year: number;
     books: IBooks[];
@@ -41,7 +43,7 @@ const userList: IUser[] = [
         lName: 'Ivanic',
         email: 'iivanic@vuka.hr',
         password: 'vukastudent',
-        status: 'student',
+        role: 'student',
         studyProgram: 'hospitality',
         year: 2,
         books: [],
@@ -53,7 +55,7 @@ const userList: IUser[] = [
         lName: 'Markovic',
         email: 'mmarkovic@vuka.hr',
         password: 'vukaprof',
-        status: 'professor',
+        role: 'professor',
         studyProgram: 'professor',
         year: 6,
         books: [],
@@ -65,7 +67,7 @@ const userList: IUser[] = [
         lName: 'Adminic',
         email: 'admin@vuka.hr',
         password: 'vukaadmin',
-        status: 'admin',
+        role: 'admin',
         studyProgram: 'admin',
         year: 7,
         books: [],

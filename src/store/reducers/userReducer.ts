@@ -13,7 +13,7 @@ const initialState = {
         lName: '',
         email: '',
         password: '',
-        status: '',
+        role: undefined,
         studyProgram: '',
         year: 0,
         books: [],
