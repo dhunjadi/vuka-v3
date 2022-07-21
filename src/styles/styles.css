@@ -180,6 +180,7 @@ body {
   opacity: 100%;
   visibility: initial;
 }
+.c-navbar__icons a,
 .c-navbar__icons button {
   background-color: transparent;
   border: none;
@@ -188,19 +189,21 @@ body {
   margin: 1rem 0.5rem;
 }
 @media screen and (min-width: 767px) {
-  .c-navbar__icons button {
+  .c-navbar__icons a,
+.c-navbar__icons button {
     margin: 1rem 1rem;
   }
 }
 @media screen and (min-width: 1160px) {
-  .c-navbar__icons button {
+  .c-navbar__icons a,
+.c-navbar__icons button {
     margin: 1rem 1.5rem;
   }
 }
 .c-navbar__icons_news::before {
   content: url("../assets/navbar/home.svg");
 }
-.c-navbar__icons_news.is-active::before {
+.c-navbar__icons_news.active::before {
   content: url("../assets/navbar/homeHover.svg");
 }
 .c-navbar__icons_news:hover::before {
@@ -209,7 +212,7 @@ body {
 .c-navbar__icons_tasks::before {
   content: url("../assets/navbar/tasks.svg");
 }
-.c-navbar__icons_tasks.is-active::before {
+.c-navbar__icons_tasks.active::before {
   content: url("../assets/navbar/tasksHover.svg");
 }
 .c-navbar__icons_tasks:hover::before {
@@ -218,7 +221,7 @@ body {
 .c-navbar__icons_schedule::before {
   content: url("../assets/navbar/schedule.svg");
 }
-.c-navbar__icons_schedule.is-active::before {
+.c-navbar__icons_schedule.active::before {
   content: url("../assets/navbar/scheduleHover.svg");
 }
 .c-navbar__icons_schedule:hover::before {
@@ -227,7 +230,7 @@ body {
 .c-navbar__icons_library::before {
   content: url("../assets/navbar/library.svg");
 }
-.c-navbar__icons_library.is-active::before {
+.c-navbar__icons_library.active::before {
   content: url("../assets/navbar/libraryHover.svg");
 }
 .c-navbar__icons_library:hover::before {
@@ -236,7 +239,7 @@ body {
 .c-navbar__icons_grades::before {
   content: url("../assets/navbar/grades.svg");
 }
-.c-navbar__icons_grades.is-active::before {
+.c-navbar__icons_grades.active::before {
   content: url("../assets/navbar/gradesHover.svg");
 }
 .c-navbar__icons_grades:hover::before {
@@ -245,7 +248,7 @@ body {
 .c-navbar__icons_settings::before {
   content: url("../assets/navbar/settings.svg");
 }
-.c-navbar__icons_settings.is-active::before {
+.c-navbar__icons_settings.active::before {
   content: url("../assets/navbar/settingsHover.svg");
 }
 .c-navbar__icons_settings:hover::before {
@@ -254,7 +257,7 @@ body {
 .c-navbar__icons_logout::before {
   content: url("../assets/navbar/logout.svg");
 }
-.c-navbar__icons_logout.is-active::before {
+.c-navbar__icons_logout.active::before {
   content: url("../assets/navbar/logoutHover.svg");
 }
 .c-navbar__icons_logout:hover::before {

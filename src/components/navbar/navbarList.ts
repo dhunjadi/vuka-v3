@@ -29,9 +29,4 @@ export const navbarList = [
         title: 'settings',
         url: '/settings',
     },
-    {
-        id: '7',
-        title: 'logout',
-        url: '/',
-    },
 ];

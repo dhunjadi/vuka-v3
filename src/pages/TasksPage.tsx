@@ -47,7 +47,7 @@ const TasksPage = (): JSX.Element => {
     return (
         <>
             <Navbar />
-            <div id="p-tasks">{loggedInUser.role === 'student' ? tasksStudentsSee : tasksProfAndAdminSee}</div>
+            <div className="p-tasks">{loggedInUser.role === 'student' ? tasksStudentsSee : tasksProfAndAdminSee}</div>
         </>
     );
 };

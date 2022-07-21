@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {useNavigate} from 'react-router-dom';
+import {NavLink, useNavigate} from 'react-router-dom';
 import {StoreState} from '../../store/reducers/rootReducer';
 import logo from '../../assets/logo.png';
 import {userLogoutAction} from '../../store/actions/userActions';
@@ -13,8 +13,7 @@ const Navbar = (): JSX.Element => {
     const loggedInUser = useSelector((state: StoreState) => state.userReducer.loggedInUser);
 
     const [navbarIsVisible, setNavbarIsVisible] = useState<boolean>(true);
-    const [activeID, setActiveID] = useState(navbarList[0].id);
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState<boolean>(false);
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -25,7 +24,6 @@ const Navbar = (): JSX.Element => {
 
     const handleLogout = (): void => {
         navigate('/');
-        setActiveID('7');
         dispatch(userLogoutAction());
     };
 
@@ -45,22 +43,9 @@ const Navbar = (): JSX.Element => {
                 </div>
                 <div className={`c-navbar__icons ${navbarIsVisible && 'is-open'}`}>
                     {navbarList.map((item) => {
-                        return (
-                            <button
-                                className={`c-navbar__icons_${item.title} ${item.id === activeID && `is-active`} cursor-p`}
-                                key={item.id}
-                                onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
-                                    const isLogout = e.currentTarget.className.includes('logout');
-                                    if (!isLogout) {
-                                        navigate(item.url);
-                                        setActiveID(item.id);
-                                    } else {
-                                        setIsOpen(true);
-                                    }
-                                }}
-                            />
-                        );
+                        return <NavLink key={item.id} to={item.url} className={`c-navbar__icons_${item.title}`} />;
                     })}
+                    <a className="c-navbar__icons_logout cursor-p" onClick={() => setIsOpen(true)} />
                 </div>
             </nav>
             <Modal

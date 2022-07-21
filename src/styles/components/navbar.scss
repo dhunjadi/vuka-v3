@@ -64,6 +64,7 @@
             visibility: initial;
         }
 
+        a,
         button {
             background-color: transparent;
             border: none;
@@ -85,7 +86,7 @@
                 content: url('../assets/navbar/home.svg');
             }
 
-            &.is-active::before {
+            &.active::before {
                 content: url('../assets/navbar/homeHover.svg');
             }
 
@@ -99,7 +100,7 @@
                 content: url('../assets/navbar/tasks.svg');
             }
 
-            &.is-active::before {
+            &.active::before {
                 content: url('../assets/navbar/tasksHover.svg');
             }
 
@@ -113,7 +114,7 @@
                 content: url('../assets/navbar/schedule.svg');
             }
 
-            &.is-active::before {
+            &.active::before {
                 content: url('../assets/navbar/scheduleHover.svg');
             }
 
@@ -127,7 +128,7 @@
                 content: url('../assets/navbar/library.svg');
             }
 
-            &.is-active::before {
+            &.active::before {
                 content: url('../assets/navbar/libraryHover.svg');
             }
 
@@ -141,7 +142,7 @@
                 content: url('../assets/navbar/grades.svg');
             }
 
-            &.is-active::before {
+            &.active::before {
                 content: url('../assets/navbar/gradesHover.svg');
             }
 
@@ -155,7 +156,7 @@
                 content: url('../assets/navbar/settings.svg');
             }
 
-            &.is-active::before {
+            &.active::before {
                 content: url('../assets/navbar/settingsHover.svg');
             }
 
@@ -169,7 +170,7 @@
                 content: url('../assets/navbar/logout.svg');
             }
 
-            &.is-active::before {
+            &.active::before {
                 content: url('../assets/navbar/logoutHover.svg');
             }
 
