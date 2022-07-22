@@ -64,7 +64,16 @@ const TasksPage = (): JSX.Element => {
     return (
         <>
             <Navbar />
-            <div className="p-tasks">{loggedInUser.role === 'student' ? tasksStudentsSee : tasksProfAndAdminSee}</div>
+            <div className="p-tasks">
+                {loggedInUser.role !== 'student' && (
+                    <div className="p-tasks__header">
+                        <div className="p-tasks__header_buttons">
+                            <button className="btn btn--primary">Create new task</button>
+                        </div>
+                    </div>
+                )}
+                {loggedInUser.role === 'student' ? tasksStudentsSee : tasksProfAndAdminSee}
+            </div>
         </>
     );
 };

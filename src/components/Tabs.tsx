@@ -3,14 +3,15 @@ import React from 'react';
 interface TabssProps {
     tabList: string[];
     selectedTab: string;
-    handleSelect: (chip: string) => void;
+    buttons?: JSX.Element;
+    handleSelect?: (chip: string) => void;
 }
 
 const Tabs = (props: TabssProps): JSX.Element => {
-    const {tabList, selectedTab, handleSelect} = props;
+    const {tabList, selectedTab, buttons, handleSelect} = props;
 
     const handleToggle = (e: React.MouseEvent<HTMLButtonElement>): void => {
-        handleSelect(e.currentTarget.value);
+        handleSelect && handleSelect(e.currentTarget.value);
     };
 
     return (
@@ -25,8 +26,16 @@ const Tabs = (props: TabssProps): JSX.Element => {
                     {tab}
                 </button>
             ))}
+            {buttons}
         </div>
     );
 };
 
 export default Tabs;
+
+Tabs.defaultProps = {
+    tabList: [],
+    selectedTab: undefined,
+    buttons: undefined,
+    handleSelect: undefined,
+};

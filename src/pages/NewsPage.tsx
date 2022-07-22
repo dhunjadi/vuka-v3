@@ -16,22 +16,44 @@ const NewsPage = (): JSX.Element => {
     const newsTypes = ['GENERAL', loggedInUser.studyProgram.toUpperCase()];
     const [newsType, setNewsType] = useState(newsTypes[0]);
 
-    const newsForStudents = newsList.filter((news) => {
-        return news.type === newsType.toLowerCase() && news.published === true;
-    });
+    const getBody = (): JSX.Element => {
+        if (loggedInUser.role === 'student') {
+            return (
+                <>
+                    <Tabs tabList={newsTypes} selectedTab={newsType} handleSelect={(tab) => setNewsType(tab)} />
+                    {newsList
+                        .filter((news) => news.type === newsType.toLocaleLowerCase() && news.published === true)
+                        .map((news) => {
+                            return (
+                                <Card key={news.id} header={news.title} cursorPointer onClick={() => navigate(`/news/${news.id}`)}>
+                                    {news.text.substring(0, 100) + '...'}{' '}
+                                </Card>
+                            );
+                        })}
+                </>
+            );
+        }
+
+        return (
+            <>
+                <Tabs
+                    tabList={['NEWS LIST']}
+                    selectedTab={'NEWS LIST'}
+                    buttons={
+                        <>
+                            <button className="btn btn--primary">Add news</button>{' '}
+                        </>
+                    }
+                    handleSelect={(tab) => setNewsType(tab)}
+                />
+            </>
+        );
+    };
+
     return (
         <>
             <Navbar />
-            <div className="p-news">
-                <Tabs tabList={newsTypes} selectedTab={newsType} handleSelect={(tab) => setNewsType(tab)} />
-                {newsForStudents.map((news) => {
-                    return (
-                        <Card key={news.id} header={news.title} cursorPointer onClick={() => navigate(`/news/${news.id}`)}>
-                            {news.text.substring(0, 100) + '...'}
-                        </Card>
-                    );
-                })}
-            </div>
+            <div className="p-news">{getBody()}</div>
         </>
     );
 };
