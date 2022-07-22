@@ -9,6 +9,10 @@ import {persistor, store} from './store/store';
 import './styles/styles.css';
 import NewsDetailsPage from './pages/NewsDetailsPage';
 import TasksPage from './pages/TasksPage';
+import SchedulePage from './pages/SchedulePage';
+import LibraryPage from './pages/LibraryPage';
+import GradesPage from './pages/GradesPage';
+import SettingsPage from './pages/SettingsPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
@@ -21,6 +25,10 @@ root.render(
                         <Route path="/news" element={<NewsPage />} />
                         <Route path="/news/:id" element={<NewsDetailsPage />} />
                         <Route path="/tasks" element={<TasksPage />} />
+                        <Route path="/schedule" element={<SchedulePage />} />
+                        <Route path="/library" element={<LibraryPage />} />
+                        <Route path="/grades" element={<GradesPage />} />
+                        <Route path="/settings" element={<SettingsPage />} />
                     </Routes>
                 </Router>
             </PersistGate>
