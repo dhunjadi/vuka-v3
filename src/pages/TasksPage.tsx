@@ -17,7 +17,17 @@ const TasksPage = (): JSX.Element => {
         })
         .map((task) => {
             return (
-                <Card header={task.title} info={[`Subject: ${task.subject}`, `Year: ${task.year.toString()}`]} key={task.id}>
+                <Card
+                    header={task.title}
+                    info={[`Subject: ${task.subject}`, `Year: ${task.year.toString()}`]}
+                    showButtons
+                    buttons={
+                        <>
+                            <button className="btn btn--primary">Mark as completed</button>
+                        </>
+                    }
+                    key={task.id}
+                >
                     {task.text}
                 </Card>
             );
@@ -30,6 +40,7 @@ const TasksPage = (): JSX.Element => {
         .map((task) => {
             return (
                 <Card
+                    key={task.id}
                     header={task.title}
                     info={[
                         `Study Program: ${task.studyProgram}`,
@@ -37,7 +48,13 @@ const TasksPage = (): JSX.Element => {
                         `Subject: ${task.subject}`,
                         `Year: ${task.year.toString()}`,
                     ]}
-                    key={task.id}
+                    showButtons
+                    buttons={
+                        <>
+                            <button className="btn btn--primary">Edit task</button>
+                            <button className="btn btn--primary">Delete task</button>
+                        </>
+                    }
                 >
                     {task.text}
                 </Card>
