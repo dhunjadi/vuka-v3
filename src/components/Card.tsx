@@ -14,7 +14,11 @@ const Card = (props: PropsWithChildren<CardProps>): JSX.Element => {
     return (
         <div className={`c-card ${cursorPointer && 'cursor-p'}`} onClick={onClick}>
             <div className="c-card__header">{header}</div>
-            <div className="c-card__info">{info}</div>
+            <div className="c-card__info">
+                {info?.map((info) => (
+                    <p key={info}>{info}</p>
+                ))}
+            </div>
             <div className="c-card__body">{children}</div>
             <div className="c-card__footer">{showButtons && <div className="c-card__footer_buttons">{buttons}</div>}</div>
         </div>

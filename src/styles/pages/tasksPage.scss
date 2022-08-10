@@ -7,4 +7,8 @@
     @media screen and (min-width: $bp-min-width-tablet) {
         width: 60vw;
     }
+
+    &__header_buttons {
+        margin-bottom: 1rem;
+    }
 }

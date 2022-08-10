@@ -83,6 +83,9 @@ body {
     width: 60vw;
   }
 }
+.p-news .c-tabs {
+  margin-bottom: 1rem;
+}
 
 .p-newsDetails {
   height: 100vh;
@@ -100,7 +103,7 @@ body {
 }
 .p-newsDetails__btns {
   display: flex;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .p-tasks {
@@ -113,6 +116,9 @@ body {
   .p-tasks {
     width: 60vw;
   }
+}
+.p-tasks__header_buttons {
+  margin-bottom: 1rem;
 }
 
 .c-navbar {
@@ -362,6 +368,21 @@ body {
 .c-card__header {
   color: #eba904;
   font-weight: 700;
+}
+.c-card__info {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem 0;
+}
+.c-card__footer_buttons {
+  display: flex;
+  margin-top: 1rem;
+}
+.c-card__footer_buttons button {
+  margin-right: 1rem;
+}
+.c-card__footer_buttons button:last-child {
+  margin-right: 0;
 }
 
 .c-tabs {
