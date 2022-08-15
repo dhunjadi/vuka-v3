@@ -1,15 +1,4 @@
-interface IBooks {
-    id: string;
-    author: string;
-    country: string;
-    imageLink: string;
-    language: string;
-    link: string;
-    pages: number;
-    title: string;
-    year: number;
-    copiesAvailiable: number;
-}
+import {IBooks} from './bookList';
 
 interface IClasses {
     title: string;

@@ -6,13 +6,17 @@ interface CardProps {
     cursorPointer?: boolean;
     showButtons: boolean;
     buttons?: JSX.Element;
+    imgSrc?: string;
     onClick?: () => void;
 }
 
 const Card = (props: PropsWithChildren<CardProps>): JSX.Element => {
-    const {header, info, cursorPointer, showButtons, buttons, children, onClick} = props;
+    const {header, info, cursorPointer, showButtons, buttons, imgSrc, children, onClick} = props;
     return (
         <div className={`c-card ${cursorPointer && 'cursor-p'}`} onClick={onClick}>
+            <div className="c-card__img">
+                <img src={imgSrc} alt="" />
+            </div>
             <div className="c-card__header">{header}</div>
             <div className="c-card__info">
                 {info?.map((info) => (
@@ -28,10 +32,11 @@ const Card = (props: PropsWithChildren<CardProps>): JSX.Element => {
 export default Card;
 
 Card.defaultProps = {
-    header: '',
+    header: undefined,
     info: [],
     cursorPointer: false,
     showButtons: false,
     buttons: undefined,
+    imgSrc: undefined,
     onClick: undefined,
 };
