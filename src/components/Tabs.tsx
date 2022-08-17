@@ -1,13 +1,13 @@
 import React from 'react';
 
-interface TabssProps {
+interface TabsProps {
     tabList: string[];
     selectedTab: string;
     buttons?: JSX.Element;
     handleSelect?: (chip: string) => void;
 }
 
-const Tabs = (props: TabssProps): JSX.Element => {
+const Tabs = (props: TabsProps): JSX.Element => {
     const {tabList, selectedTab, buttons, handleSelect} = props;
 
     const handleToggle = (e: React.MouseEvent<HTMLButtonElement>): void => {

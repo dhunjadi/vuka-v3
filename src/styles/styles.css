@@ -473,3 +473,27 @@ body {
   border: 0.125rem solid #eba904;
   border-radius: 0.5rem;
 }
+
+.c-newsArticle {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #870f54;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+.c-newsArticle__header {
+  color: #eba904;
+  font-weight: 700;
+}
+.c-newsArticle__info {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem 0;
+}
+
+.c-book {
+  width: 100%;
+}

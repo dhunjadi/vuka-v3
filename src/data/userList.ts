@@ -1,4 +1,4 @@
-import {IBooks} from './bookList';
+import {IBook} from './bookList';
 
 interface IClasses {
     title: string;
@@ -21,7 +21,7 @@ export interface IUser {
     role: UserRole;
     studyProgram: string;
     year: number;
-    books: IBooks[];
+    books: IBook[];
     classes: IClasses[];
 }
 

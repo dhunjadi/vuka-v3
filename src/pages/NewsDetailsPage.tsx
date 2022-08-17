@@ -1,8 +1,8 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 import {useNavigate, useParams} from 'react-router-dom';
-import Card from '../components/Card';
 import Navbar from '../components/navbar/Navbar';
+import NewsArticle from '../components/NewsArticle';
 import {StoreState} from '../store/reducers/rootReducer';
 
 const NewsDetailsPage = (): JSX.Element => {
@@ -17,7 +17,7 @@ const NewsDetailsPage = (): JSX.Element => {
         <div className="p-newsDetails">
             <Navbar />
             <div className="container">
-                <Card header={selectedNews?.title}>{selectedNews?.text}</Card>
+                <NewsArticle header={selectedNews?.title}>{selectedNews?.text}</NewsArticle>
                 <div className="p-newsDetails__btns">
                     <button className="btn btn--primary" onClick={() => navigate(-1)}>
                         Go Back
