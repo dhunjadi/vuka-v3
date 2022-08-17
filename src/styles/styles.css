@@ -496,4 +496,14 @@ body {
 
 .c-book {
   width: 100%;
+  display: flex;
+  background-color: #870f54;
+}
+.c-book__info {
+  display: flex;
+  flex-direction: column;
+  color: #eba904;
+}
+.c-book__info p {
+  color: white;
 }

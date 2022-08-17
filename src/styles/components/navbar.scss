@@ -1,5 +1,5 @@
 .c-navbar {
-    background-color: $purple-dark;
+    background-color: $primary-dark;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -43,8 +43,8 @@
         opacity: 0%;
         display: flex;
         flex-direction: column;
-        background-color: $purple-light;
-        border: 0.125rem solid $gold-light;
+        background-color: $primary-light;
+        border: 0.125rem solid $secondary-light;
         border-radius: 0.25rem;
         align-items: center;
         transition: all 0.5s ease-in-out;

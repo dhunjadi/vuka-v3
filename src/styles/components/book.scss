@@ -1,3 +1,17 @@
 .c-book {
     width: 100%;
+    display: flex;
+
+    background-color: $primary-light;
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+
+        color: $secondary-light;
+
+        p {
+            color: white;
+        }
+    }
 }

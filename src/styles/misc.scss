@@ -13,16 +13,16 @@
     padding: 1rem 0;
 
     &--primary {
-        background-color: $gold-light;
-        color: $purple-light;
+        background-color: $secondary-light;
+        color: $primary-light;
 
         &.is-disabled {
-            background-color: $gold-dark;
+            background-color: $secondary-dark;
             cursor: default;
         }
 
         &:hover {
-            background-color: $gold-dark;
+            background-color: $secondary-dark;
         }
     }
 }

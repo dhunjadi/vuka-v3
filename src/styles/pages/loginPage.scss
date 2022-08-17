@@ -18,9 +18,9 @@
         input {
             height: 3rem;
             width: 100%;
-            border: 0.125rem solid $purple-light;
+            border: 0.125rem solid $primary-light;
             border-radius: 999px;
-            background-color: $purple-light;
+            background-color: $primary-light;
             margin: 0.75rem;
             color: white;
             padding: 0 1.25rem;
@@ -31,12 +31,12 @@
 
             &:focus {
                 outline: none;
-                border: 0.125rem solid $gold-light;
+                border: 0.125rem solid $secondary-light;
             }
         }
 
         p {
-            color: $gold-light;
+            color: $secondary-light;
         }
     }
 }

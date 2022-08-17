@@ -20,9 +20,9 @@
                 width: 100%;
                 height: 2rem;
 
-                border: 0.125rem solid $purple-light;
+                border: 0.125rem solid $primary-light;
                 border-radius: 999px;
-                background-color: $purple-light;
+                background-color: $primary-light;
 
                 margin: 1rem;
                 padding: 0 1rem;
@@ -34,7 +34,7 @@
 
                 &:focus {
                     outline: none;
-                    border: 0.125rem solid $gold-light;
+                    border: 0.125rem solid $secondary-light;
                 }
             }
         }
@@ -47,7 +47,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: $purple-light;
+        background-color: $primary-light;
         margin: 0.5rem 0;
         padding: 0.5rem;
         border-radius: 0.75rem;
@@ -72,7 +72,7 @@
         }
 
         &__info {
-            color: $gold-light;
+            color: $secondary-light;
             font-size: 1.5rem;
         }
     }
