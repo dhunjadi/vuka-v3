@@ -68,16 +68,18 @@
         button {
             background-color: transparent;
             border: none;
-            width: 3rem;
+            width: 2rem;
             transition: all 0.2s ease-in-out;
             margin: 1rem 0.5rem;
 
             @media screen and (min-width: $bp-min-width-tablet) {
                 margin: 1rem 1rem;
+                width: 2.5rem;
             }
 
             @media screen and (min-width: $bp-min-width-desktop) {
                 margin: 1rem 1.5rem;
+                width: 3rem;
             }
         }
 

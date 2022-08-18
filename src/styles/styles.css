@@ -121,25 +121,19 @@ body {
   margin-bottom: 1rem;
 }
 
-.p-library__books {
+.p-library {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-wrap: nowrap;
+  padding: 0 4rem;
 }
-@media screen and (min-width: 767px) {
-  .p-library__books {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-}
-.p-library__books_searchInput {
+.p-library__content_searchInput {
   width: 100%;
   display: flex;
   justify-content: center;
 }
-.p-library__books_searchInput input {
+.p-library__content_searchInput input {
   width: 100%;
   height: 2rem;
   border: 0.125rem solid #870f54;
@@ -149,12 +143,28 @@ body {
   padding: 0 1rem;
   color: white;
 }
-.p-library__books_searchInput input::placeholder {
+.p-library__content_searchInput input::placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
-.p-library__books_searchInput input:focus {
+.p-library__content_searchInput input:focus {
   outline: none;
   border: 0.125rem solid #eba904;
+}
+.p-library__content_books {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media screen and (min-width: 767px) {
+  .p-library__content_books {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 1160px) {
+  .p-library__content_books {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
 }
 .p-library .c-card {
   width: 100%;
@@ -164,32 +174,20 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #870f54;
-  margin: 0.5rem 0;
-  padding: 0.5rem;
+  margin-bottom: 0;
   border-radius: 0.75rem;
   transition: all 0.5s ease-in-out;
-}
-@media screen and (min-width: 767px) {
-  .p-library .c-card {
-    width: 35vw;
-    margin: 0.5rem;
-  }
-}
-@media screen and (min-width: 1160px) {
-  .p-library .c-card {
-    width: 25vw;
-  }
 }
 .p-library .c-card__img img {
   height: 30vh;
   border-radius: 0.5rem;
 }
 .p-library .c-card__header {
-  font-size: 2rem;
+  font-weight: bold;
 }
 .p-library .c-card__info {
   color: #eba904;
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
 }
 
 .c-navbar {
@@ -261,7 +259,7 @@ body {
 .c-navbar__icons button {
   background-color: transparent;
   border: none;
-  width: 3rem;
+  width: 2rem;
   transition: all 0.2s ease-in-out;
   margin: 1rem 0.5rem;
 }
@@ -269,12 +267,14 @@ body {
   .c-navbar__icons a,
 .c-navbar__icons button {
     margin: 1rem 1rem;
+    width: 2.5rem;
   }
 }
 @media screen and (min-width: 1160px) {
   .c-navbar__icons a,
 .c-navbar__icons button {
     margin: 1rem 1.5rem;
+    width: 3rem;
   }
 }
 .c-navbar__icons_news::before {

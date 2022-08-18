@@ -1,16 +1,11 @@
 .p-library {
-    &__books {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: nowrap;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 4rem;
 
-        @media screen and (min-width: $bp-min-width-tablet) {
-            flex-direction: row;
-            flex-wrap: wrap;
-        }
-
+    &__content {
         &_searchInput {
             width: 100%;
             display: flex;
@@ -38,6 +33,21 @@
                 }
             }
         }
+
+        &_books {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+
+            @media screen and (min-width: $bp-min-width-tablet) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @media screen and (min-width: $bp-min-width-desktop) {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1.5rem;
+            }
+        }
     }
 
     .c-card {
@@ -48,19 +58,9 @@
         justify-content: center;
         align-items: center;
         background-color: $primary-light;
-        margin: 0.5rem 0;
-        padding: 0.5rem;
+        margin-bottom: 0;
         border-radius: 0.75rem;
         transition: all 0.5s ease-in-out;
-
-        @media screen and (min-width: $bp-min-width-tablet) {
-            width: 35vw;
-            margin: 0.5rem;
-        }
-
-        @media screen and (min-width: $bp-min-width-desktop) {
-            width: 25vw;
-        }
 
         &__img img {
             height: 30vh;
@@ -68,12 +68,12 @@
         }
 
         &__header {
-            font-size: 2rem;
+            font-weight: bold;
         }
 
         &__info {
             color: $secondary-light;
-            font-size: 1.5rem;
+            /* font-size: 1.5rem; */
         }
     }
 }
