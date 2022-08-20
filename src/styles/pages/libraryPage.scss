@@ -1,9 +1,5 @@
 .p-library {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0 4rem;
+    @include pageLayout;
 
     &__content {
         &_searchInput {

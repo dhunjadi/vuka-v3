@@ -46,26 +46,28 @@ const NewsPage = (): JSX.Element => {
                     }
                     handleSelect={(tab) => setNewsType(tab)}
                 />
-                {newsList.map((news) => {
-                    return (
-                        <Card
-                            key={news.id}
-                            header={news.title}
-                            info={[`News type: ${news.type}`, `${news.published ? 'Published' : 'Not published'}`]}
-                            showButtons
-                            buttons={
-                                <>
-                                    <button className="btn btn--primary">Edit news</button>
-                                    <button className="btn btn--primary">Delete news</button>
-                                </>
-                            }
-                            cursorPointer
-                            onClick={() => navigate(`/news/${news.id}`)}
-                        >
-                            {news.text.substring(0, 100) + '...'}{' '}
-                        </Card>
-                    );
-                })}
+                <div className="p-news__articles">
+                    {newsList.map((news) => {
+                        return (
+                            <Card
+                                key={news.id}
+                                header={news.title}
+                                info={[`News type: ${news.type}`, `${news.published ? 'Published' : 'Not published'}`]}
+                                showButtons
+                                buttons={
+                                    <>
+                                        <button className="btn btn--primary">Edit news</button>
+                                        <button className="btn btn--primary">Delete news</button>
+                                    </>
+                                }
+                                cursorPointer
+                                onClick={() => navigate(`/news/${news.id}`)}
+                            >
+                                {news.text.substring(0, 100) + '...'}{' '}
+                            </Card>
+                        );
+                    })}
+                </div>
             </>
         );
     };

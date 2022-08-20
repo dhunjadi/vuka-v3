@@ -9,6 +9,9 @@
     z-index: 99;
     opacity: 0;
     transition: all 0.3s ease-in-out;
+    border-radius: 0 0 1rem 1rem;
+
+    @include glassMorphism;
 
     &.is-visible {
         opacity: 100%;
@@ -50,8 +53,6 @@
         opacity: 0%;
         display: flex;
         flex-direction: column;
-        background-color: $primary-light;
-        border: 0.125rem solid $secondary-light;
         border-radius: 0.25rem;
         align-items: center;
         transition: all 0.5s ease-in-out;
@@ -64,11 +65,17 @@
             top: 1rem;
             left: 0;
             right: 0;
+            @include glassMorphismDisabled;
         }
 
         &.is-open {
             opacity: 100%;
             visibility: initial;
+            @include glassMorphism;
+
+            @media screen and (min-width: $bp-min-width-tablet) {
+                @include glassMorphismDisabled;
+            }
         }
 
         a,
@@ -97,6 +104,7 @@
 
             &.active::before {
                 content: url('../assets/navbar/homeHover.svg');
+                box-shadow: 50 5px 5px rgba(235, 169, 4, 0.37);
             }
 
             &:hover::before {
