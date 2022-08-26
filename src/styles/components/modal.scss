@@ -43,6 +43,8 @@ $modal-footer-font-size: 0.875rem;
         align-items: center;
         z-index: 999;
         outline: none;
+
+        animation: fadeIn 0.3s ease-out;
     }
 
     &__header {
@@ -74,6 +76,8 @@ $modal-footer-font-size: 0.875rem;
         overflow-y: auto;
         box-sizing: border-box;
         padding: 1.4rem 2rem 2rem 2rem;
+
+        animation: slideIn 0.3s ease-out;
 
         input {
             font-size: 1rem;

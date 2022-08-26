@@ -28,18 +28,15 @@ const Modal = (props: PropsWithChildren<ModalProps>): JSX.Element => {
     useOnClickOutside(dropdownRef, onCancel);
 
     return (
-        <div className={`c-modal c-modal--${size} ${isOpen ? 'is-open' : ''}`} aria-hidden={!isOpen}>
+        <div className={`c-modal c-modal--${size} ${isOpen ? 'is-open' : ''}`}>
             <div className="c-modal__overlay" tabIndex={-1}>
-                <div className="c-modal__body" role="dialog" aria-modal="true" ref={dropdownRef}>
-                    {/* HEADER */}
+                <div className="c-modal__body" ref={dropdownRef}>
                     <div className="c-modal__header">
                         <h2 className="c-modal__header_title">{header}</h2>
                     </div>
 
-                    {/* BODY */}
                     <div className="c-modal__content">{children}</div>
 
-                    {/* FOOTER */}
                     <div className="c-modal__footer">
                         {(showCancel || showConfirm) && (
                             <div className="c-group c-modal__footer_buttons">
