@@ -24,11 +24,11 @@ $modal-footer-font-size: 0.875rem;
     }
 
     &__header + &__content {
-        margin-top: 1.125rem;
+        margin-top: 2rem;
     }
 
     &__content + &__footer {
-        margin-top: 2.25rem;
+        margin-top: 3.5rem;
     }
 
     &__overlay {
@@ -51,14 +51,14 @@ $modal-footer-font-size: 0.875rem;
         flex-direction: column;
 
         &_title {
-            margin-top: 0.5rem;
+            margin-top: 1rem;
             color: $modal-text-color;
             font-size: $modal-header-font-size;
             font-weight: $modal-header-font-weight;
         }
 
         &_description {
-            font-size: 0.74em;
+            font-size: 1.2rem;
             font-weight: 400;
         }
     }
@@ -67,16 +67,16 @@ $modal-footer-font-size: 0.875rem;
         width: $modal-width;
         background-color: $primary-light;
         color: $modal-text-color;
-        border-radius: 8px;
+        border-radius: 0.8rem;
 
-        max-width: calc(100% - #{30px});
+        max-width: calc(100% - #{3rem});
         max-height: 100vh;
         overflow-y: auto;
         box-sizing: border-box;
-        padding: 1.4em 2em 2em 2em;
+        padding: 1.4rem 2rem 2rem 2rem;
 
         input {
-            font-size: 1em;
+            font-size: 1rem;
         }
 
         i[class*='fa-arrow-right'] {

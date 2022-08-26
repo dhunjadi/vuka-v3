@@ -14,17 +14,19 @@ const NewsDetailsPage = (): JSX.Element => {
     const selectedNews = newsList.find((news) => news.id === id);
 
     return (
-        <div className="p-newsDetails">
+        <>
             <Navbar />
-            <div className="container">
-                <NewsArticle header={selectedNews?.title}>{selectedNews?.text}</NewsArticle>
-                <div className="p-newsDetails__btns">
-                    <button className="btn btn--primary" onClick={() => navigate(-1)}>
-                        Go Back
-                    </button>
+            <div className="p-newsDetails">
+                <div className="container">
+                    <NewsArticle header={selectedNews?.title}>{selectedNews?.text}</NewsArticle>
+                    <div className="p-newsDetails__btns">
+                        <button className="btn btn--primary" onClick={() => navigate(-1)}>
+                            Go Back
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

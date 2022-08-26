@@ -15,22 +15,22 @@ const Book = (): JSX.Element => {
             </div>
 
             <div className="c-book__info">
-                <div className="c-book__info_title">
+                <div className="c-book__info_pair">
                     Title: <p>{selectedBook?.title}</p>
                 </div>
-                <div>
+                <div className="c-book__info_pair">
                     Author: <p>{selectedBook?.author}</p>
                 </div>
-                <div>
+                <div className="c-book__info_pair">
                     Language: <p>{selectedBook?.language}</p>
                 </div>
-                <div>
+                <div className="c-book__info_pair">
                     Pages: <p>{selectedBook?.pages}</p>
                 </div>
-                <div>
+                <div className="c-book__info_pair">
                     Year: <p>{selectedBook?.year}</p>
                 </div>
-                <div>
+                <div className="c-book__info_pair">
                     Copies Availiable: <p>{selectedBook?.copiesAvailiable}</p>
                 </div>
                 <div className="c-book__btns">

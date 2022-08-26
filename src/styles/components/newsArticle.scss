@@ -4,9 +4,9 @@
     flex-direction: column;
     justify-content: center;
     background-color: $primary-light;
-    margin: 0.5rem 0;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 1rem;
 
     &__header {
         color: $secondary-light;
@@ -16,6 +16,6 @@
     &__info {
         display: flex;
         flex-direction: column;
-        margin: 0.5rem 0;
+        margin: 1rem 0;
     }
 }

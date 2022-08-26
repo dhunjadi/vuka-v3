@@ -8,10 +8,13 @@
         display: flex;
         flex-direction: column;
 
-        color: $secondary-light;
+        &_pair {
+            display: flex;
+            color: $secondary-light;
 
-        p {
-            color: white;
+            p {
+                color: white;
+            }
         }
     }
 }

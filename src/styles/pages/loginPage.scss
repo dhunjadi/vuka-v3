@@ -16,14 +16,14 @@
         align-items: center;
 
         input {
-            height: 3rem;
+            height: 4rem;
             width: 100%;
-            border: 0.125rem solid $primary-light;
-            border-radius: 999px;
+            border: 0.2rem solid $primary-light;
+            border-radius: 100rem;
             background-color: $primary-light;
-            margin: 0.75rem;
+            margin: 1rem;
             color: white;
-            padding: 0 1.25rem;
+            padding: 0 3rem;
 
             &::placeholder {
                 color: $white-50;
@@ -31,7 +31,7 @@
 
             &:focus {
                 outline: none;
-                border: 0.125rem solid $secondary-light;
+                border: 0.2rem solid $secondary-light;
             }
         }
 
