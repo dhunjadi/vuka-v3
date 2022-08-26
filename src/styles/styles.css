@@ -522,17 +522,43 @@ html {
 
 .c-book {
   width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr;
   background-color: #870f54;
+  padding: 1rem;
+  background-color: #870f54;
+}
+@media screen and (min-width: 767px) {
+  .c-book {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.c-book__img {
+  display: flex;
+  justify-content: center;
+  height: 50vh;
 }
 .c-book__info {
   display: flex;
   flex-direction: column;
+  padding: 1rem;
 }
 .c-book__info_pair {
   display: flex;
   color: #eba904;
+  margin-bottom: 1rem;
 }
 .c-book__info_pair p {
   color: white;
+}
+.c-book__btns {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 767px) {
+  .c-book__btns {
+    width: 50%;
+  }
 }
