@@ -1,3 +1,14 @@
 .p-grades {
     @include pageLayout;
+
+    @media screen and (min-width: $bp-min-width-tablet) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    @media screen and (min-width: $bp-min-width-desktop) {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2.5rem;
+    }
 }

@@ -97,7 +97,7 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: 0 auto 2rem auto;
   padding: 0 10%;
 }
 .p-news__articles {
@@ -110,7 +110,7 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: 0 auto 2rem auto;
   padding: 0 10%;
 }
 .p-newsDetails .container {
@@ -127,13 +127,13 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: 0 auto 2rem auto;
   padding: 0 10%;
   font-size: 1.6rem;
 }
 .p-tasks__header {
   width: 100%;
-  margin: 1rem 0;
+  margin-bottom: 1rem;
 }
 
 .p-library {
@@ -141,7 +141,7 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: 0 auto 2rem auto;
   padding: 0 10%;
 }
 .p-library__content {
@@ -158,7 +158,7 @@ html {
   border: 0.2rem solid #870f54;
   border-radius: 100rem;
   background-color: #870f54;
-  margin: 1rem;
+  margin: 0 1rem 1rem 1rem;
   padding: 0 1rem;
   color: white;
 }
@@ -214,8 +214,21 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: 0 auto 2rem auto;
   padding: 0 10%;
+}
+@media screen and (min-width: 767px) {
+  .p-grades {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+@media screen and (min-width: 1160px) {
+  .p-grades {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+  }
 }
 
 .c-navbar {
@@ -230,6 +243,7 @@ html {
   opacity: 0;
   transition: all 0.3s ease-in-out;
   border-radius: 0 0 1rem 1rem;
+  margin-bottom: 2rem;
   background: rgba(78, 9, 48, 0.6);
   box-shadow: 0 0.1rem 2rem 0 rgba(235, 169, 4, 0.37);
   backdrop-filter: blur(0.8rem);
@@ -525,7 +539,7 @@ html {
   width: 100%;
   display: flex;
   justify-content: space-around;
-  margin: 1rem 0;
+  margin-bottom: 1rem;
 }
 .c-tabs__tab {
   width: 100%;
@@ -620,25 +634,55 @@ html {
 
 .c-studentCard {
   width: 100%;
-  background-color: #870f54;
-  margin-top: 2rem;
-  font-size: 1.6rem;
-  border-radius: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #870f54;
+  font-size: 1.6rem;
+  border-radius: 1rem;
+  transition: all 0.3s ease-out;
+  margin-bottom: 2rem;
+}
+@media screen and (min-width: 767px) {
+  .c-studentCard {
+    margin-bottom: 0;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+.c-studentCard:hover {
+  background-color: #eba904;
+}
+.c-studentCard:hover .c-studentCard__info {
+  color: #4e0930;
+}
+.c-studentCard:hover .c-studentCard__info span {
+  color: #870f54;
 }
 .c-studentCard__info {
-  margin: 2rem 0;
+  width: -webkit-fill-available;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
   color: #eba904;
+}
+@media screen and (min-width: 767px) {
+  .c-studentCard__info {
+    margin-left: 2rem;
+    align-items: flex-start;
+  }
 }
 .c-studentCard__info span {
   color: white;
 }
 .c-studentCard__img {
   margin-top: 2rem;
+  padding: 2rem;
 }
 .c-studentCard__img img {
-  max-width: 50vw;
+  max-width: 100%;
+  border-radius: 1rem;
 }
