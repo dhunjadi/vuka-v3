@@ -209,6 +209,15 @@ html {
   color: #eba904;
 }
 
+.p-grades {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 10%;
+}
+
 .c-navbar {
   background-color: #4e0930;
   width: 100%;
@@ -607,4 +616,29 @@ html {
   .c-book__btns {
     width: 30%;
   }
+}
+
+.c-studentCard {
+  width: 100%;
+  background-color: #870f54;
+  margin-top: 2rem;
+  font-size: 1.6rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.c-studentCard__info {
+  margin: 2rem 0;
+  color: #eba904;
+}
+.c-studentCard__info span {
+  color: white;
+}
+.c-studentCard__img {
+  margin-top: 2rem;
+}
+.c-studentCard__img img {
+  max-width: 50vw;
 }

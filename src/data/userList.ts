@@ -20,6 +20,7 @@ export interface IUser {
     password: string;
     role: UserRole;
     studyProgram: string;
+    studyType: string;
     year: number;
     books: IBook[];
     classes: IClasses[];
@@ -33,7 +34,8 @@ const userList: IUser[] = [
         email: 'iivanic@vuka.hr',
         password: 'vukastudent',
         role: 'student',
-        studyProgram: 'hospitality',
+        studyProgram: 'Hospitality',
+        studyType: 'Full time',
         year: 2,
         books: [],
         classes: [],
@@ -45,7 +47,8 @@ const userList: IUser[] = [
         email: 'mmarkovic@vuka.hr',
         password: 'vukaprof',
         role: 'professor',
-        studyProgram: 'professor',
+        studyProgram: 'Professor',
+        studyType: 'Professor',
         year: 6,
         books: [],
         classes: [],
@@ -57,7 +60,8 @@ const userList: IUser[] = [
         email: 'admin@vuka.hr',
         password: 'vukaadmin',
         role: 'admin',
-        studyProgram: 'admin',
+        studyProgram: 'Admin',
+        studyType: 'Admin',
         year: 7,
         books: [],
         classes: [],

@@ -15,6 +15,7 @@ const initialState = {
         password: '',
         role: undefined,
         studyProgram: '',
+        studyType: '',
         year: 0,
         books: [],
         classes: [],
