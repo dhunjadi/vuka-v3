@@ -2,6 +2,8 @@
     @include pageLayout;
 
     &__content {
+        font-size: 1.6rem;
+
         &_searchInput {
             width: 100%;
             display: flex;
