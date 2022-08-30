@@ -21,15 +21,17 @@ const NewsPage = (): JSX.Element => {
             return (
                 <>
                     <Tabs tabList={newsTypes} selectedTab={newsType} handleSelect={(tab) => setNewsType(tab)} />
-                    {newsList
-                        .filter((news) => news.type === newsType.toLocaleLowerCase() && news.published === true)
-                        .map((news) => {
-                            return (
-                                <Card key={news.id} header={news.title} cursorPointer onClick={() => navigate(`/news/${news.id}`)}>
-                                    {news.text.substring(0, 100) + '...'}{' '}
-                                </Card>
-                            );
-                        })}
+                    <div className="p-news__articles">
+                        {newsList
+                            .filter((news) => news.type === newsType.toLocaleLowerCase() && news.published === true)
+                            .map((news) => {
+                                return (
+                                    <Card key={news.id} header={news.title} cursorPointer onClick={() => navigate(`/news/${news.id}`)}>
+                                        {news.text.substring(0, 100) + '...'}{' '}
+                                    </Card>
+                                );
+                            })}
+                    </div>
                 </>
             );
         }

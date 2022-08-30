@@ -10,6 +10,7 @@
   font-weight: 700;
   cursor: pointer;
   padding: 1rem 0;
+  transition: all 0.3s ease-out;
 }
 .btn--primary {
   background-color: #eba904;
@@ -20,7 +21,12 @@
   cursor: default;
 }
 .btn--primary:hover {
-  background-color: #c48d03;
+  transform: translateY(-0.3rem);
+  box-shadow: 0 0.2rem 2rem #eba904;
+}
+.btn--primary:active {
+  transform: translateY(0.1rem);
+  box-shadow: 0 0.1rem 1rem #eba904;
 }
 
 *,
@@ -549,13 +555,14 @@ html {
   color: #eba904;
   padding: 1rem;
   margin-right: 1rem;
+  border-radius: 100rem;
 }
 .c-tabs__tab:last-child {
   margin-right: 0;
 }
 .c-tabs__tab--active {
+  box-shadow: 0 0.1rem 1rem #eba904;
   border: 0.2rem solid #eba904;
-  border-radius: 100rem;
 }
 
 .c-newsArticle {

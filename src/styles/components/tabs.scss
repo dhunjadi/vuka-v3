@@ -11,15 +11,16 @@
         font-weight: 700;
         color: $secondary-light;
         padding: 1rem;
-
         margin-right: 1rem;
+        border-radius: 100rem;
+
         &:last-child {
             margin-right: 0;
         }
 
         &--active {
+            box-shadow: 0 0.1rem 1rem $secondary-light;
             border: 0.2rem solid $secondary-light;
-            border-radius: 100rem;
         }
     }
 }
