@@ -10,7 +10,7 @@ import LoginPage from './pages/LoginPage';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './styles/styles.css';
 import Book from './components/Book';
-import GradesDetailsPage from './pages/GradesDetailsPage';
+import StudentGradesPage from './pages/StudentGradesPage';
 
 function App(): ReactElement {
     return (
@@ -34,7 +34,7 @@ function App(): ReactElement {
 
                     <Route path="/grades">
                         <Route index element={<GradesPage />} />
-                        <Route path=":id" element={<GradesDetailsPage />} />
+                        <Route path=":id" element={<StudentGradesPage />} />
                     </Route>
                     <Route path="/settings" element={<SettingsPage />} />
                 </Routes>
