@@ -16,7 +16,15 @@
 
     &__info {
         display: flex;
-        flex-direction: column;
+        justify-content: space-between;
+        color: $color-secondary-light;
         margin: 1rem 0;
+        font-weight: 700;
+    }
+
+    &__buttons {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
     }
 }

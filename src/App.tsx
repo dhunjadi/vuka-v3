@@ -1,5 +1,4 @@
 import React, {ReactElement} from 'react';
-import NewsDetailsPage from './pages/NewsDetailsPage';
 import TasksPage from './pages/TasksPage';
 import SchedulePage from './pages/SchedulePage';
 import LibraryPage from './pages/LibraryPage';
@@ -21,7 +20,6 @@ function App(): ReactElement {
 
                     <Route path="/news">
                         <Route index element={<NewsPage />} />
-                        <Route path=":id" element={<NewsDetailsPage />} />
                     </Route>
 
                     <Route path="/tasks" element={<TasksPage />} />

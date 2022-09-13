@@ -37,7 +37,7 @@ const Book = (): JSX.Element => {
                         Copies Availiable: <p>{selectedBook?.copiesAvailiable}</p>
                     </div>
                     <div className="c-book__btns">
-                        <button className="btn btn--primary">Make a reservation</button>
+                        <button className="btn">Make a reservation</button>
                     </div>
                 </div>
             </div>
