@@ -5,9 +5,9 @@
     justify-content: center;
     align-items: center;
 
-    background-color: $primary-light;
+    background-color: $color-primary-light;
     font-size: 1.6rem;
-    border-radius: 1rem;
+    border-radius: $br-standard;
     transition: all 0.3s ease-out;
     margin-bottom: 2rem;
 
@@ -18,13 +18,13 @@
     }
 
     &:hover {
-        background-color: $secondary-light;
+        background-color: $color-secondary-light;
 
         .c-studentCard__info {
-            color: $primary-dark;
+            color: $color-primary-dark;
 
             span {
-                color: $primary-light;
+                color: $color-primary-light;
             }
         }
     }
@@ -36,7 +36,7 @@
         justify-content: center;
         align-items: center;
         margin-bottom: 2rem;
-        color: $secondary-light;
+        color: $color-secondary-light;
 
         @media screen and (min-width: $bp-min-width-tablet) {
             margin-left: 2rem;
@@ -53,7 +53,7 @@
 
         img {
             max-width: 100%;
-            border-radius: 1rem;
+            border-radius: $br-standard;
         }
     }
 }

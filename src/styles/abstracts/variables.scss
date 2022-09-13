@@ -1,12 +1,15 @@
 // BACKGROUND COLORS
-$primary-light: #870f54;
-$primary-dark: #4e0930;
+$color-primary-light: #870f54;
+$color-primary-dark: #4e0930;
 
-$secondary-light: #eba904;
-$secondary-dark: #c48d03;
+$color-secondary-light: #eba904;
+$color-secondary-dark: #c48d03;
 
-//PLACEHOLDER COLOR
-$white-50: rgba(255, 255, 255, 0.5);
+$color-placeholder: rgba(255, 255, 255, 0.5);
+
+// BORDER-RADIUS
+$br-standard: 1rem;
+$br-pill: 100rem;
 
 // Breakpoints - Mobile first, so no breakpoint for mobile
 $bp-min-width-tablet: 767px; // Mobile

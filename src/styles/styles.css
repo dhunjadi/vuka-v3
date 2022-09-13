@@ -223,15 +223,21 @@ html {
   margin: 0 auto 2rem auto;
   padding: 0 10%;
 }
+.p-grades__classes, .p-grades__students {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
 @media screen and (min-width: 767px) {
-  .p-grades {
+  .p-grades__classes, .p-grades__students {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
 }
 @media screen and (min-width: 1160px) {
-  .p-grades {
+  .p-grades__classes, .p-grades__students {
     grid-template-columns: repeat(4, 1fr);
     gap: 2.5rem;
   }
@@ -490,7 +496,7 @@ html {
   width: 546px;
   background-color: #870f54;
   color: #f5f5f5;
-  border-radius: 0.8rem;
+  border-radius: 1rem;
   font-size: 1.4rem;
   max-width: calc(100% - 3rem);
   max-height: 100vh;
@@ -529,12 +535,7 @@ html {
 .c-modal__footer > .c-group.c-modal__footer_buttons {
   display: flex;
   justify-content: flex-end;
-}
-.c-modal__footer > .c-group.c-modal__footer_buttons button {
-  margin-right: 1rem;
-}
-.c-modal__footer > .c-group.c-modal__footer_buttons button:last-child {
-  margin-right: 0;
+  gap: 1rem;
 }
 
 .c-card {
@@ -559,12 +560,7 @@ html {
 .c-card__footer_buttons {
   display: flex;
   margin-top: 1rem;
-}
-.c-card__footer_buttons button {
-  margin-right: 1rem;
-}
-.c-card__footer_buttons button:last-child {
-  margin-right: 0;
+  gap: 1rem;
 }
 
 .c-tabs {
@@ -572,6 +568,7 @@ html {
   display: flex;
   justify-content: space-around;
   margin-bottom: 1rem;
+  gap: 1rem;
 }
 .c-tabs__tab {
   width: 100%;
@@ -580,11 +577,7 @@ html {
   font-weight: 700;
   color: #eba904;
   padding: 1rem;
-  margin-right: 1rem;
   border-radius: 100rem;
-}
-.c-tabs__tab:last-child {
-  margin-right: 0;
 }
 .c-tabs__tab--active {
   box-shadow: 0 0.1rem 1rem #eba904;
@@ -751,6 +744,10 @@ html {
   border-radius: 1rem;
   padding: 1rem;
   color: #eba904;
+}
+.c-gradeCard__grades_pair {
+  display: flex;
+  justify-content: space-between;
 }
 .c-gradeCard__buttons {
   margin-top: 1rem;

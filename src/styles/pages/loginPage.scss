@@ -18,25 +18,25 @@
         input {
             height: 4rem;
             width: 100%;
-            border: 0.2rem solid $primary-light;
-            border-radius: 100rem;
-            background-color: $primary-light;
+            border: 0.2rem solid $color-primary-light;
+            border-radius: $br-pill;
+            background-color: $color-primary-light;
             margin: 1rem;
             color: white;
             padding: 0 3rem;
 
             &::placeholder {
-                color: $white-50;
+                color: $color-placeholder;
             }
 
             &:focus {
                 outline: none;
-                border: 0.2rem solid $secondary-light;
+                border: 0.2rem solid $color-secondary-light;
             }
         }
 
         p {
-            color: $secondary-light;
+            color: $color-secondary-light;
         }
     }
 }

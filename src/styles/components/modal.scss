@@ -67,9 +67,9 @@ $modal-footer-font-size: 1.4rem;
 
     &__body {
         width: $modal-width;
-        background-color: $primary-light;
+        background-color: $color-primary-light;
         color: $modal-text-color;
-        border-radius: 0.8rem;
+        border-radius: $br-standard;
         font-size: 1.4rem;
 
         max-width: calc(100% - #{3rem});
@@ -116,13 +116,7 @@ $modal-footer-font-size: 1.4rem;
         > .c-group.c-modal__footer_buttons {
             display: flex;
             justify-content: flex-end;
-
-            button {
-                margin-right: 1rem;
-                &:last-child {
-                    margin-right: 0;
-                }
-            }
+            gap: 1rem;
         }
     }
 }

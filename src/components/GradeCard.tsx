@@ -20,10 +20,18 @@ const GradeCard = (props: GradeCardProps): JSX.Element => {
                 <span>Semester: {semester}</span> <span>ECTS: {ects}</span>
             </div>
             <div className="c-gradeCard__grades">
-                <span>Exam 1: {exam1}</span>
-                <span>Exam 2: {exam2}</span>
-                <span>Essay: {essay}</span>
-                <span>Presentation: {presentation}</span>
+                <div className="c-gradeCard__grades_pair">
+                    <span>Exam 1:</span> <span>{exam1}</span>
+                </div>
+                <div className="c-gradeCard__grades_pair">
+                    <span>Exam 2:</span> <span>{exam2}</span>
+                </div>
+                <div className="c-gradeCard__grades_pair">
+                    <span>Essay:</span> <span>{essay}</span>
+                </div>
+                <div className="c-gradeCard__grades_pair">
+                    <span>Presentation:</span> <span>{presentation}</span>
+                </div>
             </div>
             {buttons && (
                 <div className="c-gradeCard__buttons">
