@@ -47,7 +47,7 @@ const Modal = (props: PropsWithChildren<ModalProps>): JSX.Element => {
                                 )}
 
                                 {showConfirm && (
-                                    <button className="btn btn--primary" onClick={onConfirm}>
+                                    <button type="submit" className="btn btn--primary" onClick={onConfirm}>
                                         {confirmText}
                                     </button>
                                 )}

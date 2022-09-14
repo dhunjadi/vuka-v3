@@ -1,0 +1,27 @@
+.c-textInput {
+    input,
+    textarea {
+        width: -webkit-fill-available;
+        height: 100%;
+        border: 0.2rem solid $color-primary-light;
+        border-radius: $br-pill;
+        background-color: $color-primary-dark;
+        margin: 1rem;
+        color: white;
+        padding: 1.5rem 3rem;
+
+        &::placeholder {
+            color: $color-placeholder;
+        }
+
+        &:focus {
+            outline: none;
+            border: 0.2rem solid $color-secondary-light;
+        }
+    }
+
+    textarea {
+        border-radius: $br-standard;
+        resize: none;
+    }
+}
