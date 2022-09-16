@@ -1,5 +1,6 @@
 import React, {PropsWithChildren} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+import {useNavigate} from 'react-router-dom';
 import {deleteNewsAricleAction} from '../store/actions/newsActons';
 import {StoreState} from '../store/reducers/rootReducer';
 
@@ -18,6 +19,7 @@ const NewsArticle = (props: PropsWithChildren<NewsArticleProps>): JSX.Element =>
 
     const loggedInUser = useSelector((state: StoreState) => state.userReducer.loggedInUser);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     return (
         <>
@@ -38,7 +40,9 @@ const NewsArticle = (props: PropsWithChildren<NewsArticleProps>): JSX.Element =>
                 <div className="c-newsArticle__body">{children}</div>
                 {showButtons && (
                     <div className="c-newsArticle__buttons">
-                        <button className="btn btn--primary">Edit</button>
+                        <button className="btn btn--primary" onClick={() => navigate(`/news/actions/${id}`)}>
+                            Edit
+                        </button>
                         <button className="btn btn--primary" onClick={() => dispatch(deleteNewsAricleAction(id))}>
                             Delete
                         </button>

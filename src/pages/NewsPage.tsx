@@ -4,6 +4,7 @@ import NewsArticle from '../components/NewsArticle';
 import Tabs from '../components/Tabs';
 import {StoreState} from '../store/reducers/rootReducer';
 import {useNavigate} from 'react-router-dom';
+import {v4 as uuidv4} from 'uuid';
 
 const NewsPage = (): JSX.Element => {
     const loggedInUser = useSelector((state: StoreState) => state.userReducer.loggedInUser);
@@ -41,7 +42,7 @@ const NewsPage = (): JSX.Element => {
                     selectedTab={'STUDENT NEWS'}
                     buttons={
                         <>
-                            <button className="btn btn--primary" onClick={() => navigate(`/news/new`)}>
+                            <button className="btn btn--primary" onClick={() => navigate(`/news/actions/${uuidv4()}`)}>
                                 Add news
                             </button>
                         </>

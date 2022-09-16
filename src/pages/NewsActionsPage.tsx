@@ -1,17 +1,27 @@
 import React, {useState} from 'react';
 import {useDispatch} from 'react-redux';
-import {useNavigate} from 'react-router-dom';
+import {useNavigate, useParams} from 'react-router-dom';
 import TextInput from '../components/TextInput';
 import ToggleSwitch from '../components/ToggleSwitch';
-import {addNewsAricleAction} from '../store/actions/newsActons';
+import {addNewsAricleAction, editNewsAricleAction} from '../store/actions/newsActons';
 import {newsArticleTypeOptions} from '../data/constants';
 import {v4 as uuidv4} from 'uuid';
+import {newsList} from '../data/newsList';
 
 const NewsActionsPage = (): JSX.Element => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const {id} = useParams();
 
-    const [articleInfo, setArticleInfo] = useState({id: uuidv4(), title: '', text: '', type: '', published: false});
+    const selectedArticle = newsList.find((article) => article.id === id);
+
+    const [articleInfo, setArticleInfo] = useState({
+        id: id || uuidv4(),
+        title: selectedArticle?.title || '',
+        text: selectedArticle?.text || '',
+        type: selectedArticle?.type || '',
+        published: selectedArticle?.published || false,
+    });
 
     const handleChange = (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement>): void => {
         const {name, value} = e.target;
@@ -34,6 +44,7 @@ const NewsActionsPage = (): JSX.Element => {
     };
 
     const handleConfirm = (): void => {
+        if (selectedArticle) dispatch(editNewsAricleAction(articleInfo));
         dispatch(addNewsAricleAction(articleInfo));
         setArticleInfo({id: '', title: '', text: '', type: '', published: false});
         navigate('/news');

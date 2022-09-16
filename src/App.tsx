@@ -23,7 +23,7 @@ function App(): ReactElement {
 
                     <Route path="/news">
                         <Route index element={<NewsPage />} />
-                        <Route path="new" element={<NewsActionsPage />} />
+                        <Route path="actions/:id" element={<NewsActionsPage />} />
                     </Route>
 
                     <Route path="/tasks" element={<TasksPage />} />
