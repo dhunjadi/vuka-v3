@@ -2,7 +2,7 @@ import React, {PropsWithChildren, useEffect, useRef} from 'react';
 import {useOnClickOutside} from '../utils/UseClickOutside';
 import {useKeyPress} from '../utils/UseKeyPress';
 
-type ModalSize = 'sm' | 'md' | 'lg';
+export type ModalSize = 'sm' | 'md' | 'lg';
 
 interface ModalProps {
     isOpen: boolean;

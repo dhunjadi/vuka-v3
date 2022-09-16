@@ -2,16 +2,17 @@ import React from 'react';
 
 interface ToggleSwitchProps {
     id: string;
+    name: string;
     isOn: boolean;
-    handleToggle: () => void;
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 function ToggleSwitch(props: ToggleSwitchProps): JSX.Element {
-    const {id, isOn, handleToggle} = props;
+    const {id, name, isOn, onChange} = props;
 
     return (
         <div className="c-toggleSwitch">
-            <input className="c-toggleSwitch__input" id={id} type="checkbox" checked={isOn} onChange={handleToggle} />
+            <input className="c-toggleSwitch__input" name={name} id={id} type="checkbox" checked={isOn} onChange={onChange} />
 
             <div className="c-toggleSwitch__body">
                 <label className="c-toggleSwitch__label" htmlFor={id}>
@@ -23,3 +24,7 @@ function ToggleSwitch(props: ToggleSwitchProps): JSX.Element {
 }
 
 export default ToggleSwitch;
+
+ToggleSwitch.defaultProps = {
+    name: undefined,
+};

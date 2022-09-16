@@ -270,6 +270,24 @@ html {
   }
 }
 
+.p-newsActions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 2rem auto;
+  padding: 0 10%;
+  align-items: initial;
+}
+.p-newsActions__form_pair {
+  display: flex;
+  align-items: center;
+}
+.p-newsActions__form_buttons {
+  display: flex;
+  gap: 1rem;
+}
+
 .c-navbar {
   background-color: #4e0930;
   width: 100%;

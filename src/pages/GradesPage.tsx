@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {useSelector} from 'react-redux';
-import Navbar from '../components/navbar/Navbar';
 import {StoreState} from '../store/reducers/rootReducer';
 import userList from '../data/userList';
 import StudentCard from '../components/StudentCard';
@@ -55,12 +54,7 @@ const GradesPage = (): JSX.Element => {
         );
     };
 
-    return (
-        <>
-            <Navbar />
-            <div className="p-grades">{getBody()}</div>
-        </>
-    );
+    return <div className="p-grades">{getBody()}</div>;
 };
 
 export default GradesPage;

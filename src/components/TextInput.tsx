@@ -4,6 +4,7 @@ export type inputType = 'text' | 'password' | 'textArea';
 
 interface TabsProps {
     type: inputType;
+    name: string;
     value: string;
     placeholder?: string;
     light?: boolean;
@@ -11,19 +12,19 @@ interface TabsProps {
 }
 
 const TextInput = (props: TabsProps): JSX.Element => {
-    const {type, value, placeholder, light, onChange} = props;
+    const {type, name, value, placeholder, light, onChange} = props;
 
     if (type === 'text' || type === 'password') {
         return (
             <div className={`c-textInput ${light && 'c-textInput--light'}`}>
-                <input type={type} placeholder={placeholder} value={value} onChange={onChange} />
+                <input type={type} name={name} placeholder={placeholder} value={value} onChange={onChange} />
             </div>
         );
     }
 
     return (
         <div className={`c-textInput ${light && 'c-textInput--light'}`}>
-            <textarea cols={30} rows={10} placeholder={placeholder} value={value} onChange={onChange}></textarea>
+            <textarea cols={30} rows={10} name={name} placeholder={placeholder} value={value} onChange={onChange}></textarea>
         </div>
     );
 };

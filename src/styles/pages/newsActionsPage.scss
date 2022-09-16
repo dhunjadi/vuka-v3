@@ -1,0 +1,16 @@
+.p-newsActions {
+    @include pageLayout;
+    align-items: initial;
+
+    &__form {
+        &_pair {
+            display: flex;
+            align-items: center;
+        }
+
+        &_buttons {
+            display: flex;
+            gap: 1rem;
+        }
+    }
+}

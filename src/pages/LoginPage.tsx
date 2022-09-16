@@ -6,8 +6,7 @@ import userList, {IUser} from '../data/userList';
 import {userLoginAction} from '../store/actions/userActions';
 
 const LoginPage = (): JSX.Element => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [loginInfo, setLogininfo] = useState({email: '', password: ''});
     const [showError, setShowError] = useState(false);
 
     const inputRef = useRef<HTMLInputElement>(null);
@@ -15,7 +14,7 @@ const LoginPage = (): JSX.Element => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const isDisabled = !email || !password;
+    const isDisabled = !loginInfo;
 
     useEffect(() => {
         inputRef.current?.focus();
@@ -23,12 +22,12 @@ const LoginPage = (): JSX.Element => {
 
     useEffect(() => {
         setShowError(false);
-    }, [email, password]);
+    }, [loginInfo]);
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
         e.preventDefault();
 
-        const found = userList.find((user: IUser) => user.email === email && user.password === password);
+        const found = userList.find((user: IUser) => user.email === loginInfo.email && user.password === loginInfo.password);
         if (!found) setShowError(true);
 
         if (found) {
@@ -43,8 +42,19 @@ const LoginPage = (): JSX.Element => {
                 <img src={logo} alt="logo" />
             </div>
             <form onSubmit={handleSubmit}>
-                <input ref={inputRef} type="text" placeholder="example@vuka.hr" value={email} onChange={(e) => setEmail(e.target.value)} />
-                <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                <input
+                    ref={inputRef}
+                    type="text"
+                    placeholder="example@vuka.hr"
+                    value={loginInfo.email}
+                    onChange={(e) => setLogininfo({...loginInfo, email: e.target.value})}
+                />
+                <input
+                    type="password"
+                    placeholder="Password"
+                    value={loginInfo.password}
+                    onChange={(e) => setLogininfo({...loginInfo, password: e.target.value})}
+                />
                 {showError && <p>Incorrect Email or password</p>}
                 <button className={`btn btn--primary ${isDisabled && 'is-disabled'}`} type="submit" disabled={isDisabled}>
                     Login
