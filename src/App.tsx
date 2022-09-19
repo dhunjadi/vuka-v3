@@ -10,14 +10,12 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './styles/styles.css';
 import Book from './components/Book';
 import StudentGradesPage from './pages/StudentGradesPage';
-import Navbar from './components/navbar/Navbar';
 import NewsActionsPage from './pages/NewsActionsPage';
 
 function App(): ReactElement {
     return (
         <div className="App">
             <Router>
-                <Navbar />
                 <Routes>
                     <Route path="/" element={<LoginPage />} />
 

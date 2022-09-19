@@ -7,6 +7,7 @@ import {addNewsAricleAction, editNewsAricleAction} from '../store/actions/newsAc
 import {newsArticleTypeOptions} from '../data/constants';
 import {v4 as uuidv4} from 'uuid';
 import {newsList} from '../data/newsList';
+import Navbar from '../components/navbar/Navbar';
 
 const NewsActionsPage = (): JSX.Element => {
     const dispatch = useDispatch();
@@ -51,48 +52,51 @@ const NewsActionsPage = (): JSX.Element => {
     };
 
     return (
-        <div className="p-newsActions">
-            <div className="p-newsActions__form">
-                <form onSubmit={handleFormSubmit}>
-                    <TextInput
-                        type="text"
-                        name="title"
-                        placeholder="Enter Article Title..."
-                        value={articleInfo.title}
-                        onChange={handleChange}
-                    />
-                    <TextInput
-                        type="textArea"
-                        name="text"
-                        placeholder="Enter Article Text..."
-                        value={articleInfo.text}
-                        onChange={handleChange}
-                    />
+        <>
+            <Navbar />
+            <div className="p-newsActions">
+                <div className="p-newsActions__form">
+                    <form onSubmit={handleFormSubmit}>
+                        <TextInput
+                            type="text"
+                            name="title"
+                            placeholder="Enter Article Title..."
+                            value={articleInfo.title}
+                            onChange={handleChange}
+                        />
+                        <TextInput
+                            type="textArea"
+                            name="text"
+                            placeholder="Enter Article Text..."
+                            value={articleInfo.text}
+                            onChange={handleChange}
+                        />
 
-                    <div className="p-newsActions__form_pair">
-                        <select name="type" value={articleInfo.type} onChange={handleChange}>
-                            {newsArticleTypeOptions.map((option) => (
-                                <option key={option.id} value={option.value}>
-                                    {option.label}
-                                </option>
-                            ))}
-                        </select>
+                        <div className="p-newsActions__form_pair">
+                            <select name="type" value={articleInfo.type} onChange={handleChange}>
+                                {newsArticleTypeOptions.map((option) => (
+                                    <option key={option.id} value={option.value}>
+                                        {option.label}
+                                    </option>
+                                ))}
+                            </select>
 
-                        <ToggleSwitch id="published" name="published" isOn={articleInfo.published} onChange={handleChange} />
-                    </div>
+                            <ToggleSwitch id="published" name="published" isOn={articleInfo.published} onChange={handleChange} />
+                        </div>
 
-                    <div className="p-newsActions__form_buttons">
-                        <button className="btn btn--primary" onClick={() => navigate('/news')}>
-                            Cancel
-                        </button>
+                        <div className="p-newsActions__form_buttons">
+                            <button className="btn btn--primary" onClick={() => navigate('/news')}>
+                                Cancel
+                            </button>
 
-                        <button type="submit" className="btn btn--primary" onClick={handleConfirm}>
-                            Save
-                        </button>
-                    </div>
-                </form>
+                            <button type="submit" className="btn btn--primary" onClick={handleConfirm}>
+                                Save
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
+        </>
     );
 };
 

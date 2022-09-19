@@ -1,7 +1,13 @@
 import React from 'react';
+import Navbar from '../components/navbar/Navbar';
 
 const SettingsPage = (): JSX.Element => {
-    return <div className="p-settings">Settings</div>;
+    return (
+        <>
+            <Navbar />
+            <div className="p-settings">Settings</div>
+        </>
+    );
 };
 
 export default SettingsPage;

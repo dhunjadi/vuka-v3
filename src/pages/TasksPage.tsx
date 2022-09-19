@@ -1,6 +1,7 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 import Card from '../components/Card';
+import Navbar from '../components/navbar/Navbar';
 import {StoreState} from '../store/reducers/rootReducer';
 
 const TasksPage = (): JSX.Element => {
@@ -61,16 +62,19 @@ const TasksPage = (): JSX.Element => {
         });
 
     return (
-        <div className="p-tasks">
-            {loggedInUser.role !== 'student' && (
-                <div className="p-tasks__header">
-                    <div className="p-tasks__header_buttons">
-                        <button className="btn btn--primary">Create new task</button>
+        <>
+            <Navbar />
+            <div className="p-tasks">
+                {loggedInUser.role !== 'student' && (
+                    <div className="p-tasks__header">
+                        <div className="p-tasks__header_buttons">
+                            <button className="btn btn--primary">Create new task</button>
+                        </div>
                     </div>
-                </div>
-            )}
-            {loggedInUser.role === 'student' ? tasksStudentsSee : tasksProfAndAdminSee}
-        </div>
+                )}
+                {loggedInUser.role === 'student' ? tasksStudentsSee : tasksProfAndAdminSee}
+            </div>
+        </>
     );
 };
 

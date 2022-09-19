@@ -7,6 +7,7 @@ import dummyIage from '../assets/dummyImage.jpg';
 import {useNavigate} from 'react-router-dom';
 import GradeCard from '../components/GradeCard';
 import Tabs from '../components/Tabs';
+import Navbar from '../components/navbar/Navbar';
 
 const GradesPage = (): JSX.Element => {
     const loggedInUser = useSelector((state: StoreState) => state.userReducer.loggedInUser);
@@ -54,7 +55,12 @@ const GradesPage = (): JSX.Element => {
         );
     };
 
-    return <div className="p-grades">{getBody()}</div>;
+    return (
+        <>
+            <Navbar />
+            <div className="p-grades">{getBody()}</div>
+        </>
+    );
 };
 
 export default GradesPage;

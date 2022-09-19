@@ -5,6 +5,7 @@ import Tabs from '../components/Tabs';
 import {StoreState} from '../store/reducers/rootReducer';
 import {useNavigate} from 'react-router-dom';
 import {v4 as uuidv4} from 'uuid';
+import Navbar from '../components/navbar/Navbar';
 
 const NewsPage = (): JSX.Element => {
     const loggedInUser = useSelector((state: StoreState) => state.userReducer.loggedInUser);
@@ -69,7 +70,12 @@ const NewsPage = (): JSX.Element => {
         );
     };
 
-    return <div className="p-news">{getBody()}</div>;
+    return (
+        <>
+            <Navbar />
+            <div className="p-news">{getBody()}</div>
+        </>
+    );
 };
 
 export default NewsPage;
