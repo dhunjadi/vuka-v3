@@ -37,12 +37,13 @@ const NewsActionsPage = (): JSX.Element => {
         });
     };
 
-    const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+    /*     const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
         e.preventDefault();
+        if (selectedArticle) dispatch(editNewsAricleAction(articleInfo));
         dispatch(addNewsAricleAction(articleInfo));
         setArticleInfo({id: '', title: '', text: '', type: '', published: false});
         navigate(-1);
-    };
+    }; */
 
     const handleConfirm = (): void => {
         if (selectedArticle) dispatch(editNewsAricleAction(articleInfo));
@@ -56,7 +57,7 @@ const NewsActionsPage = (): JSX.Element => {
             <Navbar />
             <div className="p-newsActions">
                 <div className="p-newsActions__form">
-                    <form onSubmit={handleFormSubmit}>
+                    <form>
                         <TextInput
                             type="text"
                             name="title"
@@ -89,7 +90,7 @@ const NewsActionsPage = (): JSX.Element => {
                                 Cancel
                             </button>
 
-                            <button type="submit" className="btn btn--primary" onClick={handleConfirm}>
+                            <button type="button" className="btn btn--primary" onClick={handleConfirm}>
                                 Save
                             </button>
                         </div>

@@ -4,10 +4,12 @@ import {ADD_NEWS_ARTICLE, DELETE_NEWS_ARTICLE, EDIT_NEWS_ARTICLE} from '../actio
 
 export interface newsReducerState {
     newsList: INews[];
+    selectedNews: INews;
 }
 
 const initialState = {
     newsList: newsList,
+    selectedNews: {id: '', title: '', text: '', type: '', published: false},
 };
 
 export const newsReducer = (state: newsReducerState = initialState, action: AnyAction): newsReducerState => {
@@ -25,17 +27,7 @@ export const newsReducer = (state: newsReducerState = initialState, action: AnyA
         case EDIT_NEWS_ARTICLE:
             return {
                 ...state,
-                newsList: [
-                    ...state.newsList.map((el) => {
-                        if (el.id === action.news.id) {
-                            return {
-                                ...el,
-                                el: action.news,
-                            };
-                        }
-                        return el;
-                    }),
-                ],
+                newsList: [...state.newsList.map((el) => (el.id === action.news.id ? action.news : el))],
             };
         default:
             return state;
