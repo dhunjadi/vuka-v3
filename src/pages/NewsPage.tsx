@@ -8,8 +8,8 @@ import {v4 as uuidv4} from 'uuid';
 import Navbar from '../components/navbar/Navbar';
 
 const NewsPage = (): JSX.Element => {
-    const loggedInUser = useSelector((state: StoreState) => state.userReducer.loggedInUser);
-    const newsList = useSelector((state: StoreState) => state.newsReducer.newsList);
+    const {loggedInUser} = useSelector((state: StoreState) => state.userReducer);
+    const {newsList} = useSelector((state: StoreState) => state.newsReducer);
 
     const navigate = useNavigate();
 
@@ -25,11 +25,7 @@ const NewsPage = (): JSX.Element => {
                         {newsList
                             .filter((news) => news.type === newsType.toLocaleLowerCase() && news.published === true)
                             .map((news) => {
-                                return (
-                                    <NewsArticle key={news.id} id={news.id} header={news.title} newsType={news.type}>
-                                        {news.text}
-                                    </NewsArticle>
-                                );
+                                return <NewsArticle key={news.id} {...news} />;
                             })}
                     </div>
                 </>
@@ -52,18 +48,7 @@ const NewsPage = (): JSX.Element => {
                 />
                 <div className="p-news__articles">
                     {newsList.map((news) => {
-                        return (
-                            <NewsArticle
-                                key={news.id}
-                                id={news.id}
-                                header={news.title}
-                                newsType={news.type}
-                                published={news.published}
-                                showButtons
-                            >
-                                {news.text}
-                            </NewsArticle>
-                        );
+                        return <NewsArticle key={news.id} {...news} showButtons />;
                     })}
                 </div>
             </>

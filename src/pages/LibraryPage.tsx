@@ -6,7 +6,7 @@ import Navbar from '../components/navbar/Navbar';
 import {StoreState} from '../store/reducers/rootReducer';
 
 const LibraryPage = (): JSX.Element => {
-    const bookList = useSelector((state: StoreState) => state.bookReducer.bookList);
+    const {bookList} = useSelector((state: StoreState) => state.bookReducer);
     const navigate = useNavigate();
 
     const [searchText, setSearchText] = useState<string>('');

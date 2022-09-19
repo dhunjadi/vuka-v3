@@ -11,9 +11,7 @@ interface TabsProps {
     onChange: (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
-const TextInput = (props: TabsProps): JSX.Element => {
-    const {type, name, value, placeholder, light, onChange} = props;
-
+const TextInput = ({type, name, value, placeholder, light, onChange}: TabsProps): JSX.Element => {
     if (type === 'text' || type === 'password') {
         return (
             <div className={`c-textInput ${light && 'c-textInput--light'}`}>

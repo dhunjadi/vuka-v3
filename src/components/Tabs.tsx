@@ -7,9 +7,7 @@ interface TabsProps {
     handleSelect?: (chip: string) => void;
 }
 
-const Tabs = (props: TabsProps): JSX.Element => {
-    const {tabList, selectedTab, buttons, handleSelect} = props;
-
+const Tabs = ({tabList, selectedTab, buttons, handleSelect}: TabsProps): JSX.Element => {
     const handleToggle = (e: React.MouseEvent<HTMLButtonElement>): void => {
         handleSelect && handleSelect(e.currentTarget.value);
     };

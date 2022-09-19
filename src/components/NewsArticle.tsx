@@ -1,4 +1,4 @@
-import React, {PropsWithChildren} from 'react';
+import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
 import {deleteNewsAricleAction} from '../store/actions/newsActons';
@@ -6,29 +6,26 @@ import {StoreState} from '../store/reducers/rootReducer';
 
 interface NewsArticleProps {
     id: string;
-    header?: string;
-    newsType: string;
-    published?: boolean;
-    cursorPointer?: boolean;
+    title: string;
+    text: string;
+    type: string;
+    published: boolean;
     showButtons?: boolean;
-    onClick?: () => void;
 }
 
-const NewsArticle = (props: PropsWithChildren<NewsArticleProps>): JSX.Element => {
-    const {id, header, newsType, published, cursorPointer, children, showButtons, onClick} = props;
-
-    const loggedInUser = useSelector((state: StoreState) => state.userReducer.loggedInUser);
+const NewsArticle = ({id, title, text, type, published, showButtons}: NewsArticleProps): JSX.Element => {
+    const {loggedInUser} = useSelector((state: StoreState) => state.userReducer);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     return (
         <>
-            <article className={`c-newsArticle ${cursorPointer && 'cursor-p'}`} onClick={onClick}>
-                <div className="c-newsArticle__header">{header}</div>
+            <article className="c-newsArticle">
+                <div className="c-newsArticle__header">{title}</div>
                 {loggedInUser.role !== 'student' && (
                     <div className="c-newsArticle__info">
                         <div className="c-newsArticle__info_pair">
-                            <span>News type: </span> <span>{newsType}</span>
+                            <span>News type: </span> <span>{type}</span>
                         </div>
 
                         <div className="c-newsArticle__info_pair">
@@ -37,7 +34,7 @@ const NewsArticle = (props: PropsWithChildren<NewsArticleProps>): JSX.Element =>
                     </div>
                 )}
 
-                <div className="c-newsArticle__body">{children}</div>
+                <div className="c-newsArticle__body">{text}</div>
                 {showButtons && (
                     <div className="c-newsArticle__buttons">
                         <button className="btn btn--primary" onClick={() => navigate(`/news/actions/${id}`)}>
@@ -56,9 +53,5 @@ const NewsArticle = (props: PropsWithChildren<NewsArticleProps>): JSX.Element =>
 export default NewsArticle;
 
 NewsArticle.defaultProps = {
-    header: undefined,
-    published: undefined,
-    cursorPointer: false,
     showButtons: false,
-    onClick: undefined,
 };

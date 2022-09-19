@@ -5,7 +5,7 @@ import {StoreState} from '../store/reducers/rootReducer';
 import Navbar from './navbar/Navbar';
 
 const Book = (): JSX.Element => {
-    const bookList = useSelector((state: StoreState) => state.bookReducer.bookList);
+    const {bookList} = useSelector((state: StoreState) => state.bookReducer);
 
     const {id} = useParams();
     const selectedBook = bookList.find((news) => news.id === id);

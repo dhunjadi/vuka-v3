@@ -3,16 +3,15 @@ import React from 'react';
 interface GradeCardProps {
     title: string;
     semester: number;
-    ects: number;
+    ects: number | undefined;
     exam1: number | undefined;
     exam2: number | undefined;
     essay: number | undefined;
     presentation: number | undefined;
-    buttons: boolean;
+    showButtons?: boolean;
 }
 
-const GradeCard = (props: GradeCardProps): JSX.Element => {
-    const {title, ects, semester, exam1, exam2, essay, presentation, buttons} = props;
+const GradeCard = ({title, ects, semester, exam1, exam2, essay, presentation, showButtons}: GradeCardProps): JSX.Element => {
     return (
         <div className="c-gradeCard">
             <div className="c-gradeCard__title">{title}</div>
@@ -33,7 +32,7 @@ const GradeCard = (props: GradeCardProps): JSX.Element => {
                     <span>Presentation:</span> <span>{presentation}</span>
                 </div>
             </div>
-            {buttons && (
+            {showButtons && (
                 <div className="c-gradeCard__buttons">
                     <button className="btn btn--primary">Edit</button>
                 </div>
@@ -45,5 +44,5 @@ const GradeCard = (props: GradeCardProps): JSX.Element => {
 export default GradeCard;
 
 GradeCard.defaultProps = {
-    buttons: false,
+    showButtons: false,
 };

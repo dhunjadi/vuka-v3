@@ -7,9 +7,7 @@ interface ToggleSwitchProps {
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-function ToggleSwitch(props: ToggleSwitchProps): JSX.Element {
-    const {id, name, isOn, onChange} = props;
-
+function ToggleSwitch({id, name, isOn, onChange}: ToggleSwitchProps): JSX.Element {
     return (
         <div className="c-toggleSwitch">
             <input className="c-toggleSwitch__input" name={name} id={id} type="checkbox" checked={isOn} onChange={onChange} />

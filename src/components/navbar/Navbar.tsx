@@ -10,7 +10,7 @@ import {navbarList} from './navbarList';
 import Modal from '../Modal';
 
 const Navbar = (): JSX.Element => {
-    const loggedInUser = useSelector((state: StoreState) => state.userReducer.loggedInUser);
+    const {loggedInUser} = useSelector((state: StoreState) => state.userReducer);
 
     const [lastScrollY, setLastScrollY] = useState<number>(0);
     const [showNavbar, setShowNavbar] = useState<boolean>(true);

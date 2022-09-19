@@ -10,7 +10,7 @@ import Tabs from '../components/Tabs';
 import Navbar from '../components/navbar/Navbar';
 
 const GradesPage = (): JSX.Element => {
-    const loggedInUser = useSelector((state: StoreState) => state.userReducer.loggedInUser);
+    const {loggedInUser} = useSelector((state: StoreState) => state.userReducer);
     const navigate = useNavigate();
 
     const semesters = ['1', '2', '3', '4', '5', '6'];
@@ -23,17 +23,7 @@ const GradesPage = (): JSX.Element => {
                     {userList.map((user) => {
                         return (
                             user.role === 'student' && (
-                                <StudentCard
-                                    key={user.id}
-                                    imgSrc={dummyIage}
-                                    fName={user.fName}
-                                    lName={user.lName}
-                                    email={user.email}
-                                    studyProgram={user.studyProgram}
-                                    studyType={user.studyType}
-                                    year={user.year}
-                                    onClick={() => navigate(`/grades/${user.id}`)}
-                                />
+                                <StudentCard key={user.id} imgSrc={dummyIage} {...user} onClick={() => navigate(`/grades/${user.id}`)} />
                             )
                         );
                     })}
@@ -48,7 +38,7 @@ const GradesPage = (): JSX.Element => {
                     {loggedInUser.classes
                         .filter((clas) => clas.semester === Number(currentSemester))
                         .map((clas) => {
-                            return <GradeCard key={clas.title} buttons={loggedInUser.role !== 'student'} {...clas} />;
+                            return <GradeCard key={clas.title} showButtons {...clas} />;
                         })}
                 </div>
             </>

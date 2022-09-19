@@ -11,8 +11,7 @@ interface StudentCardProps {
     onClick?: () => void;
 }
 
-const StudentCard = (props: StudentCardProps): JSX.Element => {
-    const {imgSrc, fName, lName, email, studyProgram, studyType, year, onClick} = props;
+const StudentCard = ({imgSrc, fName, lName, email, studyProgram, studyType, year, onClick}: StudentCardProps): JSX.Element => {
     return (
         <div className="c-studentCard cursor-p" onClick={onClick}>
             <div className="c-studentCard__img">
