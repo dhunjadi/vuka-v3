@@ -1,4 +1,5 @@
-.p-newsEdit {
+.p-newsEdit,
+.p-newNews {
     @include pageLayout;
     align-items: initial;
 
@@ -12,5 +13,10 @@
             display: flex;
             gap: 1rem;
         }
+    }
+
+    .c-toggleSwitch {
+        border: 0.2rem solid $color-primary-light;
+        border-radius: $br-pill;
     }
 }

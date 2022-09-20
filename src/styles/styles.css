@@ -270,7 +270,8 @@ html {
   }
 }
 
-.p-newsEdit {
+.p-newsEdit,
+.p-newNews {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -279,13 +280,20 @@ html {
   padding: 0 10%;
   align-items: initial;
 }
-.p-newsEdit__form_pair {
+.p-newsEdit__form_pair,
+.p-newNews__form_pair {
   display: flex;
   align-items: center;
 }
-.p-newsEdit__form_buttons {
+.p-newsEdit__form_buttons,
+.p-newNews__form_buttons {
   display: flex;
   gap: 1rem;
+}
+.p-newsEdit .c-toggleSwitch,
+.p-newNews .c-toggleSwitch {
+  border: 0.2rem solid #870f54;
+  border-radius: 100rem;
 }
 
 .c-navbar {

@@ -11,6 +11,7 @@ import './styles/styles.css';
 import Book from './components/Book';
 import StudentGradesPage from './pages/StudentGradesPage';
 import NewsEditPage from './pages/NewsEditPage';
+import NewNewsPage from './pages/NewNewsPage';
 
 function App(): ReactElement {
     return (
@@ -21,6 +22,7 @@ function App(): ReactElement {
 
                     <Route path="/news">
                         <Route index element={<NewsPage />} />
+                        <Route path="new" element={<NewNewsPage />} />
                         <Route path="actions/:id" element={<NewsEditPage />} />
                     </Route>
 

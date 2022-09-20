@@ -4,7 +4,6 @@ import NewsArticle from '../components/NewsArticle';
 import Tabs from '../components/Tabs';
 import {StoreState} from '../store/reducers/rootReducer';
 import {useNavigate} from 'react-router-dom';
-import {v4 as uuidv4} from 'uuid';
 import Navbar from '../components/navbar/Navbar';
 
 const NewsPage = (): JSX.Element => {
@@ -39,7 +38,7 @@ const NewsPage = (): JSX.Element => {
                     selectedTab={'STUDENT NEWS'}
                     buttons={
                         <>
-                            <button className="btn btn--primary" onClick={() => navigate(`/news/actions/${uuidv4()}`)}>
+                            <button className="btn btn--primary" onClick={() => navigate(`/news/new`)}>
                                 Add news
                             </button>
                         </>
