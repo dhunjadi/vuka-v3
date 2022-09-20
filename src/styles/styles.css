@@ -270,7 +270,7 @@ html {
   }
 }
 
-.p-newsActions {
+.p-newsEdit {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -279,11 +279,11 @@ html {
   padding: 0 10%;
   align-items: initial;
 }
-.p-newsActions__form_pair {
+.p-newsEdit__form_pair {
   display: flex;
   align-items: center;
 }
-.p-newsActions__form_buttons {
+.p-newsEdit__form_buttons {
   display: flex;
   gap: 1rem;
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
-import {deleteNewsAricleAction} from '../store/actions/newsActons';
+import {deleteNewsAricleAction, selectNewsAricleAction} from '../store/actions/newsActons';
 import {StoreState} from '../store/reducers/rootReducer';
 
 interface NewsArticleProps {
@@ -17,6 +17,15 @@ const NewsArticle = ({id, title, text, type, published, showButtons}: NewsArticl
     const {loggedInUser} = useSelector((state: StoreState) => state.userReducer);
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    const handleSelectToEdit = (): void => {
+        dispatch(selectNewsAricleAction({id, title, text, type, published}));
+        navigate(`/news/actions/${id}`);
+    };
+
+    const handleDelete = (): void => {
+        dispatch(deleteNewsAricleAction(id));
+    };
 
     return (
         <>
@@ -37,10 +46,10 @@ const NewsArticle = ({id, title, text, type, published, showButtons}: NewsArticl
                 <div className="c-newsArticle__body">{text}</div>
                 {showButtons && (
                     <div className="c-newsArticle__buttons">
-                        <button className="btn btn--primary" onClick={() => navigate(`/news/actions/${id}`)}>
+                        <button className="btn btn--primary" onClick={handleSelectToEdit}>
                             Edit
                         </button>
-                        <button className="btn btn--primary" onClick={() => dispatch(deleteNewsAricleAction(id))}>
+                        <button className="btn btn--primary" onClick={handleDelete}>
                             Delete
                         </button>
                     </div>

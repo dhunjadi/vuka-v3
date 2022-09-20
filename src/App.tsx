@@ -10,7 +10,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './styles/styles.css';
 import Book from './components/Book';
 import StudentGradesPage from './pages/StudentGradesPage';
-import NewsActionsPage from './pages/NewsActionsPage';
+import NewsEditPage from './pages/NewsEditPage';
 
 function App(): ReactElement {
     return (
@@ -21,7 +21,7 @@ function App(): ReactElement {
 
                     <Route path="/news">
                         <Route index element={<NewsPage />} />
-                        <Route path="actions/:id" element={<NewsActionsPage />} />
+                        <Route path="actions/:id" element={<NewsEditPage />} />
                     </Route>
 
                     <Route path="/tasks" element={<TasksPage />} />

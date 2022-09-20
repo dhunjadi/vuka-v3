@@ -1,27 +1,25 @@
 import React, {useState} from 'react';
-import {useDispatch} from 'react-redux';
-import {useNavigate, useParams} from 'react-router-dom';
+import {useDispatch, useSelector} from 'react-redux';
+import {useNavigate} from 'react-router-dom';
 import TextInput from '../components/TextInput';
 import ToggleSwitch from '../components/ToggleSwitch';
-import {addNewsAricleAction, editNewsAricleAction} from '../store/actions/newsActons';
+import {editNewsAricleAction} from '../store/actions/newsActons';
 import {newsArticleTypeOptions} from '../data/constants';
-import {v4 as uuidv4} from 'uuid';
-import {newsList} from '../data/newsList';
 import Navbar from '../components/navbar/Navbar';
+import {StoreState} from '../store/reducers/rootReducer';
 
-const NewsActionsPage = (): JSX.Element => {
+const NewsEditPage = (): JSX.Element => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const {id} = useParams();
 
-    const selectedArticle = newsList.find((article) => article.id === id);
+    const {selectedNews} = useSelector((state: StoreState) => state.newsReducer);
 
     const [articleInfo, setArticleInfo] = useState({
-        id: id || uuidv4(),
-        title: selectedArticle?.title || '',
-        text: selectedArticle?.text || '',
-        type: selectedArticle?.type || '',
-        published: selectedArticle?.published || false,
+        id: selectedNews.id,
+        title: selectedNews.title,
+        text: selectedNews.text,
+        type: selectedNews.type,
+        published: selectedNews.published,
     });
 
     const handleChange = (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement>): void => {
@@ -39,14 +37,7 @@ const NewsActionsPage = (): JSX.Element => {
 
     const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
         e.preventDefault();
-        dispatch(addNewsAricleAction(articleInfo));
-        setArticleInfo({id: '', title: '', text: '', type: '', published: false});
-        navigate(-1);
-    };
-
-    const handleConfirm = (): void => {
-        if (selectedArticle) dispatch(editNewsAricleAction(articleInfo));
-        dispatch(addNewsAricleAction(articleInfo));
+        dispatch(editNewsAricleAction(articleInfo));
         setArticleInfo({id: '', title: '', text: '', type: '', published: false});
         navigate('/news');
     };
@@ -54,8 +45,8 @@ const NewsActionsPage = (): JSX.Element => {
     return (
         <>
             <Navbar />
-            <div className="p-newsActions">
-                <div className="p-newsActions__form">
+            <div className="p-newsEdit">
+                <div className="p-newsEdit__form">
                     <form onSubmit={handleFormSubmit}>
                         <TextInput
                             type="text"
@@ -72,7 +63,7 @@ const NewsActionsPage = (): JSX.Element => {
                             onChange={handleChange}
                         />
 
-                        <div className="p-newsActions__form_pair">
+                        <div className="p-newsEdit__form_pair">
                             <select name="type" value={articleInfo.type} onChange={handleChange}>
                                 {newsArticleTypeOptions.map((option) => (
                                     <option key={option.id} value={option.value}>
@@ -84,12 +75,12 @@ const NewsActionsPage = (): JSX.Element => {
                             <ToggleSwitch id="published" name="published" isOn={articleInfo.published} onChange={handleChange} />
                         </div>
 
-                        <div className="p-newsActions__form_buttons">
+                        <div className="p-newsEdit__form_buttons">
                             <button className="btn btn--primary" onClick={() => navigate('/news')}>
                                 Cancel
                             </button>
 
-                            <button type="submit" className="btn btn--primary" onClick={handleConfirm}>
+                            <button type="submit" className="btn btn--primary">
                                 Save
                             </button>
                         </div>
@@ -100,4 +91,4 @@ const NewsActionsPage = (): JSX.Element => {
     );
 };
 
-export default NewsActionsPage;
+export default NewsEditPage;
