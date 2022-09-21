@@ -12,6 +12,8 @@ import Book from './components/Book';
 import StudentGradesPage from './pages/StudentGradesPage';
 import NewsEditPage from './pages/NewsEditPage';
 import NewNewsPage from './pages/NewNewsPage';
+import NewTaskPage from './pages/NewTaskPage';
+import TaskEditPage from './pages/TaskEditPage';
 
 function App(): ReactElement {
     return (
@@ -23,10 +25,14 @@ function App(): ReactElement {
                     <Route path="/news">
                         <Route index element={<NewsPage />} />
                         <Route path="new" element={<NewNewsPage />} />
-                        <Route path="actions/:id" element={<NewsEditPage />} />
+                        <Route path="edit/:id" element={<NewsEditPage />} />
                     </Route>
 
-                    <Route path="/tasks" element={<TasksPage />} />
+                    <Route path="/tasks">
+                        <Route index element={<TasksPage />} />
+                        <Route path="new" element={<NewTaskPage />} />
+                        <Route path="edit/:id" element={<TaskEditPage />} />
+                    </Route>
                     <Route path="/schedule" element={<SchedulePage />} />
 
                     <Route path="/library">

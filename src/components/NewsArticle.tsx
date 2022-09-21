@@ -8,19 +8,19 @@ interface NewsArticleProps {
     id: string;
     title: string;
     text: string;
-    type: string;
+    studyProgram: string;
     published: boolean;
     showButtons?: boolean;
 }
 
-const NewsArticle = ({id, title, text, type, published, showButtons}: NewsArticleProps): JSX.Element => {
+const NewsArticle = ({id, title, text, studyProgram, published, showButtons}: NewsArticleProps): JSX.Element => {
     const {loggedInUser} = useSelector((state: StoreState) => state.userReducer);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const handleSelectToEdit = (): void => {
-        dispatch(selectNewsAricleAction({id, title, text, type, published}));
-        navigate(`/news/actions/${id}`);
+        dispatch(selectNewsAricleAction({id, title, text, studyProgram, published}));
+        navigate(`/news/edit/${id}`);
     };
 
     const handleDelete = (): void => {
@@ -34,7 +34,7 @@ const NewsArticle = ({id, title, text, type, published, showButtons}: NewsArticl
                 {loggedInUser.role !== 'student' && (
                     <div className="c-newsArticle__info">
                         <div className="c-newsArticle__info_pair">
-                            <span>News type: </span> <span>{type}</span>
+                            <span>News type: </span> <span>{studyProgram}</span>
                         </div>
 
                         <div className="c-newsArticle__info_pair">

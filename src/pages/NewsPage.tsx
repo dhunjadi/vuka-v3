@@ -22,7 +22,7 @@ const NewsPage = (): JSX.Element => {
                     <Tabs tabList={newsTypes} selectedTab={newsType} handleSelect={(tab) => setNewsType(tab)} />
                     <div className="p-news__articles">
                         {newsList
-                            .filter((news) => news.type === newsType.toLocaleLowerCase() && news.published === true)
+                            .filter((news) => news.studyProgram === newsType.toLocaleLowerCase() && news.published === true)
                             .map((news) => {
                                 return <NewsArticle key={news.id} {...news} />;
                             })}

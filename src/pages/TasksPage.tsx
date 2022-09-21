@@ -1,12 +1,17 @@
 import React from 'react';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
+import {useNavigate} from 'react-router-dom';
 import Card from '../components/Card';
 import Navbar from '../components/navbar/Navbar';
+import {deleteTaskAction, selectTaskAction} from '../store/actions/tasksActions';
 import {StoreState} from '../store/reducers/rootReducer';
 
 const TasksPage = (): JSX.Element => {
     const {loggedInUser} = useSelector((state: StoreState) => state.userReducer);
     const {taskList} = useSelector((state: StoreState) => state.tasksReducer);
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const tasksStudentsSee = taskList
         .filter((task) => {
@@ -51,8 +56,18 @@ const TasksPage = (): JSX.Element => {
                     showButtons
                     buttons={
                         <>
-                            <button className="btn btn--primary">Edit task</button>
-                            <button className="btn btn--primary">Delete task</button>
+                            <button
+                                className="btn btn--primary"
+                                onClick={() => {
+                                    dispatch(selectTaskAction(task));
+                                    navigate(`/tasks/edit/${task.id}`);
+                                }}
+                            >
+                                Edit task
+                            </button>
+                            <button className="btn btn--primary" onClick={() => dispatch(deleteTaskAction(task.id))}>
+                                Delete task
+                            </button>
                         </>
                     }
                 >
@@ -68,7 +83,9 @@ const TasksPage = (): JSX.Element => {
                 {loggedInUser.role !== 'student' && (
                     <div className="p-tasks__header">
                         <div className="p-tasks__header_buttons">
-                            <button className="btn btn--primary">Create new task</button>
+                            <button className="btn btn--primary" onClick={() => navigate(`/tasks/new`)}>
+                                Create new task
+                            </button>
                         </div>
                     </div>
                 )}

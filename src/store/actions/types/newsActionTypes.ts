@@ -1,22 +1,22 @@
 import {INews} from '../../../data/newsList';
 import {ADD_NEWS_ARTICLE, DELETE_NEWS_ARTICLE, EDIT_NEWS_ARTICLE, SELECT_NEWS_ARTICLE} from '../newsActons';
 
-export interface IAddNewsArticle {
+export interface IAddNewsArticleAction {
     type: typeof ADD_NEWS_ARTICLE;
     news: INews;
 }
 
-export interface IDeleteNewsArticle {
+export interface IDeleteNewsArticleAction {
     type: typeof DELETE_NEWS_ARTICLE;
     id: string;
 }
 
-export interface ISelectNewsArticle {
+export interface ISelectNewsArticleAction {
     type: typeof SELECT_NEWS_ARTICLE;
     news: INews;
 }
 
-export interface IEditNewsArticle {
+export interface IEditNewsArticleAction {
     type: typeof EDIT_NEWS_ARTICLE;
     news: INews;
 }

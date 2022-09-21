@@ -4,7 +4,7 @@ import {useNavigate} from 'react-router-dom';
 import TextInput from '../components/TextInput';
 import ToggleSwitch from '../components/ToggleSwitch';
 import {addNewsAricleAction} from '../store/actions/newsActons';
-import {newsArticleTypeOptions} from '../data/constants';
+import {studyProgramOptions} from '../data/constants';
 import Navbar from '../components/navbar/Navbar';
 import {v4 as uuidv4} from 'uuid';
 
@@ -16,7 +16,7 @@ const NewNewsPage = (): JSX.Element => {
         id: uuidv4(),
         title: '',
         text: '',
-        type: '',
+        studyProgram: '',
         published: false,
     });
 
@@ -25,7 +25,7 @@ const NewNewsPage = (): JSX.Element => {
 
         setArticleInfo((prev) => {
             if (name === 'published') return {...prev, [name]: !prev.published};
-            if (name === 'type') {
+            if (name === 'studyProgram') {
                 const selected = value;
                 return {...prev, [name]: selected};
             }
@@ -36,7 +36,7 @@ const NewNewsPage = (): JSX.Element => {
     const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
         e.preventDefault();
         dispatch(addNewsAricleAction(articleInfo));
-        setArticleInfo({id: '', title: '', text: '', type: '', published: false});
+        setArticleInfo({id: '', title: '', text: '', studyProgram: '', published: false});
         navigate('/news');
     };
 
@@ -62,8 +62,8 @@ const NewNewsPage = (): JSX.Element => {
                         />
 
                         <div className="p-newNews__form_pair">
-                            <select name="type" value={articleInfo.type} onChange={handleChange}>
-                                {newsArticleTypeOptions.map((option) => (
+                            <select name="studyProgram" value={articleInfo.studyProgram} onChange={handleChange}>
+                                {studyProgramOptions.map((option) => (
                                     <option key={option.id} value={option.value}>
                                         {option.label}
                                     </option>

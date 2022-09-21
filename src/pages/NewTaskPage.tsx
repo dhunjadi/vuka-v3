@@ -1,33 +1,34 @@
 import React, {useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
 import TextInput from '../components/TextInput';
 import ToggleSwitch from '../components/ToggleSwitch';
-import {editNewsAricleAction} from '../store/actions/newsActons';
 import {studyProgramOptions} from '../data/constants';
 import Navbar from '../components/navbar/Navbar';
-import {StoreState} from '../store/reducers/rootReducer';
+import {v4 as uuidv4} from 'uuid';
+import {ITask} from '../data/taskList';
+import {addNewTaskAction} from '../store/actions/tasksActions';
 
-const NewsEditPage = (): JSX.Element => {
+const NewTaskPage = (): JSX.Element => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const {selectedNews} = useSelector((state: StoreState) => state.newsReducer);
-
-    const [articleInfo, setArticleInfo] = useState({
-        id: selectedNews.id,
-        title: selectedNews.title,
-        text: selectedNews.text,
-        studyProgram: selectedNews.studyProgram,
-        published: selectedNews.published,
+    const [taskInfo, setTaskInfo] = useState<ITask>({
+        id: uuidv4(),
+        title: '',
+        text: '',
+        studyProgram: '',
+        subject: '',
+        year: 1,
+        published: false,
     });
 
     const handleChange = (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement>): void => {
         const {name, value} = e.target;
 
-        setArticleInfo((prev) => {
+        setTaskInfo((prev) => {
             if (name === 'published') return {...prev, [name]: !prev.published};
-            if (name === 'type') {
+            if (name === 'studyProgram' || name === 'year' || name === 'subject') {
                 const selected = value;
                 return {...prev, [name]: selected};
             }
@@ -37,34 +38,34 @@ const NewsEditPage = (): JSX.Element => {
 
     const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
         e.preventDefault();
-        dispatch(editNewsAricleAction(articleInfo));
-        setArticleInfo({id: '', title: '', text: '', studyProgram: '', published: false});
-        navigate('/news');
+        dispatch(addNewTaskAction(taskInfo));
+        setTaskInfo({id: '', title: '', text: '', studyProgram: '', subject: '', year: 1, published: false});
+        navigate('/tasks');
     };
 
     return (
         <>
             <Navbar />
-            <div className="p-newsEdit">
-                <div className="p-newsEdit__form">
+            <div className="p-newTask">
+                <div className="p-newTask__form">
                     <form onSubmit={handleFormSubmit}>
                         <TextInput
                             type="text"
                             name="title"
-                            placeholder="Enter Article Title..."
-                            value={articleInfo.title}
+                            placeholder="Enter Task Title..."
+                            value={taskInfo.title}
                             onChange={handleChange}
                         />
                         <TextInput
                             type="textArea"
                             name="text"
-                            placeholder="Enter Article Text..."
-                            value={articleInfo.text}
+                            placeholder="Enter Task Text..."
+                            value={taskInfo.text}
                             onChange={handleChange}
                         />
 
-                        <div className="p-newsEdit__form_pair">
-                            <select name="type" value={articleInfo.studyProgram} onChange={handleChange}>
+                        <div className="p-newTask__form_pair">
+                            <select name="studyProgram" value={taskInfo.studyProgram} onChange={handleChange}>
                                 {studyProgramOptions.map((option) => (
                                     <option key={option.id} value={option.value}>
                                         {option.label}
@@ -72,10 +73,23 @@ const NewsEditPage = (): JSX.Element => {
                                 ))}
                             </select>
 
-                            <ToggleSwitch id="published" name="published" isOn={articleInfo.published} onChange={handleChange} />
+                            <select name="year" value={taskInfo.year} onChange={handleChange}>
+                                <option value={1}>1</option>
+                                <option value={2}>2</option>
+                                <option value={3}>3</option>
+                                <option value={4}>4</option>
+                                <option value={5}>5</option>
+                            </select>
+
+                            <select name="subject" value={taskInfo.subject} onChange={handleChange}>
+                                <option value={'abc'}>abc</option>
+                                <option value={'def'}>def</option>
+                            </select>
+
+                            <ToggleSwitch id="published" name="published" isOn={taskInfo.published} onChange={handleChange} />
                         </div>
 
-                        <div className="p-newsEdit__form_buttons">
+                        <div className="p-newTask__form_buttons">
                             <button className="btn btn--primary" onClick={() => navigate('/news')}>
                                 Cancel
                             </button>
@@ -91,4 +105,4 @@ const NewsEditPage = (): JSX.Element => {
     );
 };
 
-export default NewsEditPage;
+export default NewTaskPage;
