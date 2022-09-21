@@ -270,8 +270,7 @@ html {
   }
 }
 
-.p-newsEdit,
-.p-newNews {
+.p-actions {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -280,46 +279,16 @@ html {
   padding: 0 10%;
   align-items: initial;
 }
-.p-newsEdit__form_pair,
-.p-newNews__form_pair {
+.p-actions__form_pair {
   display: flex;
   align-items: center;
 }
-.p-newsEdit__form_buttons,
-.p-newNews__form_buttons {
+.p-actions__form_buttons {
   display: flex;
   gap: 1rem;
   margin-top: 1rem;
 }
-.p-newsEdit .c-toggleSwitch,
-.p-newNews .c-toggleSwitch {
-  border: 0.2rem solid #870f54;
-  border-radius: 100rem;
-}
-
-.p-newTask,
-.p-taskEdit {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto 2rem auto;
-  padding: 0 10%;
-  align-items: initial;
-}
-.p-newTask__form_pair,
-.p-taskEdit__form_pair {
-  display: flex;
-  align-items: center;
-}
-.p-newTask__form_buttons,
-.p-taskEdit__form_buttons {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-.p-newTask .c-toggleSwitch,
-.p-taskEdit .c-toggleSwitch {
+.p-actions .c-toggleSwitch {
   border: 0.2rem solid #870f54;
   border-radius: 100rem;
 }

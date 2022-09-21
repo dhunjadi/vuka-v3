@@ -46,8 +46,8 @@ const NewTaskPage = (): JSX.Element => {
     return (
         <>
             <Navbar />
-            <div className="p-newTask">
-                <div className="p-newTask__form">
+            <div className="p-actions">
+                <div className="p-actions__form">
                     <form onSubmit={handleFormSubmit}>
                         <TextInput
                             type="text"
@@ -64,7 +64,7 @@ const NewTaskPage = (): JSX.Element => {
                             onChange={handleChange}
                         />
 
-                        <div className="p-newTask__form_pair">
+                        <div className="p-actions__form_pair">
                             <select name="studyProgram" value={taskInfo.studyProgram} onChange={handleChange}>
                                 {studyProgramOptions.map((option) => (
                                     <option key={option.id} value={option.value}>
@@ -89,8 +89,8 @@ const NewTaskPage = (): JSX.Element => {
                             <ToggleSwitch id="published" name="published" isOn={taskInfo.published} onChange={handleChange} />
                         </div>
 
-                        <div className="p-newTask__form_buttons">
-                            <button className="btn btn--primary" onClick={() => navigate('/news')}>
+                        <div className="p-actions__form_buttons">
+                            <button className="btn btn--primary" onClick={() => navigate('/tasks')}>
                                 Cancel
                             </button>
 

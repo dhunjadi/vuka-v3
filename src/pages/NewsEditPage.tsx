@@ -45,8 +45,8 @@ const NewsEditPage = (): JSX.Element => {
     return (
         <>
             <Navbar />
-            <div className="p-newsEdit">
-                <div className="p-newsEdit__form">
+            <div className="p-actions">
+                <div className="p-actions__form">
                     <form onSubmit={handleFormSubmit}>
                         <TextInput
                             type="text"
@@ -63,7 +63,7 @@ const NewsEditPage = (): JSX.Element => {
                             onChange={handleChange}
                         />
 
-                        <div className="p-newsEdit__form_pair">
+                        <div className="p-actions__form_pair">
                             <select name="type" value={articleInfo.studyProgram} onChange={handleChange}>
                                 {studyProgramOptions.map((option) => (
                                     <option key={option.id} value={option.value}>
@@ -75,7 +75,7 @@ const NewsEditPage = (): JSX.Element => {
                             <ToggleSwitch id="published" name="published" isOn={articleInfo.published} onChange={handleChange} />
                         </div>
 
-                        <div className="p-newsEdit__form_buttons">
+                        <div className="p-actions__form_buttons">
                             <button className="btn btn--primary" onClick={() => navigate('/news')}>
                                 Cancel
                             </button>

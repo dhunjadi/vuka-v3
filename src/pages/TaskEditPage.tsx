@@ -48,8 +48,8 @@ const taskEditPage = (): JSX.Element => {
     return (
         <>
             <Navbar />
-            <div className="p-taskEdit">
-                <div className="p-taskEdit__form">
+            <div className="p-actions">
+                <div className="p-actions__form">
                     <form onSubmit={handleFormSubmit}>
                         <TextInput
                             type="text"
@@ -66,7 +66,7 @@ const taskEditPage = (): JSX.Element => {
                             onChange={handleChange}
                         />
 
-                        <div className="p-taskEdit__form_pair">
+                        <div className="p-actions__form_pair">
                             <select name="studyProgram" value={taskInfo.studyProgram} onChange={handleChange}>
                                 {studyProgramOptions.map((option) => (
                                     <option key={option.id} value={option.value}>
@@ -91,7 +91,7 @@ const taskEditPage = (): JSX.Element => {
                             <ToggleSwitch id="published" name="published" isOn={taskInfo.published} onChange={handleChange} />
                         </div>
 
-                        <div className="p-taskEdit__form_buttons">
+                        <div className="p-actions__form_buttons">
                             <button className="btn btn--primary" onClick={() => navigate('/tasks')}>
                                 Cancel
                             </button>
