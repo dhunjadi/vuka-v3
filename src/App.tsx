@@ -14,6 +14,7 @@ import NewsEditPage from './pages/NewsEditPage';
 import NewNewsPage from './pages/NewNewsPage';
 import NewTaskPage from './pages/NewTaskPage';
 import TaskEditPage from './pages/TaskEditPage';
+import GradesEditPage from './pages/GradesEditPage';
 
 function App(): ReactElement {
     return (
@@ -43,6 +44,7 @@ function App(): ReactElement {
                     <Route path="/grades">
                         <Route index element={<GradesPage />} />
                         <Route path=":id" element={<StudentGradesPage />} />
+                        <Route path="edit" element={<GradesEditPage />} />
                     </Route>
                     <Route path="/settings" element={<SettingsPage />} />
                 </Routes>

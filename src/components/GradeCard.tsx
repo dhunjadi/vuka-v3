@@ -1,9 +1,14 @@
 import React from 'react';
+import {useDispatch} from 'react-redux';
+import {useNavigate} from 'react-router-dom';
+import {selectClassAction} from '../store/actions/userActions';
 
 interface GradeCardProps {
+    studentId: string;
+    id: string;
     title: string;
     semester: number;
-    ects: number | undefined;
+    ects: number;
     exam1: number | undefined;
     exam2: number | undefined;
     essay: number | undefined;
@@ -11,7 +16,14 @@ interface GradeCardProps {
     showButtons?: boolean;
 }
 
-const GradeCard = ({title, ects, semester, exam1, exam2, essay, presentation, showButtons}: GradeCardProps): JSX.Element => {
+const GradeCard = ({studentId, id, title, ects, semester, exam1, exam2, essay, presentation, showButtons}: GradeCardProps): JSX.Element => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const handleSelect = (): void => {
+        dispatch(selectClassAction({id, title, semester, exam1, exam2, essay, presentation, ects, studentId}));
+        navigate('/grades/edit');
+    };
     return (
         <div className="c-gradeCard">
             <div className="c-gradeCard__title">{title}</div>
@@ -34,7 +46,9 @@ const GradeCard = ({title, ects, semester, exam1, exam2, essay, presentation, sh
             </div>
             {showButtons && (
                 <div className="c-gradeCard__buttons">
-                    <button className="btn btn--primary">Edit</button>
+                    <button className="btn btn--primary" onClick={handleSelect}>
+                        Edit
+                    </button>
                 </div>
             )}
         </div>

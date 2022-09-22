@@ -1,13 +1,12 @@
 import React, {useState} from 'react';
-import {useParams} from 'react-router-dom';
+import {useSelector} from 'react-redux';
 import GradeCard from '../components/GradeCard';
 import Navbar from '../components/navbar/Navbar';
 import Tabs from '../components/Tabs';
-import userList from '../data/userList';
+import {StoreState} from '../store/reducers/rootReducer';
 
 const StudentGradesPage = (): JSX.Element => {
-    const {id} = useParams();
-    const selectedStudent = userList.find((user) => user.id === id);
+    const {selectedStudent} = useSelector((state: StoreState) => state.userReducer);
 
     const semesters = ['1', '2', '3', '4', '5', '6'];
     const [currentSemester, setCurrentSemester] = useState<string>(semesters[0]);

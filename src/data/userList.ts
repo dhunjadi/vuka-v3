@@ -1,6 +1,8 @@
 import {IBook} from './bookList';
 
-interface IClasses {
+export interface IClass {
+    studentId: string;
+    id: string;
     title: string;
     semester: number;
     exam1: number | undefined;
@@ -23,10 +25,10 @@ export interface IUser {
     studyType: string;
     year: number;
     books: IBook[];
-    classes: IClasses[];
+    classes: IClass[];
 }
 
-const userList: IUser[] = [
+export const userList: IUser[] = [
     {
         id: '1',
         fName: 'Ivan',
@@ -40,6 +42,8 @@ const userList: IUser[] = [
         books: [],
         classes: [
             {
+                studentId: '1',
+                id: '1',
                 title: 'Basic Economics I',
                 semester: 1,
                 exam1: 4,
@@ -49,6 +53,8 @@ const userList: IUser[] = [
                 ects: 5,
             },
             {
+                studentId: '1',
+                id: '2',
                 title: 'Business Mathematics I',
                 semester: 1,
                 exam1: 5,
@@ -58,6 +64,8 @@ const userList: IUser[] = [
                 ects: 4,
             },
             {
+                studentId: '1',
+                id: '3',
                 title: 'Computer Science in Business I',
                 semester: 1,
                 exam1: 3,
@@ -67,6 +75,8 @@ const userList: IUser[] = [
                 ects: 3,
             },
             {
+                studentId: '1',
+                id: '4',
                 title: 'Fundamentals of Tourism',
                 semester: 1,
                 exam1: 2,
@@ -76,6 +86,8 @@ const userList: IUser[] = [
                 ects: 4,
             },
             {
+                studentId: '1',
+                id: '5',
                 title: 'Introduction to Professional and Scientific Work',
                 semester: 1,
                 exam1: 5,
@@ -85,6 +97,8 @@ const userList: IUser[] = [
                 ects: 3,
             },
             {
+                studentId: '1',
+                id: '6',
                 title: 'Physical Education (PE) (1/4)',
                 semester: 1,
                 exam1: 2,
@@ -94,6 +108,8 @@ const userList: IUser[] = [
                 ects: 0,
             },
             {
+                studentId: '1',
+                id: '7',
                 title: 'Tourism Geography I',
                 semester: 1,
                 exam1: 2,
@@ -103,6 +119,8 @@ const userList: IUser[] = [
                 ects: 5,
             },
             {
+                studentId: '1',
+                id: '8',
                 title: 'Basic Economics II',
                 semester: 2,
                 exam1: 2,
@@ -112,6 +130,8 @@ const userList: IUser[] = [
                 ects: 5,
             },
             {
+                studentId: '1',
+                id: '9',
                 title: 'Business Law',
                 semester: 2,
                 exam1: 3,
@@ -121,6 +141,8 @@ const userList: IUser[] = [
                 ects: 3,
             },
             {
+                studentId: '1',
+                id: '10',
                 title: 'Business Mathematics II',
                 semester: 2,
                 exam1: 3,
@@ -130,6 +152,8 @@ const userList: IUser[] = [
                 ects: 4,
             },
             {
+                studentId: '1',
+                id: '11',
                 title: 'Computer Science in Business II',
                 semester: 2,
                 exam1: 3,
@@ -139,6 +163,8 @@ const userList: IUser[] = [
                 ects: 3,
             },
             {
+                studentId: '1',
+                id: '12',
                 title: 'Physical Education (PE) (2/4)',
                 semester: 2,
                 exam1: 3,
@@ -148,6 +174,8 @@ const userList: IUser[] = [
                 ects: 0,
             },
             {
+                studentId: '1',
+                id: '13',
                 title: 'Tourism Economics',
                 semester: 2,
                 exam1: 3,
@@ -157,6 +185,8 @@ const userList: IUser[] = [
                 ects: 4,
             },
             {
+                studentId: '1',
+                id: '14',
                 title: 'Tourism Geography II',
                 semester: 2,
                 exam1: 3,
@@ -166,6 +196,8 @@ const userList: IUser[] = [
                 ects: 4,
             },
             {
+                studentId: '1',
+                id: '15',
                 title: 'Business Statistics I',
                 semester: 3,
                 exam1: 3,
@@ -175,6 +207,8 @@ const userList: IUser[] = [
                 ects: 3,
             },
             {
+                studentId: '1',
+                id: '16',
                 title: 'Fundamentals of Accounting I',
                 semester: 3,
                 exam1: 3,
@@ -184,6 +218,8 @@ const userList: IUser[] = [
                 ects: 4,
             },
             {
+                studentId: '1',
+                id: '17',
                 title: 'Fundamentals of Entrepreneurship',
                 semester: 3,
                 exam1: 3,
@@ -193,6 +229,8 @@ const userList: IUser[] = [
                 ects: 4,
             },
             {
+                studentId: '1',
+                id: '18',
                 title: 'Fundamentals of Marketing',
                 semester: 3,
                 exam1: 3,
@@ -202,6 +240,8 @@ const userList: IUser[] = [
                 ects: 4,
             },
             {
+                studentId: '1',
+                id: '19',
                 title: 'Hospitality Management (1/2)',
                 semester: 3,
                 exam1: 3,
@@ -211,6 +251,8 @@ const userList: IUser[] = [
                 ects: 5,
             },
             {
+                studentId: '1',
+                id: '20',
                 title: 'Physical Education (PE) (3/4)',
                 semester: 3,
                 exam1: 3,
@@ -220,6 +262,8 @@ const userList: IUser[] = [
                 ects: 0,
             },
             {
+                studentId: '1',
+                id: '21',
                 title: 'Tourism and Environment',
                 semester: 3,
                 exam1: 3,
@@ -229,6 +273,8 @@ const userList: IUser[] = [
                 ects: 3,
             },
             {
+                studentId: '1',
+                id: '22',
                 title: 'Business Statistics II',
                 semester: 4,
                 exam1: 3,
@@ -238,6 +284,8 @@ const userList: IUser[] = [
                 ects: 4,
             },
             {
+                studentId: '1',
+                id: '23',
                 title: 'Entrepreneurship in Hospitality',
                 semester: 4,
                 exam1: 3,
@@ -247,6 +295,8 @@ const userList: IUser[] = [
                 ects: 5,
             },
             {
+                studentId: '1',
+                id: '24',
                 title: 'Fundamentals of Accounting II',
                 semester: 4,
                 exam1: 3,
@@ -256,6 +306,8 @@ const userList: IUser[] = [
                 ects: 4,
             },
             {
+                studentId: '1',
+                id: '25',
                 title: 'Hospitality Management (2/2)',
                 semester: 4,
                 exam1: 3,
@@ -265,6 +317,8 @@ const userList: IUser[] = [
                 ects: 5,
             },
             {
+                studentId: '1',
+                id: '26',
                 title: 'Marketing in Hospitality',
                 semester: 4,
                 exam1: 3,
@@ -274,6 +328,8 @@ const userList: IUser[] = [
                 ects: 5,
             },
             {
+                studentId: '1',
+                id: '27',
                 title: 'Physical Education (PE) (4/4)',
                 semester: 4,
                 exam1: 3,
@@ -283,6 +339,8 @@ const userList: IUser[] = [
                 ects: 0,
             },
             {
+                studentId: '1',
+                id: '28',
                 title: 'Business Finances (1/2)',
                 semester: 5,
                 exam1: 3,
@@ -292,6 +350,8 @@ const userList: IUser[] = [
                 ects: 5,
             },
             {
+                studentId: '1',
+                id: '29',
                 title: 'Evaluation of Cultural Heritage in Tourism',
                 semester: 5,
                 exam1: 3,
@@ -301,6 +361,8 @@ const userList: IUser[] = [
                 ects: 3,
             },
             {
+                studentId: '1',
+                id: '30',
                 title: 'Fundamentals of Management',
                 semester: 5,
                 exam1: 3,
@@ -310,6 +372,8 @@ const userList: IUser[] = [
                 ects: 3,
             },
             {
+                studentId: '1',
+                id: '31',
                 title: 'Fundamentals of Special Forms of Tourism',
                 semester: 5,
                 exam1: 3,
@@ -319,6 +383,8 @@ const userList: IUser[] = [
                 ects: 3,
             },
             {
+                studentId: '1',
+                id: '32',
                 title: 'International Trade',
                 semester: 5,
                 exam1: 3,
@@ -328,6 +394,8 @@ const userList: IUser[] = [
                 ects: 3,
             },
             {
+                studentId: '1',
+                id: '33',
                 title: 'Travel Agency Managment',
                 semester: 5,
                 exam1: 3,
@@ -337,6 +405,8 @@ const userList: IUser[] = [
                 ects: 3,
             },
             {
+                studentId: '1',
+                id: '34',
                 title: 'Business Finances (2/2)',
                 semester: 6,
                 exam1: 3,
@@ -346,6 +416,8 @@ const userList: IUser[] = [
                 ects: 5,
             },
             {
+                studentId: '1',
+                id: '35',
                 title: 'Final Thesis',
                 semester: 6,
                 exam1: 3,
@@ -355,6 +427,8 @@ const userList: IUser[] = [
                 ects: 6,
             },
             {
+                studentId: '1',
+                id: '36',
                 title: 'Practical Work',
                 semester: 6,
                 exam1: 3,
@@ -364,6 +438,8 @@ const userList: IUser[] = [
                 ects: 7,
             },
             {
+                studentId: '1',
+                id: '37',
                 title: 'Tourist Market Research',
                 semester: 6,
                 exam1: 3,
