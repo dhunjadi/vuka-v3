@@ -1,9 +1,9 @@
 import React, {useState, useRef, useEffect} from 'react';
 import {useDispatch} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
-import logo from '../assets/logo.png';
-import userList, {IUser} from '../data/userList';
-import {userLoginAction} from '../store/actions/userActions';
+import logo from '../../assets/logo.png';
+import userList, {IUser} from '../../data/userList';
+import {userLoginAction} from '../../store/actions/userActions';
 
 const LoginPage = (): JSX.Element => {
     const [loginInfo, setLogininfo] = useState({email: '', password: ''});

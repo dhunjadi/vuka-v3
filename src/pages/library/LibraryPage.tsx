@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import {useSelector} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
-import Card from '../components/Card';
-import Navbar from '../components/navbar/Navbar';
-import {StoreState} from '../store/reducers/rootReducer';
+import Card from '../../components/Card';
+import Navbar from '../../components/navbar/Navbar';
+import {StoreState} from '../../store/reducers/rootReducer';
 
 const LibraryPage = (): JSX.Element => {
     const {bookList} = useSelector((state: StoreState) => state.bookReducer);

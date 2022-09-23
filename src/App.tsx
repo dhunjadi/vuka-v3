@@ -1,20 +1,20 @@
 import React, {ReactElement} from 'react';
-import TasksPage from './pages/TasksPage';
-import SchedulePage from './pages/SchedulePage';
-import LibraryPage from './pages/LibraryPage';
-import GradesPage from './pages/GradesPage';
-import SettingsPage from './pages/SettingsPage';
-import NewsPage from './pages/NewsPage';
-import LoginPage from './pages/LoginPage';
+import TasksPage from './pages/tasks/TasksPage';
+import SchedulePage from './pages/schedule/SchedulePage';
+import LibraryPage from './pages/library/LibraryPage';
+import GradesPage from './pages/grades/GradesPage';
+import SettingsPage from './pages/settings/SettingsPage';
+import NewsPage from './pages/news/NewsPage';
+import LoginPage from './pages/login/LoginPage';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './styles/styles.css';
 import Book from './components/Book';
-import StudentGradesPage from './pages/StudentGradesPage';
-import NewsEditPage from './pages/NewsEditPage';
-import NewNewsPage from './pages/NewNewsPage';
-import NewTaskPage from './pages/NewTaskPage';
-import TaskEditPage from './pages/TaskEditPage';
-import GradesEditPage from './pages/GradesEditPage';
+import StudentGradesPage from './pages/grades/StudentGradesPage';
+import NewsEditPage from './pages/news/NewsEditPage';
+import NewNewsPage from './pages/news/NewNewsPage';
+import NewTaskPage from './pages/tasks/NewTaskPage';
+import TaskEditPage from './pages/tasks/TaskEditPage';
+import GradesEditPage from './pages/grades/GradesEditPage';
 
 function App(): ReactElement {
     return (

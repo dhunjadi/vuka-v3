@@ -1,13 +1,7 @@
 import React from 'react';
+import {IUser} from '../data/userList';
 
-interface StudentCardProps {
-    imgSrc?: string;
-    fName: string;
-    lName: string;
-    email: string;
-    studyProgram: string;
-    studyType: string;
-    year: number;
+interface StudentCardProps extends IUser {
     onClick?: () => void;
 }
 

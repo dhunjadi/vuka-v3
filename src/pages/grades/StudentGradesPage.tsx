@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import {useSelector} from 'react-redux';
-import GradeCard from '../components/GradeCard';
-import Navbar from '../components/navbar/Navbar';
-import Tabs from '../components/Tabs';
-import {StoreState} from '../store/reducers/rootReducer';
+import GradeCard from '../../components/GradeCard';
+import Navbar from '../../components/navbar/Navbar';
+import Tabs from '../../components/Tabs';
+import {StoreState} from '../../store/reducers/rootReducer';
 
 const StudentGradesPage = (): JSX.Element => {
     const {selectedStudent} = useSelector((state: StoreState) => state.userReducer);

@@ -1,13 +1,12 @@
 import React, {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {StoreState} from '../store/reducers/rootReducer';
-import StudentCard from '../components/StudentCard';
-import dummyIage from '../assets/dummyImage.jpg';
+import {StoreState} from '../../store/reducers/rootReducer';
+import StudentCard from '../../components/StudentCard';
 import {useNavigate} from 'react-router-dom';
-import GradeCard from '../components/GradeCard';
-import Tabs from '../components/Tabs';
-import Navbar from '../components/navbar/Navbar';
-import {selectStudentAction} from '../store/actions/userActions';
+import GradeCard from '../../components/GradeCard';
+import Tabs from '../../components/Tabs';
+import Navbar from '../../components/navbar/Navbar';
+import {selectStudentAction} from '../../store/actions/userActions';
 
 const GradesPage = (): JSX.Element => {
     const {loggedInUser, userList} = useSelector((state: StoreState) => state.userReducer);
@@ -23,29 +22,13 @@ const GradesPage = (): JSX.Element => {
             return (
                 <div className="p-grades__students">
                     {userList.map((user) => {
-                        const {id, fName, lName, email, password, role, studyProgram, studyType, year, books, classes} = user;
                         return (
                             user.role === 'student' && (
                                 <StudentCard
                                     key={user.id}
-                                    imgSrc={dummyIage}
                                     {...user}
                                     onClick={() => {
-                                        dispatch(
-                                            selectStudentAction({
-                                                id,
-                                                fName,
-                                                lName,
-                                                email,
-                                                password,
-                                                role,
-                                                studyProgram,
-                                                studyType,
-                                                year,
-                                                books,
-                                                classes,
-                                            })
-                                        );
+                                        dispatch(selectStudentAction(user));
                                         navigate(`/grades/${user.id}`);
                                     }}
                                 />
@@ -63,7 +46,7 @@ const GradesPage = (): JSX.Element => {
                     {loggedInUser.classes
                         .filter((clas) => clas.semester === Number(currentSemester))
                         .map((clas) => {
-                            return <GradeCard key={clas.id} showButtons {...clas} />;
+                            return <GradeCard key={clas.id} {...clas} />;
                         })}
                 </div>
             </>

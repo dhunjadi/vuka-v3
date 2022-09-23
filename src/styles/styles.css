@@ -613,7 +613,7 @@ html {
   border: 0.2rem solid #eba904;
 }
 
-.c-newsArticle {
+.c-article {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -624,18 +624,18 @@ html {
   border-radius: 1rem;
   font-size: 1.6rem;
 }
-.c-newsArticle__header {
+.c-article__header {
   color: #eba904;
   font-weight: 700;
 }
-.c-newsArticle__info {
+.c-article__info {
   display: flex;
   justify-content: space-between;
-  color: #eba904;
+  color: white;
   margin: 1rem 0;
   font-weight: 700;
 }
-.c-newsArticle__buttons {
+.c-article__buttons {
   display: flex;
   gap: 1rem;
   margin-top: 1rem;

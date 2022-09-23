@@ -1,26 +1,28 @@
 import React, {useState} from 'react';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
-import TextInput from '../components/TextInput';
-import ToggleSwitch from '../components/ToggleSwitch';
-import {studyProgramOptions} from '../data/constants';
-import Navbar from '../components/navbar/Navbar';
-import {v4 as uuidv4} from 'uuid';
-import {ITask} from '../data/taskList';
-import {addNewTaskAction} from '../store/actions/tasksActions';
+import TextInput from '../../components/TextInput';
+import ToggleSwitch from '../../components/ToggleSwitch';
+import {studyProgramOptions} from '../../data/constants';
+import Navbar from '../../components/navbar/Navbar';
+import {ITask} from '../../data/taskList';
+import {editTaskAction} from '../../store/actions/tasksActions';
+import {StoreState} from '../../store/reducers/rootReducer';
 
-const NewTaskPage = (): JSX.Element => {
+const taskEditPage = (): JSX.Element => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+    const {selectedTask} = useSelector((state: StoreState) => state.tasksReducer);
+
     const [taskInfo, setTaskInfo] = useState<ITask>({
-        id: uuidv4(),
-        title: '',
-        text: '',
-        studyProgram: '',
-        subject: '',
-        year: 1,
-        published: false,
+        id: selectedTask.id,
+        title: selectedTask.title,
+        text: selectedTask.text,
+        studyProgram: selectedTask.studyProgram,
+        subject: selectedTask.subject,
+        year: selectedTask.year,
+        published: selectedTask.published,
     });
 
     const handleChange = (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement>): void => {
@@ -38,7 +40,7 @@ const NewTaskPage = (): JSX.Element => {
 
     const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
         e.preventDefault();
-        dispatch(addNewTaskAction(taskInfo));
+        dispatch(editTaskAction(taskInfo));
         setTaskInfo({id: '', title: '', text: '', studyProgram: '', subject: '', year: 1, published: false});
         navigate('/tasks');
     };
@@ -105,4 +107,4 @@ const NewTaskPage = (): JSX.Element => {
     );
 };
 
-export default NewTaskPage;
+export default taskEditPage;

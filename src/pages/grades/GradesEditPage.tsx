@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
-import TextInput from '../components/TextInput';
-import {gradeOptions, semesterOptions} from '../data/constants';
-import Navbar from '../components/navbar/Navbar';
-import {StoreState} from '../store/reducers/rootReducer';
-import {IClass} from '../data/userList';
-import {editClassAction} from '../store/actions/userActions';
+import TextInput from '../../components/TextInput';
+import {gradeOptions, semesterOptions} from '../../data/constants';
+import Navbar from '../../components/navbar/Navbar';
+import {StoreState} from '../../store/reducers/rootReducer';
+import {IClass} from '../../data/userList';
+import {editClassAction} from '../../store/actions/userActions';
 
 const GradesEditPage = (): JSX.Element => {
     const {loggedInUser} = useSelector((state: StoreState) => state.userReducer);
@@ -117,7 +117,7 @@ const GradesEditPage = (): JSX.Element => {
                         </div>
 
                         <div className="p-actions__form_buttons">
-                            <button className="btn btn--primary" onClick={() => navigate('/news')}>
+                            <button className="btn btn--primary" onClick={() => navigate(`/grades/${classInfo.studentId}`)}>
                                 Cancel
                             </button>
 

@@ -1,25 +1,23 @@
 import React, {useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
-import TextInput from '../components/TextInput';
-import ToggleSwitch from '../components/ToggleSwitch';
-import {editNewsAricleAction} from '../store/actions/newsActons';
-import {studyProgramOptions} from '../data/constants';
-import Navbar from '../components/navbar/Navbar';
-import {StoreState} from '../store/reducers/rootReducer';
+import TextInput from '../../components/TextInput';
+import ToggleSwitch from '../../components/ToggleSwitch';
+import {addNewsAricleAction} from '../../store/actions/newsActons';
+import {studyProgramOptions} from '../../data/constants';
+import Navbar from '../../components/navbar/Navbar';
+import {v4 as uuidv4} from 'uuid';
 
-const NewsEditPage = (): JSX.Element => {
+const NewNewsPage = (): JSX.Element => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const {selectedNews} = useSelector((state: StoreState) => state.newsReducer);
-
     const [articleInfo, setArticleInfo] = useState({
-        id: selectedNews.id,
-        title: selectedNews.title,
-        text: selectedNews.text,
-        studyProgram: selectedNews.studyProgram,
-        published: selectedNews.published,
+        id: uuidv4(),
+        title: '',
+        text: '',
+        studyProgram: '',
+        published: false,
     });
 
     const handleChange = (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement>): void => {
@@ -27,7 +25,7 @@ const NewsEditPage = (): JSX.Element => {
 
         setArticleInfo((prev) => {
             if (name === 'published') return {...prev, [name]: !prev.published};
-            if (name === 'type') {
+            if (name === 'studyProgram') {
                 const selected = value;
                 return {...prev, [name]: selected};
             }
@@ -37,7 +35,7 @@ const NewsEditPage = (): JSX.Element => {
 
     const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
         e.preventDefault();
-        dispatch(editNewsAricleAction(articleInfo));
+        dispatch(addNewsAricleAction(articleInfo));
         setArticleInfo({id: '', title: '', text: '', studyProgram: '', published: false});
         navigate('/news');
     };
@@ -46,7 +44,7 @@ const NewsEditPage = (): JSX.Element => {
         <>
             <Navbar />
             <div className="p-actions">
-                <div className="p-actions__form">
+                <div className="p-newNews__form">
                     <form onSubmit={handleFormSubmit}>
                         <TextInput
                             type="text"
@@ -64,7 +62,7 @@ const NewsEditPage = (): JSX.Element => {
                         />
 
                         <div className="p-actions__form_pair">
-                            <select name="type" value={articleInfo.studyProgram} onChange={handleChange}>
+                            <select name="studyProgram" value={articleInfo.studyProgram} onChange={handleChange}>
                                 {studyProgramOptions.map((option) => (
                                     <option key={option.id} value={option.value}>
                                         {option.label}
@@ -91,4 +89,4 @@ const NewsEditPage = (): JSX.Element => {
     );
 };
 
-export default NewsEditPage;
+export default NewNewsPage;

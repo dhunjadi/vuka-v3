@@ -1,23 +1,25 @@
 import React, {useState} from 'react';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
-import TextInput from '../components/TextInput';
-import ToggleSwitch from '../components/ToggleSwitch';
-import {addNewsAricleAction} from '../store/actions/newsActons';
-import {studyProgramOptions} from '../data/constants';
-import Navbar from '../components/navbar/Navbar';
-import {v4 as uuidv4} from 'uuid';
+import TextInput from '../../components/TextInput';
+import ToggleSwitch from '../../components/ToggleSwitch';
+import {editNewsAricleAction} from '../../store/actions/newsActons';
+import {studyProgramOptions} from '../../data/constants';
+import Navbar from '../../components/navbar/Navbar';
+import {StoreState} from '../../store/reducers/rootReducer';
 
-const NewNewsPage = (): JSX.Element => {
+const NewsEditPage = (): JSX.Element => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+    const {selectedNews} = useSelector((state: StoreState) => state.newsReducer);
+
     const [articleInfo, setArticleInfo] = useState({
-        id: uuidv4(),
-        title: '',
-        text: '',
-        studyProgram: '',
-        published: false,
+        id: selectedNews.id,
+        title: selectedNews.title,
+        text: selectedNews.text,
+        studyProgram: selectedNews.studyProgram,
+        published: selectedNews.published,
     });
 
     const handleChange = (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement>): void => {
@@ -35,7 +37,7 @@ const NewNewsPage = (): JSX.Element => {
 
     const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
         e.preventDefault();
-        dispatch(addNewsAricleAction(articleInfo));
+        dispatch(editNewsAricleAction(articleInfo));
         setArticleInfo({id: '', title: '', text: '', studyProgram: '', published: false});
         navigate('/news');
     };
@@ -44,7 +46,7 @@ const NewNewsPage = (): JSX.Element => {
         <>
             <Navbar />
             <div className="p-actions">
-                <div className="p-newNews__form">
+                <div className="p-actions__form">
                     <form onSubmit={handleFormSubmit}>
                         <TextInput
                             type="text"
@@ -89,4 +91,4 @@ const NewNewsPage = (): JSX.Element => {
     );
 };
 
-export default NewNewsPage;
+export default NewsEditPage;
