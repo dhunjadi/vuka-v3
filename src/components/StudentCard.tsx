@@ -22,10 +22,10 @@ const StudentCard = ({imgSrc, fName, lName, email, studyProgram, studyType, year
                     Email: <span>{email}</span>{' '}
                 </div>
                 <div className="c-studentCard__info_pair">
-                    Study Program: <span>{studyProgram}</span>{' '}
+                    Study Program: <span>{studyProgram}</span>
                 </div>
                 <div className="c-studentCard__info_pair">
-                    Study Type: <span>{studyType}</span>{' '}
+                    Study Type: <span>{studyType}</span>
                 </div>
                 <div className="c-studentCard__info_pair">
                     Year: <span>{year}</span>

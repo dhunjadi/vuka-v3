@@ -3,17 +3,19 @@ import React from 'react';
 interface TabsProps {
     tabList: string[];
     selectedTab: string;
+    text?: string;
     buttons?: JSX.Element;
     handleSelect?: (chip: string) => void;
 }
 
-const Tabs = ({tabList, selectedTab, buttons, handleSelect}: TabsProps): JSX.Element => {
+const Tabs = ({tabList, selectedTab, text, buttons, handleSelect}: TabsProps): JSX.Element => {
     const handleToggle = (e: React.MouseEvent<HTMLButtonElement>): void => {
         handleSelect && handleSelect(e.currentTarget.value);
     };
 
     return (
         <div className="c-tabs">
+            {text && text}
             {tabList.map((tab, i) => (
                 <button
                     key={i}
@@ -34,6 +36,7 @@ export default Tabs;
 Tabs.defaultProps = {
     tabList: [],
     selectedTab: undefined,
+    text: undefined,
     buttons: undefined,
     handleSelect: undefined,
 };

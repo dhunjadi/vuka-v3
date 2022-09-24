@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
 import TextInput from '../../components/TextInput';
@@ -7,12 +7,18 @@ import {editNewsAricleAction} from '../../store/actions/newsActons';
 import {studyProgramOptions} from '../../data/constants';
 import Navbar from '../../components/navbar/Navbar';
 import {StoreState} from '../../store/reducers/rootReducer';
+import {useKeyPress} from '../../utils/UseKeyPress';
 
 const NewsEditPage = (): JSX.Element => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const {selectedNews} = useSelector((state: StoreState) => state.newsReducer);
+
+    const isEscPressed = useKeyPress('Escape');
+    useEffect(() => {
+        if (isEscPressed) navigate('/news');
+    }, [isEscPressed, navigate]);
 
     const [articleInfo, setArticleInfo] = useState({
         id: selectedNews.id,

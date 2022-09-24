@@ -2,8 +2,12 @@
     width: 100%;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     margin-bottom: 1rem;
     gap: 1rem;
+    color: $color-secondary-light;
+    font-weight: 700;
+    font-size: 1.6rem;
 
     &__tab {
         width: 100%;

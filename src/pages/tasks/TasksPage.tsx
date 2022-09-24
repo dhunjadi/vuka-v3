@@ -1,17 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
 import Navbar from '../../components/navbar/Navbar';
 import Article from '../../components/Article';
 import {deleteTaskAction, selectTaskAction} from '../../store/actions/tasksActions';
 import {StoreState} from '../../store/reducers/rootReducer';
+import Modal from '../../components/Modal';
 
 const TasksPage = (): JSX.Element => {
     const {loggedInUser} = useSelector((state: StoreState) => state.userReducer);
-    const {taskList} = useSelector((state: StoreState) => state.tasksReducer);
+    const {taskList, selectedTask} = useSelector((state: StoreState) => state.tasksReducer);
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    const [isDeleteTaskModalOpen, setIsDeleteTaskModalOpen] = useState<boolean>(false);
+
+    const handleDelete = (): void => {
+        dispatch(deleteTaskAction(selectedTask.id));
+        setIsDeleteTaskModalOpen(false);
+    };
 
     const tasksStudentsSee = taskList
         .filter((task) => {
@@ -36,7 +44,10 @@ const TasksPage = (): JSX.Element => {
                         dispatch(selectTaskAction(task));
                         navigate(`/tasks/edit/${task.id}`);
                     }}
-                    handleSelectToDelete={() => dispatch(deleteTaskAction(task.id))}
+                    handleSelectToDelete={() => {
+                        dispatch(selectTaskAction(task));
+                        setIsDeleteTaskModalOpen(true);
+                    }}
                     {...task}
                 />
             );
@@ -57,6 +68,16 @@ const TasksPage = (): JSX.Element => {
                 )}
                 {loggedInUser.role === 'student' ? tasksStudentsSee : tasksProfAndAdminSee}
             </div>
+
+            <Modal
+                isOpen={isDeleteTaskModalOpen}
+                onCancel={() => setIsDeleteTaskModalOpen(false)}
+                onConfirm={handleDelete}
+                showCancel
+                showConfirm
+            >
+                Are you sure you want to delete &quot;{selectedTask.title}&quot;?
+            </Modal>
         </>
     );
 };

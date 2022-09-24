@@ -6,16 +6,23 @@ import {StoreState} from '../../store/reducers/rootReducer';
 import {useNavigate} from 'react-router-dom';
 import Navbar from '../../components/navbar/Navbar';
 import {deleteNewsAricleAction, selectNewsAricleAction} from '../../store/actions/newsActons';
+import Modal from '../../components/Modal';
 
 const NewsPage = (): JSX.Element => {
     const {loggedInUser} = useSelector((state: StoreState) => state.userReducer);
-    const {newsList} = useSelector((state: StoreState) => state.newsReducer);
+    const {newsList, selectedNews} = useSelector((state: StoreState) => state.newsReducer);
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const newsTypes = ['GENERAL', loggedInUser.studyProgram.toUpperCase()];
     const [newsType, setNewsType] = useState(newsTypes[0]);
+    const [isDeleteNewsModalOpen, setIsDeleteNewsModalOpen] = useState<boolean>(false);
+
+    const handleDelete = (): void => {
+        dispatch(deleteNewsAricleAction(selectedNews.id));
+        setIsDeleteNewsModalOpen(false);
+    };
 
     const getBody = (): JSX.Element => {
         if (loggedInUser.role == 'student') {
@@ -57,7 +64,8 @@ const NewsPage = (): JSX.Element => {
                                     navigate(`/news/edit/${news.id}`);
                                 }}
                                 handleSelectToDelete={() => {
-                                    dispatch(deleteNewsAricleAction(news.id));
+                                    dispatch(selectNewsAricleAction(news));
+                                    setIsDeleteNewsModalOpen(true);
                                 }}
                                 {...news}
                             />
@@ -72,6 +80,16 @@ const NewsPage = (): JSX.Element => {
         <>
             <Navbar />
             <div className="p-news">{getBody()}</div>
+
+            <Modal
+                isOpen={isDeleteNewsModalOpen}
+                onCancel={() => setIsDeleteNewsModalOpen(false)}
+                onConfirm={handleDelete}
+                showCancel
+                showConfirm
+            >
+                Are you sure you want to delete &quot;{selectedNews.title}&quot;?
+            </Modal>
         </>
     );
 };

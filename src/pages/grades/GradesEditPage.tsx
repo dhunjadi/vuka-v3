@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
 import TextInput from '../../components/TextInput';
@@ -7,12 +7,18 @@ import Navbar from '../../components/navbar/Navbar';
 import {StoreState} from '../../store/reducers/rootReducer';
 import {IClass} from '../../data/userList';
 import {editClassAction} from '../../store/actions/userActions';
+import {useKeyPress} from '../../utils/UseKeyPress';
 
 const GradesEditPage = (): JSX.Element => {
     const {loggedInUser} = useSelector((state: StoreState) => state.userReducer);
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    const isEscPressed = useKeyPress('Escape');
+    useEffect(() => {
+        if (isEscPressed) navigate(`/grades/${classInfo.studentId}`);
+    }, [isEscPressed, navigate]);
 
     const {selectedClass} = useSelector((state: StoreState) => state.userReducer);
 
@@ -48,7 +54,7 @@ const GradesEditPage = (): JSX.Element => {
         e.preventDefault();
         dispatch(editClassAction(classInfo));
         setClassInfo({studentId: '', id: '', title: '', semester: 1, ects: 0, exam1: 0, exam2: 0, essay: 0, presentation: 0});
-        navigate(`/grades`);
+        navigate(`/grades/${classInfo.studentId}`);
     };
 
     return (

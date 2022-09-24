@@ -41,7 +41,12 @@ const GradesPage = (): JSX.Element => {
 
         return (
             <>
-                <Tabs tabList={semesters} selectedTab={currentSemester} handleSelect={(tab) => setCurrentSemester(tab)} />
+                <Tabs
+                    tabList={semesters}
+                    selectedTab={currentSemester}
+                    text={'Semesters: '}
+                    handleSelect={(tab) => setCurrentSemester(tab)}
+                />
                 <div className="p-grades__classes">
                     {loggedInUser.classes
                         .filter((clas) => clas.semester === Number(currentSemester))

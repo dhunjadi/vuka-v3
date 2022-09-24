@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
 import TextInput from '../../components/TextInput';
@@ -8,12 +8,18 @@ import Navbar from '../../components/navbar/Navbar';
 import {ITask} from '../../data/taskList';
 import {editTaskAction} from '../../store/actions/tasksActions';
 import {StoreState} from '../../store/reducers/rootReducer';
+import {useKeyPress} from '../../utils/UseKeyPress';
 
 const taskEditPage = (): JSX.Element => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const {selectedTask} = useSelector((state: StoreState) => state.tasksReducer);
+
+    const isEscPressed = useKeyPress('Escape');
+    useEffect(() => {
+        if (isEscPressed) navigate('/tasks');
+    }, [isEscPressed, navigate]);
 
     const [taskInfo, setTaskInfo] = useState<ITask>({
         id: selectedTask.id,

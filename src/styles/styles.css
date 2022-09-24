@@ -596,8 +596,12 @@ html {
   width: 100%;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   margin-bottom: 1rem;
   gap: 1rem;
+  color: #eba904;
+  font-weight: 700;
+  font-size: 1.6rem;
 }
 .c-tabs__tab {
   width: 100%;

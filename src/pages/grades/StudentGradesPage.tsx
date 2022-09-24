@@ -15,7 +15,12 @@ const StudentGradesPage = (): JSX.Element => {
         <>
             <Navbar />
             <div className="p-studentGrades">
-                <Tabs tabList={semesters} selectedTab={currentSemester} handleSelect={(tab) => setCurrentSemester(tab)} />
+                <Tabs
+                    tabList={semesters}
+                    selectedTab={currentSemester}
+                    text={'Semesters: '}
+                    handleSelect={(tab) => setCurrentSemester(tab)}
+                />
 
                 <div className="p-studentGrades__classes">
                     {selectedStudent?.classes
