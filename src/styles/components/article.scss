@@ -8,6 +8,7 @@
     padding: 1rem;
     border-radius: $br-standard;
     font-size: 1.6rem;
+    color: $color-black;
 
     &__header {
         color: $color-secondary-light;
@@ -17,7 +18,7 @@
     &__info {
         display: flex;
         justify-content: space-between;
-        color: white;
+        color: $color-white;
         margin: 1rem 0;
         font-weight: 700;
     }

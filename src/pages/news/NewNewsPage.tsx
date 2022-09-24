@@ -18,6 +18,7 @@ const NewNewsPage = (): JSX.Element => {
         text: '',
         studyProgram: '',
         published: false,
+        read: false,
     });
 
     const handleChange = (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement>): void => {
@@ -36,7 +37,7 @@ const NewNewsPage = (): JSX.Element => {
     const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
         e.preventDefault();
         dispatch(addNewsAricleAction(articleInfo));
-        setArticleInfo({id: '', title: '', text: '', studyProgram: '', published: false});
+        setArticleInfo({id: '', title: '', text: '', studyProgram: '', published: false, read: false});
         navigate('/news');
     };
 

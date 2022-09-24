@@ -5,6 +5,7 @@ export interface INews {
     text: string;
     studyProgram: string;
     published: boolean;
+    read: boolean;
 }
 
 export const newsList: INews[] = [
@@ -14,6 +15,7 @@ export const newsList: INews[] = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quasi mollitia possimus a temporibus ipsam laboriosam in aperiam quos maxime est illo dicta corporis, id quia consectetur magnam, error quisquam totam eum perferendis, quo ea enim? Ipsam iste totam dignissimos laborum quo perferendis recusandae ut, quasi vitae hic nostrum ullam?',
         studyProgram: 'general',
         published: true,
+        read: false,
     },
     {
         id: '2',
@@ -21,6 +23,7 @@ export const newsList: INews[] = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quasi mollitia possimus a temporibus ipsam laboriosam in aperiam quos maxime est illo dicta corporis, id quia consectetur magnam, error quisquam totam eum perferendis, quo ea enim? Ipsam iste totam dignissimos laborum quo perferendis recusandae ut, quasi vitae hic nostrum ullam?',
         studyProgram: 'general',
         published: true,
+        read: false,
     },
     {
         id: '3',
@@ -28,6 +31,7 @@ export const newsList: INews[] = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quasi mollitia possimus a temporibus ipsam laboriosam in aperiam quos maxime est illo dicta corporis, id quia consectetur magnam, error quisquam totam eum perferendis, quo ea enim? Ipsam iste totam dignissimos laborum quo perferendis recusandae ut, quasi vitae hic nostrum ullam?',
         studyProgram: 'hospitality',
         published: true,
+        read: false,
     },
     {
         id: '4',
@@ -35,6 +39,7 @@ export const newsList: INews[] = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quasi mollitia possimus a temporibus ipsam laboriosam in aperiam quos maxime est illo dicta corporis, id quia consectetur magnam, error quisquam totam eum perferendis, quo ea enim? Ipsam iste totam dignissimos laborum quo perferendis recusandae ut, quasi vitae hic nostrum ullam?',
         studyProgram: 'mechatronics',
         published: true,
+        read: false,
     },
     {
         id: '5',
@@ -42,6 +47,7 @@ export const newsList: INews[] = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quasi mollitia possimus a temporibus ipsam laboriosam in aperiam quos maxime est illo dicta corporis, id quia consectetur magnam, error quisquam totam eum perferendis, quo ea enim? Ipsam iste totam dignissimos laborum quo perferendis recusandae ut, quasi vitae hic nostrum ullam?',
         studyProgram: 'mechatronics',
         published: true,
+        read: false,
     },
     {
         id: '6',
@@ -49,6 +55,7 @@ export const newsList: INews[] = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quasi mollitia possimus a temporibus ipsam laboriosam in aperiam quos maxime est illo dicta corporis, id quia consectetur magnam, error quisquam totam eum perferendis, quo ea enim? Ipsam iste totam dignissimos laborum quo perferendis recusandae ut, quasi vitae hic nostrum ullam?',
         studyProgram: 'hospitality',
         published: true,
+        read: false,
     },
     {
         id: '7',
@@ -56,6 +63,7 @@ export const newsList: INews[] = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quasi mollitia possimus a temporibus ipsam laboriosam in aperiam quos maxime est illo dicta corporis, id quia consectetur magnam, error quisquam totam eum perferendis, quo ea enim? Ipsam iste totam dignissimos laborum quo perferendis recusandae ut, quasi vitae hic nostrum ullam?',
         studyProgram: 'general',
         published: true,
+        read: false,
     },
     {
         id: '8',
@@ -63,6 +71,7 @@ export const newsList: INews[] = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quasi mollitia possimus a temporibus ipsam laboriosam in aperiam quos maxime est illo dicta corporis, id quia consectetur magnam, error quisquam totam eum perferendis, quo ea enim? Ipsam iste totam dignissimos laborum quo perferendis recusandae ut, quasi vitae hic nostrum ullam?',
         studyProgram: 'general',
         published: true,
+        read: false,
     },
     {
         id: '9',
@@ -70,6 +79,7 @@ export const newsList: INews[] = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quasi mollitia possimus a temporibus ipsam laboriosam in aperiam quos maxime est illo dicta corporis, id quia consectetur magnam, error quisquam totam eum perferendis, quo ea enim? Ipsam iste totam dignissimos laborum quo perferendis recusandae ut, quasi vitae hic nostrum ullam?',
         studyProgram: 'hospitality',
         published: true,
+        read: false,
     },
     {
         id: '10',
@@ -77,6 +87,7 @@ export const newsList: INews[] = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quasi mollitia possimus a temporibus ipsam laboriosam in aperiam quos maxime est illo dicta corporis, id quia consectetur magnam, error quisquam totam eum perferendis, quo ea enim? Ipsam iste totam dignissimos laborum quo perferendis recusandae ut, quasi vitae hic nostrum ullam?',
         studyProgram: 'mechatronics',
         published: true,
+        read: false,
     },
     {
         id: '11',
@@ -84,6 +95,7 @@ export const newsList: INews[] = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quasi mollitia possimus a temporibus ipsam laboriosam in aperiam quos maxime est illo dicta corporis, id quia consectetur magnam, error quisquam totam eum perferendis, quo ea enim? Ipsam iste totam dignissimos laborum quo perferendis recusandae ut, quasi vitae hic nostrum ullam?',
         studyProgram: 'general',
         published: true,
+        read: false,
     },
     {
         id: '12',
@@ -91,6 +103,7 @@ export const newsList: INews[] = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quasi mollitia possimus a temporibus ipsam laboriosam in aperiam quos maxime est illo dicta corporis, id quia consectetur magnam, error quisquam totam eum perferendis, quo ea enim? Ipsam iste totam dignissimos laborum quo perferendis recusandae ut, quasi vitae hic nostrum ullam?',
         studyProgram: 'general',
         published: true,
+        read: false,
     },
     {
         id: '13',
@@ -98,6 +111,7 @@ export const newsList: INews[] = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quasi mollitia possimus a temporibus ipsam laboriosam in aperiam quos maxime est illo dicta corporis, id quia consectetur magnam, error quisquam totam eum perferendis, quo ea enim? Ipsam iste totam dignissimos laborum quo perferendis recusandae ut, quasi vitae hic nostrum ullam?',
         studyProgram: 'hospitality',
         published: true,
+        read: false,
     },
     {
         id: '14',
@@ -105,6 +119,7 @@ export const newsList: INews[] = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quasi mollitia possimus a temporibus ipsam laboriosam in aperiam quos maxime est illo dicta corporis, id quia consectetur magnam, error quisquam totam eum perferendis, quo ea enim? Ipsam iste totam dignissimos laborum quo perferendis recusandae ut, quasi vitae hic nostrum ullam?',
         studyProgram: 'general',
         published: true,
+        read: false,
     },
     {
         id: '15',
@@ -112,6 +127,7 @@ export const newsList: INews[] = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quasi mollitia possimus a temporibus ipsam laboriosam in aperiam quos maxime est illo dicta corporis, id quia consectetur magnam, error quisquam totam eum perferendis, quo ea enim? Ipsam iste totam dignissimos laborum quo perferendis recusandae ut, quasi vitae hic nostrum ullam?',
         studyProgram: 'mechatronics',
         published: true,
+        read: false,
     },
     {
         id: '16',
@@ -119,6 +135,7 @@ export const newsList: INews[] = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quasi mollitia possimus a temporibus ipsam laboriosam in aperiam quos maxime est illo dicta corporis, id quia consectetur magnam, error quisquam totam eum perferendis, quo ea enim? Ipsam iste totam dignissimos laborum quo perferendis recusandae ut, quasi vitae hic nostrum ullam?',
         studyProgram: 'mechatronics',
         published: true,
+        read: false,
     },
     {
         id: '17',
@@ -126,6 +143,7 @@ export const newsList: INews[] = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quasi mollitia possimus a temporibus ipsam laboriosam in aperiam quos maxime est illo dicta corporis, id quia consectetur magnam, error quisquam totam eum perferendis, quo ea enim? Ipsam iste totam dignissimos laborum quo perferendis recusandae ut, quasi vitae hic nostrum ullam?',
         studyProgram: 'mechatronics',
         published: true,
+        read: false,
     },
     {
         id: '18',
@@ -133,5 +151,6 @@ export const newsList: INews[] = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quasi mollitia possimus a temporibus ipsam laboriosam in aperiam quos maxime est illo dicta corporis, id quia consectetur magnam, error quisquam totam eum perferendis, quo ea enim? Ipsam iste totam dignissimos laborum quo perferendis recusandae ut, quasi vitae hic nostrum ullam?',
         studyProgram: 'hospitality',
         published: true,
+        read: false,
     },
 ];

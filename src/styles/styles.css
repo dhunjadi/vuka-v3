@@ -102,7 +102,7 @@ html {
   border-radius: 100rem;
   background-color: #870f54;
   margin: 1rem;
-  color: white;
+  color: #eaebed;
   padding: 1.5rem 3rem;
 }
 .p-login form input::placeholder {
@@ -167,7 +167,7 @@ html {
   background-color: #870f54;
   margin: 0 1rem 1rem 1rem;
   padding: 0 1rem;
-  color: white;
+  color: #eaebed;
 }
 .p-library__content_searchInput input::placeholder {
   color: rgba(255, 255, 255, 0.5);
@@ -319,7 +319,7 @@ html {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  color: white;
+  color: #eaebed;
   font-size: 1.6rem;
 }
 .c-navbar__logo img {
@@ -627,6 +627,7 @@ html {
   padding: 1rem;
   border-radius: 1rem;
   font-size: 1.6rem;
+  color: #121212;
 }
 .c-article__header {
   color: #eba904;
@@ -635,7 +636,7 @@ html {
 .c-article__info {
   display: flex;
   justify-content: space-between;
-  color: white;
+  color: #eaebed;
   margin: 1rem 0;
   font-weight: 700;
 }
@@ -679,7 +680,7 @@ html {
   margin-bottom: 1rem;
 }
 .c-book__info_pair p {
-  color: white;
+  color: #eaebed;
 }
 .c-book__btns {
   width: 100%;
@@ -742,7 +743,7 @@ html {
   }
 }
 .c-studentCard__info span {
-  color: white;
+  color: #eaebed;
 }
 .c-studentCard__img {
   margin-top: 2rem;
@@ -801,7 +802,7 @@ html {
   border-radius: 100rem;
   background-color: #4e0930;
   margin: 1rem;
-  color: white;
+  color: #eaebed;
   padding: 1.5rem 3rem;
 }
 .c-textInput input::placeholder,
@@ -869,5 +870,5 @@ html {
   height: 2rem;
   border-radius: 45px;
   transition: 0.2s;
-  background: white;
+  background: #eaebed;
 }

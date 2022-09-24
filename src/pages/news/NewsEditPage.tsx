@@ -26,6 +26,7 @@ const NewsEditPage = (): JSX.Element => {
         text: selectedNews.text,
         studyProgram: selectedNews.studyProgram,
         published: selectedNews.published,
+        read: selectedNews.read,
     });
 
     const handleChange = (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement>): void => {
@@ -44,7 +45,7 @@ const NewsEditPage = (): JSX.Element => {
     const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
         e.preventDefault();
         dispatch(editNewsAricleAction(articleInfo));
-        setArticleInfo({id: '', title: '', text: '', studyProgram: '', published: false});
+        setArticleInfo({id: '', title: '', text: '', studyProgram: '', published: false, read: selectedNews.read});
         navigate('/news');
     };
 
