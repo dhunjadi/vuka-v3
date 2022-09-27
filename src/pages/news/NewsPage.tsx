@@ -5,7 +5,7 @@ import Tabs from '../../components/Tabs';
 import {StoreState} from '../../store/reducers/rootReducer';
 import {useNavigate} from 'react-router-dom';
 import Navbar from '../../components/navbar/Navbar';
-import {deleteNewsAricleAction, selectNewsAricleAction} from '../../store/actions/newsActons';
+import {deleteNewsAricleAction, selectNewsAricleAction, updateNewsArticleReadStateActionAction} from '../../store/actions/newsActons';
 import Modal from '../../components/Modal';
 
 const NewsPage = (): JSX.Element => {
@@ -33,7 +33,17 @@ const NewsPage = (): JSX.Element => {
                         {newsList
                             .filter((news) => news.studyProgram === newsType.toLocaleLowerCase() && news.published === true)
                             .map((news) => {
-                                return <Article key={news.id} {...news} />;
+                                return (
+                                    <Article
+                                        key={news.id}
+                                        type={'news'}
+                                        handleMarkAs={() => {
+                                            selectNewsAricleAction(news);
+                                            dispatch(updateNewsArticleReadStateActionAction(news.id));
+                                        }}
+                                        {...news}
+                                    />
+                                );
                             })}
                     </div>
                 </>
@@ -59,6 +69,7 @@ const NewsPage = (): JSX.Element => {
                         return (
                             <Article
                                 key={news.id}
+                                type={'news'}
                                 handleSelectToEdit={() => {
                                     dispatch(selectNewsAricleAction(news));
                                     navigate(`/news/edit/${news.id}`);

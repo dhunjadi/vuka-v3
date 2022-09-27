@@ -29,7 +29,7 @@ const TasksPage = (): JSX.Element => {
             return b.year - a.year;
         })
         .map((task) => {
-            return <Article key={task.id} {...task} />;
+            return <Article key={task.id} type={'task'} {...task} />;
         });
 
     const tasksProfAndAdminSee = taskList
@@ -40,6 +40,7 @@ const TasksPage = (): JSX.Element => {
             return (
                 <Article
                     key={task.id}
+                    type={'task'}
                     handleSelectToEdit={() => {
                         dispatch(selectTaskAction(task));
                         navigate(`/tasks/edit/${task.id}`);

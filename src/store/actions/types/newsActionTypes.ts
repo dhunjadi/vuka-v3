@@ -1,5 +1,5 @@
 import {INews} from '../../../data/newsList';
-import {ADD_NEWS_ARTICLE, DELETE_NEWS_ARTICLE, EDIT_NEWS_ARTICLE, SELECT_NEWS_ARTICLE} from '../newsActons';
+import {ADD_NEWS_ARTICLE, DELETE_NEWS_ARTICLE, EDIT_NEWS_ARTICLE, SELECT_NEWS_ARTICLE, UPDATE_NEWS_ARTICLE_READ_STATE} from '../newsActons';
 
 export interface IAddNewsArticleAction {
     type: typeof ADD_NEWS_ARTICLE;
@@ -19,4 +19,9 @@ export interface ISelectNewsArticleAction {
 export interface IEditNewsArticleAction {
     type: typeof EDIT_NEWS_ARTICLE;
     news: INews;
+}
+
+export interface IUpdateNewsArticleReadStateAction {
+    type: typeof UPDATE_NEWS_ARTICLE_READ_STATE;
+    id: string;
 }
