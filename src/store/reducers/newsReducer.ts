@@ -1,6 +1,6 @@
 import {AnyAction} from 'redux';
 import {INews, newsList} from '../../data/newsList';
-import {ADD_NEWS_ARTICLE, DELETE_NEWS_ARTICLE, EDIT_NEWS_ARTICLE, SELECT_NEWS_ARTICLE} from '../actions/newsActons';
+import {ADD_NEWS_ARTICLE, CLEAR_SELECTED_NEWS, DELETE_NEWS_ARTICLE, EDIT_NEWS_ARTICLE, SELECT_NEWS_ARTICLE} from '../actions/newsActons';
 
 export interface newsReducerState {
     newsList: INews[];
@@ -33,6 +33,11 @@ export const newsReducer = (state: newsReducerState = initialState, action: AnyA
             return {
                 ...state,
                 newsList: [...state.newsList.map((news) => (news.id === action.news.id ? action.news : news))],
+            };
+        case CLEAR_SELECTED_NEWS:
+            return {
+                ...state,
+                selectedNews: initialState.selectedNews,
             };
         default:
             return state;

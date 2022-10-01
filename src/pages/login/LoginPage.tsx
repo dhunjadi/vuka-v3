@@ -5,8 +5,13 @@ import logo from '../../assets/logo.png';
 import userList, {IUser} from '../../data/userList';
 import {userLoginAction} from '../../store/actions/userActions';
 
+interface ILoginForm {
+    email: string;
+    password: string;
+}
+
 const LoginPage = (): JSX.Element => {
-    const [loginInfo, setLogininfo] = useState({email: '', password: ''});
+    const [loginInfo, setLogininfo] = useState<ILoginForm>({email: '', password: ''});
     const [showError, setShowError] = useState(false);
 
     const inputRef = useRef<HTMLInputElement>(null);

@@ -1,34 +1,32 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {useNavigate} from 'react-router-dom';
+import {useLocation, useNavigate} from 'react-router-dom';
 import TextInput from '../../components/TextInput';
 import ToggleSwitch from '../../components/ToggleSwitch';
 import {studyProgramOptions} from '../../data/constants';
 import Navbar from '../../components/navbar/Navbar';
+import {v4 as uuidv4} from 'uuid';
 import {ITask} from '../../data/taskList';
-import {editTaskAction} from '../../store/actions/tasksActions';
+import {addNewTaskAction, clearSelectedTaskAction, editTaskAction} from '../../store/actions/tasksActions';
 import {StoreState} from '../../store/reducers/rootReducer';
-import {useKeyPress} from '../../utils/UseKeyPress';
 
-const taskEditPage = (): JSX.Element => {
+const TaskActionsPage = (): JSX.Element => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const {pathname} = useLocation();
 
     const {selectedTask} = useSelector((state: StoreState) => state.tasksReducer);
 
-    const isEscPressed = useKeyPress('Escape');
-    useEffect(() => {
-        if (isEscPressed) navigate('/tasks');
-    }, [isEscPressed, navigate]);
+    const isEditing = pathname.includes('edit');
 
     const [taskInfo, setTaskInfo] = useState<ITask>({
-        id: selectedTask.id,
-        title: selectedTask.title,
-        text: selectedTask.text,
-        studyProgram: selectedTask.studyProgram,
-        subject: selectedTask.subject,
-        year: selectedTask.year,
-        published: selectedTask.published,
+        id: selectedTask.id || uuidv4(),
+        title: selectedTask.title || '',
+        text: selectedTask.text || '',
+        studyProgram: selectedTask.studyProgram || '',
+        subject: selectedTask.subject || '',
+        year: selectedTask.year || 1,
+        published: selectedTask.published || false,
     });
 
     const handleChange = (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement>): void => {
@@ -46,7 +44,15 @@ const taskEditPage = (): JSX.Element => {
 
     const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
         e.preventDefault();
-        dispatch(editTaskAction(taskInfo));
+        if (isEditing) {
+            dispatch(editTaskAction(taskInfo));
+            dispatch(clearSelectedTaskAction());
+            setTaskInfo({id: '', title: '', text: '', studyProgram: '', subject: '', year: 1, published: false});
+            navigate('/tasks');
+            return;
+        }
+
+        dispatch(addNewTaskAction(taskInfo));
         setTaskInfo({id: '', title: '', text: '', studyProgram: '', subject: '', year: 1, published: false});
         navigate('/tasks');
     };
@@ -113,4 +119,4 @@ const taskEditPage = (): JSX.Element => {
     );
 };
 
-export default taskEditPage;
+export default TaskActionsPage;

@@ -10,11 +10,9 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './styles/styles.css';
 import Book from './components/Book';
 import StudentGradesPage from './pages/grades/StudentGradesPage';
-import NewsEditPage from './pages/news/NewsEditPage';
-import NewNewsPage from './pages/news/NewNewsPage';
-import NewTaskPage from './pages/tasks/NewTaskPage';
-import TaskEditPage from './pages/tasks/TaskEditPage';
 import GradesEditPage from './pages/grades/GradesEditPage';
+import NewsActionsPage from './pages/news/NewsActionsPage';
+import TaskActionsPage from './pages/tasks/TaskActionsPage';
 
 function App(): ReactElement {
     return (
@@ -25,14 +23,14 @@ function App(): ReactElement {
 
                     <Route path="/news">
                         <Route index element={<NewsPage />} />
-                        <Route path="new" element={<NewNewsPage />} />
-                        <Route path="edit/:id" element={<NewsEditPage />} />
+                        <Route path="new" element={<NewsActionsPage />} />
+                        <Route path="edit/:id" element={<NewsActionsPage />} />
                     </Route>
 
                     <Route path="/tasks">
                         <Route index element={<TasksPage />} />
-                        <Route path="new" element={<NewTaskPage />} />
-                        <Route path="edit/:id" element={<TaskEditPage />} />
+                        <Route path="new" element={<TaskActionsPage />} />
+                        <Route path="edit/:id" element={<TaskActionsPage />} />
                     </Route>
                     <Route path="/schedule" element={<SchedulePage />} />
 

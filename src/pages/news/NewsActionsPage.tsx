@@ -1,32 +1,30 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {useNavigate} from 'react-router-dom';
+import {useLocation, useNavigate} from 'react-router-dom';
 import TextInput from '../../components/TextInput';
 import ToggleSwitch from '../../components/ToggleSwitch';
-import {editNewsAricleAction} from '../../store/actions/newsActons';
+import {addNewsAricleAction, clearSelectedNewsAction, editNewsAricleAction} from '../../store/actions/newsActons';
 import {studyProgramOptions} from '../../data/constants';
 import Navbar from '../../components/navbar/Navbar';
+import {v4 as uuidv4} from 'uuid';
 import {StoreState} from '../../store/reducers/rootReducer';
-import {useKeyPress} from '../../utils/UseKeyPress';
+import {INews} from '../../data/newsList';
 
-const NewsEditPage = (): JSX.Element => {
+const NewsActionsPage = (): JSX.Element => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const {pathname} = useLocation();
 
     const {selectedNews} = useSelector((state: StoreState) => state.newsReducer);
 
-    const isEscPressed = useKeyPress('Escape');
-    useEffect(() => {
-        if (isEscPressed) navigate('/news');
-    }, [isEscPressed, navigate]);
+    const isEditing = pathname.includes('edit');
 
-    const [articleInfo, setArticleInfo] = useState({
-        id: selectedNews.id,
-        title: selectedNews.title,
-        text: selectedNews.text,
-        studyProgram: selectedNews.studyProgram,
-        published: selectedNews.published,
-        read: selectedNews.read,
+    const [articleInfo, setArticleInfo] = useState<INews>({
+        id: selectedNews.id || uuidv4(),
+        title: selectedNews.title || '',
+        text: selectedNews.text || '',
+        studyProgram: selectedNews.studyProgram || '',
+        published: selectedNews.published || false,
     });
 
     const handleChange = (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement>): void => {
@@ -44,8 +42,21 @@ const NewsEditPage = (): JSX.Element => {
 
     const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
         e.preventDefault();
-        dispatch(editNewsAricleAction(articleInfo));
-        setArticleInfo({id: '', title: '', text: '', studyProgram: '', published: false, read: selectedNews.read});
+        if (isEditing) {
+            dispatch(editNewsAricleAction(articleInfo));
+            dispatch(clearSelectedNewsAction());
+            setArticleInfo({id: '', title: '', text: '', studyProgram: '', published: false});
+            navigate('/news');
+            return;
+        }
+
+        dispatch(addNewsAricleAction(articleInfo));
+        setArticleInfo({id: '', title: '', text: '', studyProgram: '', published: false});
+        navigate('/news');
+    };
+
+    const handleCancel = (): void => {
+        dispatch(clearSelectedNewsAction());
         navigate('/news');
     };
 
@@ -83,7 +94,7 @@ const NewsEditPage = (): JSX.Element => {
                         </div>
 
                         <div className="p-actions__form_buttons">
-                            <button className="btn btn--primary" onClick={() => navigate('/news')}>
+                            <button className="btn btn--primary" onClick={handleCancel}>
                                 Cancel
                             </button>
 
@@ -98,4 +109,4 @@ const NewsEditPage = (): JSX.Element => {
     );
 };
 
-export default NewsEditPage;
+export default NewsActionsPage;

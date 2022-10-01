@@ -1,6 +1,6 @@
 import {AnyAction} from 'redux';
 import {taskList, ITask} from '../../data/taskList';
-import {ADD_NEW_TASK, DELETE_TASK, EDIT_TASK, SELECT_TASK} from '../actions/tasksActions';
+import {ADD_NEW_TASK, CLEAR_SELECTED_TASK, DELETE_TASK, EDIT_TASK, SELECT_TASK} from '../actions/tasksActions';
 
 export interface tasksReducerState {
     taskList: ITask[];
@@ -33,6 +33,11 @@ export const tasksReducer = (state: tasksReducerState = initialState, action: An
             return {
                 ...state,
                 taskList: [...state.taskList.map((task) => (task.id === action.task.id ? action.task : task))],
+            };
+        case CLEAR_SELECTED_TASK:
+            return {
+                ...state,
+                selectedTask: initialState.selectedTask,
             };
         default:
             return state;
