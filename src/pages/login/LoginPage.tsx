@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import {useDispatch} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
 import logo from '../../assets/logo.png';
@@ -14,16 +14,10 @@ const LoginPage = (): JSX.Element => {
     const [loginInfo, setLogininfo] = useState<ILoginForm>({email: '', password: ''});
     const [showError, setShowError] = useState(false);
 
-    const inputRef = useRef<HTMLInputElement>(null);
-
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const isDisabled = !loginInfo;
-
-    useEffect(() => {
-        inputRef.current?.focus();
-    }, []);
+    const isDisabled = !loginInfo.email && !loginInfo.password;
 
     useEffect(() => {
         setShowError(false);
@@ -48,11 +42,11 @@ const LoginPage = (): JSX.Element => {
             </div>
             <form onSubmit={handleSubmit}>
                 <input
-                    ref={inputRef}
                     type="text"
                     placeholder="example@vuka.hr"
                     value={loginInfo.email}
                     onChange={(e) => setLogininfo({...loginInfo, email: e.target.value})}
+                    autoFocus
                 />
                 <input
                     type="password"

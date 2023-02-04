@@ -13,12 +13,14 @@
     &__header {
         color: $color-secondary-light;
         font-weight: 700;
+        font-size: 2rem;
     }
 
     &__info {
         display: flex;
         justify-content: space-between;
         color: $color-white;
+        font-size: 1.6rem;
         margin: 1rem 0;
         font-weight: 700;
     }

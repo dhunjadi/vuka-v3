@@ -79,6 +79,7 @@ const TaskActionsPage = (): JSX.Element => {
                         />
 
                         <div className="p-actions__form_pair">
+                            Program:
                             <select name="studyProgram" value={taskInfo.studyProgram} onChange={handleChange}>
                                 {studyProgramOptions.map((option) => (
                                     <option key={option.id} value={option.value}>
@@ -86,7 +87,7 @@ const TaskActionsPage = (): JSX.Element => {
                                     </option>
                                 ))}
                             </select>
-
+                            Year:
                             <select name="year" value={taskInfo.year} onChange={handleChange}>
                                 <option value={1}>1</option>
                                 <option value={2}>2</option>
@@ -94,12 +95,12 @@ const TaskActionsPage = (): JSX.Element => {
                                 <option value={4}>4</option>
                                 <option value={5}>5</option>
                             </select>
-
+                            Subject:
                             <select name="subject" value={taskInfo.subject} onChange={handleChange}>
                                 <option value={'abc'}>abc</option>
                                 <option value={'def'}>def</option>
                             </select>
-
+                            Published:
                             <ToggleSwitch id="published" name="published" isOn={taskInfo.published} onChange={handleChange} />
                         </div>
 

@@ -1,13 +1,10 @@
 /* eslint-disable max-len */
 
-export interface ITask {
-    id: string;
-    title: string;
-    text: string;
-    studyProgram: string;
+import {INews} from './newsList';
+
+export interface ITask extends INews {
     subject: string;
     year: number;
-    published: boolean;
 }
 
 export const taskList: ITask[] = [

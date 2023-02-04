@@ -73,6 +73,7 @@ const GradesEditPage = (): JSX.Element => {
                         />
 
                         <div className="p-actions__form_pair">
+                            Semester:
                             <select name="semester" value={classInfo.semester} onChange={handleChange}>
                                 {semesterOptions.map((option) => (
                                     <option key={option} value={option}>
@@ -80,7 +81,7 @@ const GradesEditPage = (): JSX.Element => {
                                     </option>
                                 ))}
                             </select>
-
+                            ECTS:
                             <select name="ects" value={classInfo.ects} onChange={handleChange}>
                                 {gradeOptions.map((grade) => (
                                     <option key={grade.label} value={grade.value}>
@@ -88,7 +89,10 @@ const GradesEditPage = (): JSX.Element => {
                                     </option>
                                 ))}
                             </select>
+                        </div>
 
+                        <div className="p-actions__form_pair p-actions__form_pair--grid">
+                            <span>Exam 1:</span>
                             <select name="exam1" value={classInfo.exam1} onChange={handleChange}>
                                 {gradeOptions.map((grade) => (
                                     <option key={grade.label} value={grade.value}>
@@ -96,7 +100,7 @@ const GradesEditPage = (): JSX.Element => {
                                     </option>
                                 ))}
                             </select>
-
+                            <span>Exam 2:</span>
                             <select name="exam2" value={classInfo.exam2} onChange={handleChange}>
                                 {gradeOptions.map((grade) => (
                                     <option key={grade.label} value={grade.value}>
@@ -104,7 +108,10 @@ const GradesEditPage = (): JSX.Element => {
                                     </option>
                                 ))}
                             </select>
+                        </div>
 
+                        <div className="p-actions__form_pair p-actions__form_pair--grid">
+                            Essay:
                             <select name="essay" value={classInfo.essay} onChange={handleChange}>
                                 {gradeOptions.map((grade) => (
                                     <option key={grade.label} value={grade.value}>
@@ -112,7 +119,7 @@ const GradesEditPage = (): JSX.Element => {
                                     </option>
                                 ))}
                             </select>
-
+                            Presentation
                             <select name="presentation" value={classInfo.presentation} onChange={handleChange}>
                                 {gradeOptions.map((grade) => (
                                     <option key={grade.label} value={grade.value}>

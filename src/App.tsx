@@ -7,7 +7,6 @@ import SettingsPage from './pages/settings/SettingsPage';
 import NewsPage from './pages/news/NewsPage';
 import LoginPage from './pages/login/LoginPage';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import './styles/styles.css';
 import Book from './components/Book';
 import StudentGradesPage from './pages/grades/StudentGradesPage';
 import GradesEditPage from './pages/grades/GradesEditPage';

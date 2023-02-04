@@ -103,99 +103,99 @@
 
         &_news {
             &::before {
-                content: url('../assets/navbar/home.svg');
+                content: url('../../assets/navbar/home.svg');
             }
 
             &.active::before {
-                content: url('../assets/navbar/homeHover.svg');
+                content: url('../../assets/navbar/homeHover.svg');
             }
 
             &:hover::before {
-                content: url('../assets/navbar/homeHover.svg');
+                content: url('../../assets/navbar/homeHover.svg');
             }
         }
 
         &_tasks {
             &::before {
-                content: url('../assets/navbar/tasks.svg');
+                content: url('../../assets/navbar/tasks.svg');
             }
 
             &.active::before {
-                content: url('../assets/navbar/tasksHover.svg');
+                content: url('../../assets/navbar/tasksHover.svg');
             }
 
             &:hover::before {
-                content: url('../assets/navbar/tasksHover.svg');
+                content: url('../../assets/navbar/tasksHover.svg');
             }
         }
 
         &_schedule {
             &::before {
-                content: url('../assets/navbar/schedule.svg');
+                content: url('../../assets/navbar/schedule.svg');
             }
 
             &.active::before {
-                content: url('../assets/navbar/scheduleHover.svg');
+                content: url('../../assets/navbar/scheduleHover.svg');
             }
 
             &:hover::before {
-                content: url('../assets/navbar/scheduleHover.svg');
+                content: url('../../assets/navbar/scheduleHover.svg');
             }
         }
 
         &_library {
             &::before {
-                content: url('../assets/navbar/library.svg');
+                content: url('../../assets/navbar/library.svg');
             }
 
             &.active::before {
-                content: url('../assets/navbar/libraryHover.svg');
+                content: url('../../assets/navbar/libraryHover.svg');
             }
 
             &:hover::before {
-                content: url('../assets/navbar/libraryHover.svg');
+                content: url('../../assets/navbar/libraryHover.svg');
             }
         }
 
         &_grades {
             &::before {
-                content: url('../assets/navbar/grades.svg');
+                content: url('../../assets/navbar/grades.svg');
             }
 
             &.active::before {
-                content: url('../assets/navbar/gradesHover.svg');
+                content: url('../../assets/navbar/gradesHover.svg');
             }
 
             &:hover::before {
-                content: url('../assets/navbar/gradesHover.svg');
+                content: url('../../assets/navbar/gradesHover.svg');
             }
         }
 
         &_settings {
             &::before {
-                content: url('../assets/navbar/settings.svg');
+                content: url('../../assets/navbar/settings.svg');
             }
 
             &.active::before {
-                content: url('../assets/navbar/settingsHover.svg');
+                content: url('../../assets/navbar/settingsHover.svg');
             }
 
             &:hover::before {
-                content: url('../assets/navbar/settingsHover.svg');
+                content: url('../../assets/navbar/settingsHover.svg');
             }
         }
 
         &_logout {
             &::before {
-                content: url('../assets/navbar/logout.svg');
+                content: url('../../assets/navbar/logout.svg');
             }
 
             &.active::before {
-                content: url('../assets/navbar/logoutHover.svg');
+                content: url('../../assets/navbar/logoutHover.svg');
             }
 
             &:hover::before {
-                content: url('../assets/navbar/logoutHover.svg');
+                content: url('../../assets/navbar/logoutHover.svg');
             }
         }
     }

@@ -82,6 +82,7 @@ const NewsActionsPage = (): JSX.Element => {
                         />
 
                         <div className="p-actions__form_pair">
+                            Type:
                             <select name="studyProgram" value={articleInfo.studyProgram} onChange={handleChange}>
                                 {studyProgramOptions.map((option) => (
                                     <option key={option.id} value={option.value}>
@@ -89,7 +90,7 @@ const NewsActionsPage = (): JSX.Element => {
                                     </option>
                                 ))}
                             </select>
-
+                            Published:
                             <ToggleSwitch id="published" name="published" isOn={articleInfo.published} onChange={handleChange} />
                         </div>
 
