@@ -21,3 +21,15 @@
     margin: 0 auto 2rem auto;
     padding: 0 10%;
 }
+
+@mixin screenTablet {
+    @media (min-width: $bp-tablet) {
+        @content;
+    }
+}
+
+@mixin screenDesktop {
+    @media (min-width: $bp-desktop) {
+        @content;
+    }
+}

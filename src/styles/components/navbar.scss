@@ -30,7 +30,7 @@
             width: 6rem;
             margin-right: 1rem;
 
-            @media screen and (min-width: $bp-min-width-tablet) {
+            @include screenTablet {
                 width: 10rem;
             }
         }
@@ -42,7 +42,7 @@
         align-items: center;
         margin-right: 3rem;
 
-        @media screen and (min-width: $bp-min-width-tablet) {
+        @include screenTablet {
             display: none;
         }
     }
@@ -60,7 +60,7 @@
         align-items: center;
         transition: all 0.5s ease-in-out;
 
-        @media screen and (min-width: $bp-min-width-tablet) {
+        @include screenTablet {
             background-color: transparent;
             border: none;
             flex-direction: row;
@@ -77,7 +77,7 @@
             visibility: initial;
             @include glassMorphism;
 
-            @media screen and (min-width: $bp-min-width-tablet) {
+            @include screenTablet {
                 @include glassMorphismDisabled;
             }
         }
@@ -90,12 +90,12 @@
             transition: all 0.2s ease-in-out;
             margin: 1rem;
 
-            @media screen and (min-width: $bp-min-width-tablet) {
+            @include screenTablet {
                 margin: 2;
                 width: 4rem;
             }
 
-            @media screen and (min-width: $bp-min-width-desktop) {
+            @include screenDesktop {
                 margin: 1rem 1.5rem;
                 width: 4.5rem;
             }

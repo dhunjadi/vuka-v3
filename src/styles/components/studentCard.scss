@@ -11,7 +11,7 @@
     transition: all 0.3s ease-out;
     margin-bottom: 2rem;
 
-    @media screen and (min-width: $bp-min-width-tablet) {
+    @include screenTablet {
         margin-bottom: 0;
         justify-content: flex-start;
         align-items: center;
@@ -38,7 +38,7 @@
         margin-bottom: 2rem;
         color: $color-secondary-light;
 
-        @media screen and (min-width: $bp-min-width-tablet) {
+        @include screenTablet {
             margin-left: 2rem;
             align-items: flex-start;
         }

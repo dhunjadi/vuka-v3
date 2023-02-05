@@ -15,6 +15,6 @@ $br-standard: 1rem;
 $br-pill: 100rem;
 
 // Breakpoints - Mobile first, so no breakpoint for mobile
-$bp-min-width-tablet: 767px; // Mobile
-$bp-min-width-desktop: 1160px; // Tablet
-$bp-min-width-desktop-wide: 1440px; // Large desktop screens (wide screen)
+$bp-tablet: 767px; // Mobile
+$bp-desktop: 1160px; // Tablet
+$bp-desktop-wide: 1440px; // Large desktop screens (wide screen)

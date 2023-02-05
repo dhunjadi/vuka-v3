@@ -78,7 +78,7 @@ const TaskActionsPage = (): JSX.Element => {
                             onChange={handleChange}
                         />
 
-                        <div className="p-actions__form_pair">
+                        <div className="p-actions__form_pair p-actions__form_pair--grid">
                             Program:
                             <select name="studyProgram" value={taskInfo.studyProgram} onChange={handleChange}>
                                 {studyProgramOptions.map((option) => (
@@ -95,6 +95,9 @@ const TaskActionsPage = (): JSX.Element => {
                                 <option value={4}>4</option>
                                 <option value={5}>5</option>
                             </select>
+                        </div>
+
+                        <div className="p-actions__form_pair p-actions__form_pair--grid">
                             Subject:
                             <select name="subject" value={taskInfo.subject} onChange={handleChange}>
                                 <option value={'abc'}>abc</option>

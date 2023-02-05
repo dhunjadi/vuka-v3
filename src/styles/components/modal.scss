@@ -106,7 +106,7 @@ $modal-footer-font-size: 1.4rem;
             width: $modal-width-lg;
         }
 
-        @media (max-width: $bp-min-width-tablet) {
+        @media (max-width: $bp-tablet) {
             max-width: calc(100% - #{5rem});
         }
     }

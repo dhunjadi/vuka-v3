@@ -72,7 +72,7 @@ const GradesEditPage = (): JSX.Element => {
                             disabled={loggedInUser.role !== 'admin'}
                         />
 
-                        <div className="p-actions__form_pair">
+                        <div className="p-actions__form_pair  p-actions__form_pair--grid">
                             Semester:
                             <select name="semester" value={classInfo.semester} onChange={handleChange}>
                                 {semesterOptions.map((option) => (

@@ -2,6 +2,14 @@
     @include pageLayout;
     align-items: initial;
 
+    select {
+        text-align-last: center;
+    }
+
+    option {
+        text-align: center;
+    }
+
     &__form {
         &_pair {
             display: flex;
@@ -9,12 +17,35 @@
             gap: 1rem;
             font-size: 1.2rem;
             color: white;
+
+            &--grid {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+
+                & > .c-toggleSwitch {
+                    margin-left: auto;
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 1rem;
+                }
+
+                @include screenTablet {
+                    grid-template-columns: repeat(4, minmax(0, 1fr));
+                    gap: 2.5rem;
+                }
+
+                @include screenDesktop {
+                    grid-template-columns: 1fr 2fr;
+                    gap: 1rem;
+                }
+            }
         }
 
         &_buttons {
             display: flex;
             gap: 1rem;
-            margin-top: 1rem;
+            margin-top: 2rem;
         }
     }
 
