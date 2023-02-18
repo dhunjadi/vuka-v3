@@ -1,9 +1,11 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {useDispatch} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
 import logo from '../../assets/logo.png';
 import userList, {IUser} from '../../data/userList';
 import {userLoginAction} from '../../store/actions/userActions';
+import {useFormik} from 'formik';
+import * as Yup from 'yup';
 
 interface ILoginForm {
     email: string;
@@ -11,50 +13,55 @@ interface ILoginForm {
 }
 
 const LoginPage = (): JSX.Element => {
-    const [loginInfo, setLogininfo] = useState<ILoginForm>({email: '', password: ''});
-    const [showError, setShowError] = useState(false);
-
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const isDisabled = !loginInfo.email && !loginInfo.password;
+    const formik = useFormik<ILoginForm>({
+        initialValues: {
+            email: '',
+            password: '',
+        },
+        validationSchema: Yup.object({
+            email: Yup.string().email('Invalid email').required('Email is required'),
+            password: Yup.string().required('Password is required'),
+        }),
+        onSubmit: () => {
+            const found = userList.find((user: IUser) => user.email === formik.values.email && user.password === formik.values.password);
 
-    useEffect(() => {
-        setShowError(false);
-    }, [loginInfo]);
+            if (!found) {
+                setShowWrongCredentialsError(true);
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
-        e.preventDefault();
+                setTimeout(() => {
+                    setShowWrongCredentialsError(false);
+                }, 3000);
+            }
 
-        const found = userList.find((user: IUser) => user.email === loginInfo.email && user.password === loginInfo.password);
-        if (!found) setShowError(true);
+            if (found) {
+                dispatch(userLoginAction(found));
+                navigate('/news');
+            }
 
-        if (found) {
-            dispatch(userLoginAction(found));
-            navigate('/news');
-        }
-    };
+            formik.resetForm();
+        },
+    });
+
+    const [showWrongCredentialsError, setShowWrongCredentialsError] = useState(false);
+    const isDisabled = !formik.isValid;
 
     return (
         <div className="p-login">
             <div className="p-login__logo">
                 <img src={logo} alt="logo" />
             </div>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    placeholder="example@vuka.hr"
-                    value={loginInfo.email}
-                    onChange={(e) => setLogininfo({...loginInfo, email: e.target.value})}
-                    autoFocus
-                />
-                <input
-                    type="password"
-                    placeholder="Password"
-                    value={loginInfo.password}
-                    onChange={(e) => setLogininfo({...loginInfo, password: e.target.value})}
-                />
-                {showError && <p>Incorrect Email or password</p>}
+            <form onSubmit={formik.handleSubmit}>
+                <input type="text" placeholder="example@vuka.hr" id="email" {...formik.getFieldProps('email')} autoFocus />
+                {formik.touched.email && formik.errors.email && <p>{formik.errors.email}</p>}
+
+                <input type="password" placeholder="Password" id="password" {...formik.getFieldProps('password')} />
+                {formik.touched.password && formik.errors.password && <p>{formik.errors.password}</p>}
+
+                {showWrongCredentialsError && <p>Incorrect Email or password</p>}
+
                 <button className={`btn btn--primary ${isDisabled && 'is-disabled'}`} type="submit" disabled={isDisabled}>
                     Login
                 </button>
