@@ -33,7 +33,8 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "sass": "sass --watch --no-source-map src/styles/main.scss src/styles/styles.css"
+        "lint": "eslint ./src --fix --max-warnings=0",
+        "prepare": "husky install"
     },
     "eslintConfig": {
         "extends": [
@@ -67,6 +68,7 @@
         "eslint-plugin-prettier": "^4.2.1",
         "eslint-plugin-react": "^7.30.1",
         "eslint-plugin-react-hooks": "^4.6.0",
+        "husky": "^8.0.0",
         "prettier": "^2.7.1"
     }
 }
