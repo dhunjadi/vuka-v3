@@ -1,7 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useLocation, useNavigate} from 'react-router-dom';
-import TextInput from '../../components/TextInput';
 import ToggleSwitch from '../../components/ToggleSwitch';
 import {studyProgramOptions} from '../../data/constants';
 import Navbar from '../../components/navbar/Navbar';
@@ -9,6 +8,8 @@ import {v4 as uuidv4} from 'uuid';
 import {ITask} from '../../data/taskList';
 import {addNewTaskAction, clearSelectedTaskAction, editTaskAction} from '../../store/actions/tasksActions';
 import {StoreState} from '../../store/reducers/rootReducer';
+import {useFormik} from 'formik';
+import * as Yup from 'yup';
 
 const TaskActionsPage = (): JSX.Element => {
     const dispatch = useDispatch();
@@ -19,68 +20,55 @@ const TaskActionsPage = (): JSX.Element => {
 
     const isEditing = pathname.includes('edit');
 
-    const [taskInfo, setTaskInfo] = useState<ITask>({
-        id: selectedTask.id || uuidv4(),
-        title: selectedTask.title || '',
-        text: selectedTask.text || '',
-        studyProgram: selectedTask.studyProgram || '',
-        subject: selectedTask.subject || '',
-        year: selectedTask.year || 1,
-        published: selectedTask.published || false,
-    });
-
-    const handleChange = (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement>): void => {
-        const {name, value} = e.target;
-
-        setTaskInfo((prev) => {
-            if (name === 'published') return {...prev, [name]: !prev.published};
-            if (name === 'studyProgram' || name === 'year' || name === 'subject') {
-                const selected = value;
-                return {...prev, [name]: selected};
+    const formik = useFormik<ITask>({
+        initialValues: {
+            id: selectedTask.id || uuidv4(),
+            title: selectedTask.title || '',
+            text: selectedTask.text || '',
+            studyProgram: selectedTask.studyProgram || '',
+            subject: selectedTask.subject || '',
+            year: selectedTask.year || 1,
+            published: selectedTask.published || false,
+        },
+        validationSchema: Yup.object({
+            id: Yup.string().required('Unknown ID'),
+            title: Yup.string().required('Title is required'),
+            text: Yup.string().required('Text is required'),
+            studyProgram: Yup.string().required('Study program is required'),
+            subject: Yup.string().required('Subject program is required'),
+            year: Yup.number().required('Year is required'),
+            published: Yup.boolean().required('Required'),
+        }),
+        onSubmit: () => {
+            if (isEditing) {
+                dispatch(editTaskAction(formik.values));
+                dispatch(clearSelectedTaskAction());
+                navigate('/tasks');
+                return;
             }
-            return {...prev, [name]: value};
-        });
-    };
 
-    const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
-        e.preventDefault();
-        if (isEditing) {
-            dispatch(editTaskAction(taskInfo));
-            dispatch(clearSelectedTaskAction());
-            setTaskInfo({id: '', title: '', text: '', studyProgram: '', subject: '', year: 1, published: false});
+            dispatch(addNewTaskAction(formik.values));
             navigate('/tasks');
-            return;
-        }
 
-        dispatch(addNewTaskAction(taskInfo));
-        setTaskInfo({id: '', title: '', text: '', studyProgram: '', subject: '', year: 1, published: false});
-        navigate('/tasks');
-    };
+            formik.resetForm();
+        },
+    });
 
     return (
         <>
             <Navbar />
             <div className="p-actions">
                 <div className="p-actions__form">
-                    <form onSubmit={handleFormSubmit}>
-                        <TextInput
-                            type="text"
-                            name="title"
-                            placeholder="Enter Task Title..."
-                            value={taskInfo.title}
-                            onChange={handleChange}
-                        />
-                        <TextInput
-                            type="textArea"
-                            name="text"
-                            placeholder="Enter Task Text..."
-                            value={taskInfo.text}
-                            onChange={handleChange}
-                        />
+                    <form onSubmit={formik.handleSubmit}>
+                        <input type="text" placeholder="Enter Task Title..." {...formik.getFieldProps('title')} />
+                        {formik.touched.title && formik.errors.title && <p>{formik.errors.title}</p>}
+
+                        <textarea cols={30} rows={10} placeholder="Enter Task Text..." {...formik.getFieldProps('text')} />
+                        {formik.touched.text && formik.errors.text && <p>{formik.errors.text}</p>}
 
                         <div className="p-actions__form_pair p-actions__form_pair--grid">
                             Program:
-                            <select name="studyProgram" value={taskInfo.studyProgram} onChange={handleChange}>
+                            <select {...formik.getFieldProps('studyProgram')}>
                                 {studyProgramOptions.map((option) => (
                                     <option key={option.id} value={option.value}>
                                         {option.label}
@@ -88,7 +76,7 @@ const TaskActionsPage = (): JSX.Element => {
                                 ))}
                             </select>
                             Year:
-                            <select name="year" value={taskInfo.year} onChange={handleChange}>
+                            <select {...formik.getFieldProps('year')}>
                                 <option value={1}>1</option>
                                 <option value={2}>2</option>
                                 <option value={3}>3</option>
@@ -99,12 +87,12 @@ const TaskActionsPage = (): JSX.Element => {
 
                         <div className="p-actions__form_pair p-actions__form_pair--grid">
                             Subject:
-                            <select name="subject" value={taskInfo.subject} onChange={handleChange}>
+                            <select {...formik.getFieldProps('subject')}>
                                 <option value={'abc'}>abc</option>
                                 <option value={'def'}>def</option>
                             </select>
                             Published:
-                            <ToggleSwitch id="published" name="published" isOn={taskInfo.published} onChange={handleChange} />
+                            <ToggleSwitch id="published" isOn={formik.values.published} {...formik.getFieldProps('published')} />
                         </div>
 
                         <div className="p-actions__form_buttons">

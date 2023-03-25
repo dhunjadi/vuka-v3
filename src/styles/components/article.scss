@@ -1,4 +1,5 @@
 .c-article {
+    position: relative;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -9,6 +10,23 @@
     border-radius: $br-standard;
     font-size: 1.6rem;
     color: $color-black;
+
+    &::after {
+        content: '';
+        transition: top 600ms ease, opacity 600ms ease;
+        opacity: 0;
+        height: 5rem;
+        width: 2px;
+        position: absolute;
+        left: -1px;
+        top: 70%;
+        background: linear-gradient(transparent, $color-secondary-light, transparent);
+    }
+
+    &:hover::after {
+        top: 25%;
+        opacity: 1;
+    }
 
     &__header {
         color: $color-secondary-light;
