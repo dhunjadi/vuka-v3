@@ -1,8 +1,8 @@
 export const studyProgramOptions = [
     {id: '1', value: '', label: '---'},
-    {id: '2', value: 'general', label: 'General'},
-    {id: '3', value: 'hospitality', label: 'Hospitality'},
-    {id: '4', value: 'mechatronics', label: 'Mechatronics'},
+    {id: '2', value: 'General', label: 'General'},
+    {id: '3', value: 'Hospitality', label: 'Hospitality'},
+    {id: '4', value: 'Mechatronics', label: 'Mechatronics'},
 ];
 
 export const semesterOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];

@@ -9,15 +9,15 @@ export interface userReducerState {
     selectedClass: IClass;
 }
 
-const initialState = {
+const initialState: userReducerState = {
     loggedInUser: {
         id: '',
         fName: '',
         lName: '',
         email: '',
         password: '',
-        role: undefined,
-        studyProgram: '',
+        role: 'Student',
+        studyProgram: 'General',
         studyType: '',
         imgSrc: '',
         year: 0,
@@ -31,8 +31,8 @@ const initialState = {
         lName: '',
         email: '',
         password: '',
-        role: undefined,
-        studyProgram: '',
+        role: 'Student',
+        studyProgram: 'General',
         studyType: '',
         imgSrc: '',
         year: 0,

@@ -7,6 +7,7 @@ import GradeCard from '../../components/GradeCard';
 import Tabs from '../../components/Tabs';
 import Navbar from '../../components/navbar/Navbar';
 import {selectStudentAction} from '../../store/actions/userActions';
+import {userRole} from '../../data/userList';
 
 const GradesPage = (): JSX.Element => {
     const {loggedInUser, userList} = useSelector((state: StoreState) => state.userReducer);
@@ -18,12 +19,12 @@ const GradesPage = (): JSX.Element => {
     const [currentSemester, setCurrentSemester] = useState<string>(semesters[0]);
 
     const getBody = (): JSX.Element => {
-        if (loggedInUser.role !== 'student') {
+        if (loggedInUser.role !== userRole.student) {
             return (
                 <div className="p-grades__students">
                     {userList.map((user) => {
                         return (
-                            user.role === 'student' && (
+                            user.role === userRole.student && (
                                 <StudentCard
                                     key={user.id}
                                     {...user}

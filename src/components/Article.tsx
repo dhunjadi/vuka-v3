@@ -1,6 +1,7 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 import {StoreState} from '../store/reducers/rootReducer';
+import {userRole} from '../data/userList';
 
 interface ArticleProps {
     id: string;
@@ -22,7 +23,7 @@ const Article = (props: ArticleProps): JSX.Element => {
         <>
             <article className="c-article">
                 <div className="c-article__header">{title}</div>
-                {loggedInUser.role !== 'student' && (
+                {loggedInUser.role !== userRole.student && (
                     <div className="c-article__info">
                         <div className="c-article__info_pair">
                             <span>{studyProgram}</span>
@@ -41,7 +42,7 @@ const Article = (props: ArticleProps): JSX.Element => {
                 )}
 
                 <div className="c-article__body">{text}</div>
-                {loggedInUser.role !== 'student' && (
+                {loggedInUser.role !== userRole.student && (
                     <div className="c-article__buttons">
                         <button className="btn btn--primary" onClick={handleSelectToEdit}>
                             Edit

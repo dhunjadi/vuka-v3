@@ -1,7 +1,14 @@
 import {IBook} from './bookList';
 import dummyImage from '../assets/dummyImage.jpg';
 
-export type UserRole = 'student' | 'professor' | 'admin' | undefined;
+export type UserRole = 'Student' | 'Professor' | 'Admin';
+type StudyProgram = 'Hospitality' | 'Mechatronics' | 'General' | 'Professor' | 'Admin';
+
+export const userRole: Record<string, UserRole> = {
+    student: 'Student',
+    professor: 'Professor',
+    admin: 'Admin',
+};
 
 export interface IUser {
     id: string;
@@ -10,7 +17,7 @@ export interface IUser {
     email: string;
     password: string;
     role: UserRole;
-    studyProgram: string;
+    studyProgram: StudyProgram;
     studyType: string;
     imgSrc: string;
     year: number;
@@ -37,8 +44,8 @@ export const userList: IUser[] = [
         lName: 'Ivanic',
         email: 'iivanic@vuka.hr',
         password: 'vukastudent',
-        role: 'student',
-        studyProgram: 'hospitality',
+        role: 'Student',
+        studyProgram: 'Hospitality',
         studyType: 'Full time',
         imgSrc: dummyImage,
         year: 2,
@@ -459,8 +466,8 @@ export const userList: IUser[] = [
         lName: 'Lukic',
         email: 'llukic@vuka.hr',
         password: 'vukastudent',
-        role: 'student',
-        studyProgram: 'hospitality',
+        role: 'Student',
+        studyProgram: 'Hospitality',
         studyType: 'Full time',
         imgSrc: dummyImage,
         year: 1,
@@ -473,8 +480,8 @@ export const userList: IUser[] = [
         lName: 'Markovic',
         email: 'mmarkovic@vuka.hr',
         password: 'vukaprof',
-        role: 'professor',
-        studyProgram: 'professor',
+        role: 'Professor',
+        studyProgram: 'Professor',
         studyType: 'Professor',
         imgSrc: dummyImage,
         year: 6,
@@ -487,8 +494,8 @@ export const userList: IUser[] = [
         lName: 'Stipic',
         email: 'sstipic@vuka.hr',
         password: 'vukastudent',
-        role: 'student',
-        studyProgram: 'hospitality',
+        role: 'Student',
+        studyProgram: 'Hospitality',
         studyType: 'Full time',
         imgSrc: dummyImage,
         year: 2,
@@ -501,8 +508,8 @@ export const userList: IUser[] = [
         lName: 'Peric',
         email: 'ppericic@vuka.hr',
         password: 'vukastudent',
-        role: 'student',
-        studyProgram: 'hospitality',
+        role: 'Student',
+        studyProgram: 'Hospitality',
         studyType: 'Full time',
         imgSrc: dummyImage,
         year: 1,
@@ -515,8 +522,8 @@ export const userList: IUser[] = [
         lName: 'Daric',
         email: 'ddaric@vuka.hr',
         password: 'vukaprof',
-        role: 'professor',
-        studyProgram: 'professor',
+        role: 'Professor',
+        studyProgram: 'Professor',
         studyType: 'Professor',
         imgSrc: dummyImage,
         year: 6,
@@ -529,8 +536,8 @@ export const userList: IUser[] = [
         lName: 'Adminic',
         email: 'admin@vuka.hr',
         password: 'vukaadmin',
-        role: 'admin',
-        studyProgram: 'admin',
+        role: 'Admin',
+        studyProgram: 'Admin',
         studyType: 'Admin',
         imgSrc: dummyImage,
         year: 7,

@@ -7,6 +7,7 @@ import {useNavigate} from 'react-router-dom';
 import Navbar from '../../components/navbar/Navbar';
 import {deleteNewsAricleAction, selectNewsAricleAction} from '../../store/actions/newsActons';
 import Modal from '../../components/Modal';
+import {userRole} from '../../data/userList';
 
 const NewsPage = (): JSX.Element => {
     const {loggedInUser} = useSelector((state: StoreState) => state.userReducer);
@@ -25,7 +26,7 @@ const NewsPage = (): JSX.Element => {
     };
 
     const getBody = (): JSX.Element => {
-        if (loggedInUser.role == 'student') {
+        if (loggedInUser.role == userRole.student) {
             return (
                 <>
                     <Tabs tabList={newsTypes} selectedTab={newsType} handleSelect={(tab) => setNewsType(tab)} />

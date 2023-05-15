@@ -5,7 +5,7 @@ import TextInput from '../../components/TextInput';
 import {gradeOptions, semesterOptions} from '../../data/constants';
 import Navbar from '../../components/navbar/Navbar';
 import {StoreState} from '../../store/reducers/rootReducer';
-import {IClass} from '../../data/userList';
+import {IClass, userRole} from '../../data/userList';
 import {editClassAction} from '../../store/actions/userActions';
 import {useKeyPress} from '../../utils/UseKeyPress';
 
@@ -69,7 +69,7 @@ const GradesEditPage = (): JSX.Element => {
                             placeholder="Enter Article Title..."
                             value={classInfo.title}
                             onChange={handleChange}
-                            disabled={loggedInUser.role !== 'admin'}
+                            disabled={loggedInUser.role !== userRole.admin}
                         />
 
                         <div className="p-actions__form_pair  p-actions__form_pair--grid">

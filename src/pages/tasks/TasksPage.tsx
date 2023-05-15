@@ -6,6 +6,7 @@ import Article from '../../components/Article';
 import {deleteTaskAction, selectTaskAction} from '../../store/actions/tasksActions';
 import {StoreState} from '../../store/reducers/rootReducer';
 import Modal from '../../components/Modal';
+import {userRole} from '../../data/userList';
 
 const TasksPage = (): JSX.Element => {
     const {loggedInUser} = useSelector((state: StoreState) => state.userReducer);
@@ -57,7 +58,7 @@ const TasksPage = (): JSX.Element => {
         <>
             <Navbar />
             <div className="p-tasks">
-                {loggedInUser.role !== 'student' && (
+                {loggedInUser.role !== userRole.student && (
                     <div className="p-tasks__header">
                         <div className="p-tasks__header_buttons">
                             <button className="btn btn--primary" onClick={() => navigate(`/tasks/new`)}>
@@ -66,7 +67,7 @@ const TasksPage = (): JSX.Element => {
                         </div>
                     </div>
                 )}
-                {loggedInUser.role === 'student' ? tasksStudentsSee : tasksProfAndAdminSee}
+                {loggedInUser.role === userRole.student ? tasksStudentsSee : tasksProfAndAdminSee}
             </div>
 
             <Modal
