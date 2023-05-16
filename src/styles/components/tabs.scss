@@ -17,6 +17,7 @@
         color: $color-secondary-light;
         padding: 1rem;
         border-radius: $br-pill;
+        text-transform: uppercase;
 
         &--active {
             box-shadow: 0 0.1rem 1rem $color-secondary-light;

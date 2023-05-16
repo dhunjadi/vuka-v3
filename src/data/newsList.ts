@@ -1,9 +1,11 @@
+import {StudyProgram} from './userList';
+
 /* eslint-disable max-len */
 export interface INews {
     id: string;
     title: string;
     text: string;
-    studyProgram: string;
+    studyProgram: StudyProgram;
     published: boolean;
 }
 

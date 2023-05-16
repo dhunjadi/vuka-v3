@@ -2,7 +2,7 @@ import {IBook} from './bookList';
 import dummyImage from '../assets/dummyImage.jpg';
 
 export type UserRole = 'Student' | 'Professor' | 'Admin';
-type StudyProgram = 'Hospitality' | 'Mechatronics' | 'General' | 'Professor' | 'Admin';
+export type StudyProgram = 'Hospitality' | 'Mechatronics' | 'General' | 'Professor' | 'Admin';
 
 export const userRole: Record<string, UserRole> = {
     student: 'Student',

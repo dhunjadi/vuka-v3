@@ -16,7 +16,7 @@ const NewsPage = (): JSX.Element => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const newsTypes = ['GENERAL', loggedInUser.studyProgram.toUpperCase()];
+    const newsTypes = ['General', loggedInUser.studyProgram];
     const [newsType, setNewsType] = useState(newsTypes[0]);
     const [isDeleteNewsModalOpen, setIsDeleteNewsModalOpen] = useState<boolean>(false);
 
@@ -32,7 +32,7 @@ const NewsPage = (): JSX.Element => {
                     <Tabs tabList={newsTypes} selectedTab={newsType} handleSelect={(tab) => setNewsType(tab)} />
                     <div className="p-news__articles">
                         {newsList
-                            .filter((news) => news.studyProgram === newsType.toLocaleLowerCase() && news.published === true)
+                            .filter((news) => news.studyProgram === newsType && news.published === true)
                             .map((news) => {
                                 return <Article key={news.id} {...news} />;
                             })}

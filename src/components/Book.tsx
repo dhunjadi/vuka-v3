@@ -9,6 +9,7 @@ const Book = (): JSX.Element => {
 
     const {id} = useParams();
     const selectedBook = bookList.find((news) => news.id === id);
+
     return (
         <>
             <Navbar />
