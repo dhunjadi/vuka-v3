@@ -6,7 +6,7 @@ import Article from '../../components/Article';
 import {deleteTaskAction, selectTaskAction} from '../../store/actions/tasksActions';
 import {StoreState} from '../../store/reducers/rootReducer';
 import Modal from '../../components/Modal';
-import {userRole} from '../../data/userList';
+import {isStudent} from '../../utils/userUtils';
 
 const TasksPage = (): JSX.Element => {
     const {loggedInUser} = useSelector((state: StoreState) => state.userReducer);
@@ -24,7 +24,14 @@ const TasksPage = (): JSX.Element => {
 
     const tasksStudentsSee = taskList
         .filter((task) => {
-            return task.studyProgram === loggedInUser.studyProgram && task.year <= loggedInUser.year && task.published === true;
+            if (isStudent(loggedInUser))
+                return (
+                    loggedInUser.role.student.studyProgram === task.studyProgram &&
+                    loggedInUser.role.student.year >= task.year &&
+                    task.published === true
+                );
+
+            return false;
         })
         .sort((a, b) => {
             return b.year - a.year;
@@ -58,7 +65,7 @@ const TasksPage = (): JSX.Element => {
         <>
             <Navbar />
             <div className="p-tasks">
-                {loggedInUser.role !== userRole.student && (
+                {!isStudent(loggedInUser) && (
                     <div className="p-tasks__header">
                         <div className="p-tasks__header_buttons">
                             <button className="btn btn--primary" onClick={() => navigate(`/tasks/new`)}>
@@ -67,7 +74,7 @@ const TasksPage = (): JSX.Element => {
                         </div>
                     </div>
                 )}
-                {loggedInUser.role === userRole.student ? tasksStudentsSee : tasksProfAndAdminSee}
+                {isStudent(loggedInUser) ? tasksStudentsSee : tasksProfAndAdminSee}
             </div>
 
             <Modal

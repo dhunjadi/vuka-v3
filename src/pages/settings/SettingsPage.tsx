@@ -24,14 +24,15 @@ const SettingsPage: React.FC = () => {
                         <h3>Status</h3>
                     </div>
                     <div className="p-settings__section_pair">
-                        <span>Role</span> <span>{loggedInUser.role}</span>
+                        <span>Role</span> <span>{loggedInUser.role.type}</span>
                     </div>
-                    <div className="p-settings__section_pair">
+                    {/* NAPRAVIT POSEBNO ZA STUDENTE, PROFESORE I ADMINA*/}
+                    {/* <div className="p-settings__section_pair">
                         <span>Type</span> <span>{loggedInUser.studyType}</span>
                     </div>
                     <div className="p-settings__section_pair">
-                        <span>Study Program:</span> <span>{loggedInUser.studyProgram}</span>
-                    </div>
+                        <span>Study Program:</span> <span>{loggedInUser.studyProgram}</span> 
+                    </div>*/}
                 </div>
 
                 <div className="p-settings__section">

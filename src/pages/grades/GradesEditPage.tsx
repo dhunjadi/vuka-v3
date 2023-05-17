@@ -5,9 +5,10 @@ import TextInput from '../../components/TextInput';
 import {gradeOptions, semesterOptions} from '../../data/constants';
 import Navbar from '../../components/navbar/Navbar';
 import {StoreState} from '../../store/reducers/rootReducer';
-import {IClass, userRole} from '../../data/userList';
+import {Class} from '../../data/userList';
 import {editClassAction} from '../../store/actions/userActions';
 import {useKeyPress} from '../../utils/UseKeyPress';
+import {isAdmin} from '../../utils/userUtils';
 
 const GradesEditPage = (): JSX.Element => {
     const {loggedInUser} = useSelector((state: StoreState) => state.userReducer);
@@ -22,7 +23,7 @@ const GradesEditPage = (): JSX.Element => {
 
     const {selectedClass} = useSelector((state: StoreState) => state.userReducer);
 
-    const [classInfo, setClassInfo] = useState<IClass>({
+    const [classInfo, setClassInfo] = useState<Class>({
         studentId: selectedClass.studentId,
         id: selectedClass.id,
         title: selectedClass.title,
@@ -53,6 +54,7 @@ const GradesEditPage = (): JSX.Element => {
     const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
         e.preventDefault();
         dispatch(editClassAction(classInfo));
+
         setClassInfo({studentId: '', id: '', title: '', semester: 1, ects: 0, exam1: 0, exam2: 0, essay: 0, presentation: 0});
         navigate(`/grades/${classInfo.studentId}`);
     };
@@ -69,7 +71,7 @@ const GradesEditPage = (): JSX.Element => {
                             placeholder="Enter Article Title..."
                             value={classInfo.title}
                             onChange={handleChange}
-                            disabled={loggedInUser.role !== userRole.admin}
+                            disabled={!isAdmin(loggedInUser)}
                         />
 
                         <div className="p-actions__form_pair  p-actions__form_pair--grid">

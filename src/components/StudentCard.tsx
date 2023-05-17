@@ -1,11 +1,15 @@
 import React from 'react';
-import {IUser} from '../data/userList';
+import {StudyType, User, UserRole, StudyProgram} from '../data/userList';
 
-interface StudentCardProps extends IUser {
+interface StudentCardProps extends Pick<User<UserRole>, 'email' | 'fName' | 'lName' | 'imgSrc'> {
     onClick?: () => void;
+    studyProgram: StudyProgram;
+    studyType: StudyType;
+    year: number;
 }
 
-const StudentCard = ({imgSrc, fName, lName, email, studyProgram, studyType, year, onClick}: StudentCardProps): JSX.Element => {
+const StudentCard = (props: StudentCardProps): JSX.Element => {
+    const {imgSrc, fName, lName, email, studyProgram, studyType, year, onClick} = props;
     return (
         <div className="c-studentCard cursor-p" onClick={onClick}>
             <div className="c-studentCard__img">

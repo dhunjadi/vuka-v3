@@ -1,4 +1,4 @@
-export interface IBook {
+export interface Book {
     id: string;
     author: string;
     country: string;
@@ -11,7 +11,7 @@ export interface IBook {
     copiesAvailiable: number;
 }
 
-export const bookList: IBook[] = [
+export const bookList: Book[] = [
     {
         id: '1',
         author: 'Chinua Achebe',

@@ -1,9 +1,9 @@
-import {IClass, IUser} from '../../../data/userList';
-import {EDIT_CLASS, SELECT_CLASS, SELECT_STUDENT, USER_LOGIN, USER_LOGOUT} from '../userActions';
+import {Class, User, UserRole} from '../../../data/userList';
+import {EDIT_CLASS, SELECT_CLASS, SELECT_USER, USER_LOGIN, USER_LOGOUT} from '../userActions';
 
 export interface IUserLoginAction {
     type: typeof USER_LOGIN;
-    user: IUser;
+    user: User<UserRole>;
 }
 
 export interface IUserLogoutAction {
@@ -11,16 +11,16 @@ export interface IUserLogoutAction {
 }
 
 export interface ISelectStudentAction {
-    type: typeof SELECT_STUDENT;
-    student: IUser;
+    type: typeof SELECT_USER;
+    student: User<UserRole>;
 }
 
 export interface ISelectClassAction {
     type: typeof SELECT_CLASS;
-    clas: IClass;
+    clas: Class;
 }
 
 export interface IEditClassAction {
     type: typeof EDIT_CLASS;
-    clas: IClass;
+    clas: Class;
 }

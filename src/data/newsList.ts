@@ -1,15 +1,15 @@
 import {StudyProgram} from './userList';
 
 /* eslint-disable max-len */
-export interface INews {
+export interface News {
     id: string;
     title: string;
     text: string;
-    studyProgram: StudyProgram;
+    studyProgram: StudyProgram | 'General';
     published: boolean;
 }
 
-export const newsList: INews[] = [
+export const newsList: News[] = [
     {
         id: '1',
         title: 'news title 1',

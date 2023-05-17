@@ -1,4 +1,4 @@
-import {INews} from '../../data/newsList';
+import {News} from '../../data/newsList';
 import {
     IAddNewsArticleAction,
     IClearSelectedNewsAction,
@@ -13,7 +13,7 @@ export const SELECT_NEWS_ARTICLE = 'SELECT_NEWS_ARTICLE';
 export const EDIT_NEWS_ARTICLE = 'EDIT_NEWS_ARTICLE';
 export const CLEAR_SELECTED_NEWS = 'CLEAR_SELECTED_NEWS';
 
-export const addNewsAricleAction = (news: INews): IAddNewsArticleAction => ({
+export const addNewsAricleAction = (news: News): IAddNewsArticleAction => ({
     type: ADD_NEWS_ARTICLE,
     news,
 });
@@ -23,12 +23,12 @@ export const deleteNewsAricleAction = (id: string): IDeleteNewsArticleAction => 
     id,
 });
 
-export const selectNewsAricleAction = (news: INews): ISelectNewsArticleAction => ({
+export const selectNewsAricleAction = (news: News): ISelectNewsArticleAction => ({
     type: SELECT_NEWS_ARTICLE,
     news,
 });
 
-export const editNewsAricleAction = (news: INews): IEditNewsArticleAction => ({
+export const editNewsAricleAction = (news: News): IEditNewsArticleAction => ({
     type: EDIT_NEWS_ARTICLE,
     news,
 });

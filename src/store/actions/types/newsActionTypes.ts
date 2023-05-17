@@ -1,9 +1,9 @@
-import {INews} from '../../../data/newsList';
+import {News} from '../../../data/newsList';
 import {ADD_NEWS_ARTICLE, CLEAR_SELECTED_NEWS, DELETE_NEWS_ARTICLE, EDIT_NEWS_ARTICLE, SELECT_NEWS_ARTICLE} from '../newsActons';
 
 export interface IAddNewsArticleAction {
     type: typeof ADD_NEWS_ARTICLE;
-    news: INews;
+    news: News;
 }
 
 export interface IDeleteNewsArticleAction {
@@ -13,12 +13,12 @@ export interface IDeleteNewsArticleAction {
 
 export interface ISelectNewsArticleAction {
     type: typeof SELECT_NEWS_ARTICLE;
-    news: INews;
+    news: News;
 }
 
 export interface IEditNewsArticleAction {
     type: typeof EDIT_NEWS_ARTICLE;
-    news: INews;
+    news: News;
 }
 
 export interface IClearSelectedNewsAction {

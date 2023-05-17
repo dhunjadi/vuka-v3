@@ -4,9 +4,10 @@ import GradeCard from '../../components/GradeCard';
 import Navbar from '../../components/navbar/Navbar';
 import Tabs from '../../components/Tabs';
 import {StoreState} from '../../store/reducers/rootReducer';
+import {isStudent} from '../../utils/userUtils';
 
 const StudentGradesPage = (): JSX.Element => {
-    const {selectedStudent} = useSelector((state: StoreState) => state.userReducer);
+    const {selectedUser} = useSelector((state: StoreState) => state.userReducer);
 
     const semesters = ['1', '2', '3', '4', '5', '6'];
     const [currentSemester, setCurrentSemester] = useState<string>(semesters[0]);
@@ -23,11 +24,12 @@ const StudentGradesPage = (): JSX.Element => {
                 />
 
                 <div className="p-studentGrades__classes">
-                    {selectedStudent?.classes
-                        .filter((clas) => clas.semester === Number(currentSemester))
-                        .map((clas) => {
-                            return <GradeCard key={clas.title} showButtons {...clas} />;
-                        })}
+                    {isStudent(selectedUser) &&
+                        selectedUser.role.student.classes
+                            .filter((clas) => clas.semester === Number(currentSemester))
+                            .map((clas) => {
+                                return <GradeCard key={clas.title} showButtons {...clas} />;
+                            })}
                 </div>
             </div>
         </>

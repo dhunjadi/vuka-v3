@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
 
-import {INews} from './newsList';
+import {News} from './newsList';
 
-export interface ITask extends INews {
+export interface ITask extends News {
     subject: string;
     year: number;
 }

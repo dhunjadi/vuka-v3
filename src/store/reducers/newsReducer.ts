@@ -1,10 +1,10 @@
 import {AnyAction} from 'redux';
-import {INews, newsList} from '../../data/newsList';
+import {News, newsList} from '../../data/newsList';
 import {ADD_NEWS_ARTICLE, CLEAR_SELECTED_NEWS, DELETE_NEWS_ARTICLE, EDIT_NEWS_ARTICLE, SELECT_NEWS_ARTICLE} from '../actions/newsActons';
 
 export interface newsReducerState {
-    newsList: INews[];
-    selectedNews: INews;
+    newsList: News[];
+    selectedNews: News;
 }
 
 const initialState = {

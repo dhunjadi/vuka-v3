@@ -23,7 +23,7 @@ const Article = (props: ArticleProps): JSX.Element => {
         <>
             <article className="c-article">
                 <div className="c-article__header">{title}</div>
-                {loggedInUser.role !== userRole.student && (
+                {loggedInUser.role.type !== userRole.student && (
                     <div className="c-article__info">
                         <div className="c-article__info_pair">
                             <span>{studyProgram}</span>
@@ -31,7 +31,7 @@ const Article = (props: ArticleProps): JSX.Element => {
 
                         {subject && (
                             <div className="c-article__info_pair">
-                                <span>Subject: </span> <span>{subject}</span>
+                                <span>{subject}</span>
                             </div>
                         )}
 
@@ -42,7 +42,7 @@ const Article = (props: ArticleProps): JSX.Element => {
                 )}
 
                 <div className="c-article__body">{text}</div>
-                {loggedInUser.role !== userRole.student && (
+                {loggedInUser.role.type !== userRole.student && (
                     <div className="c-article__buttons">
                         <button className="btn btn--primary" onClick={handleSelectToEdit}>
                             Edit

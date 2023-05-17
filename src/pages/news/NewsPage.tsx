@@ -7,16 +7,18 @@ import {useNavigate} from 'react-router-dom';
 import Navbar from '../../components/navbar/Navbar';
 import {deleteNewsAricleAction, selectNewsAricleAction} from '../../store/actions/newsActons';
 import Modal from '../../components/Modal';
-import {userRole} from '../../data/userList';
+import {isStudent} from '../../utils/userUtils';
 
 const NewsPage = (): JSX.Element => {
     const {loggedInUser} = useSelector((state: StoreState) => state.userReducer);
     const {newsList, selectedNews} = useSelector((state: StoreState) => state.newsReducer);
 
+    const isLoggedInStudent = isStudent(loggedInUser);
+
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const newsTypes = ['General', loggedInUser.studyProgram];
+    const newsTypes = ['General', 'Mechatronics'];
     const [newsType, setNewsType] = useState(newsTypes[0]);
     const [isDeleteNewsModalOpen, setIsDeleteNewsModalOpen] = useState<boolean>(false);
 
@@ -26,7 +28,7 @@ const NewsPage = (): JSX.Element => {
     };
 
     const getBody = (): JSX.Element => {
-        if (loggedInUser.role == userRole.student) {
+        if (isLoggedInStudent) {
             return (
                 <>
                     <Tabs tabList={newsTypes} selectedTab={newsType} handleSelect={(tab) => setNewsType(tab)} />

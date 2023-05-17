@@ -1,8 +1,8 @@
 import {AnyAction} from 'redux';
-import {IBook, bookList} from '../../data/bookList';
+import {Book, bookList} from '../../data/bookList';
 
 export interface bookReducerState {
-    bookList: IBook[];
+    bookList: Book[];
 }
 
 const initialState = {

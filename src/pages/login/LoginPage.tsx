@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {useDispatch} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
 import logo from '../../assets/logo.png';
-import userList, {IUser} from '../../data/userList';
+import userList, {User, UserRole} from '../../data/userList';
 import {userLoginAction} from '../../store/actions/userActions';
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
@@ -26,7 +26,9 @@ const LoginPage = (): JSX.Element => {
             password: Yup.string().required('Password is required'),
         }),
         onSubmit: () => {
-            const found = userList.find((user: IUser) => user.email === formik.values.email && user.password === formik.values.password);
+            const found = userList.find(
+                (user: User<UserRole>) => user.email === formik.values.email && user.password === formik.values.password
+            );
 
             if (!found) {
                 setShowWrongCredentialsError(true);

@@ -7,7 +7,7 @@ import {studyProgramOptions} from '../../data/constants';
 import Navbar from '../../components/navbar/Navbar';
 import {v4 as uuidv4} from 'uuid';
 import {StoreState} from '../../store/reducers/rootReducer';
-import {INews} from '../../data/newsList';
+import {News} from '../../data/newsList';
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
 
@@ -25,7 +25,7 @@ const NewsActionsPage = (): JSX.Element => {
         navigate('/news');
     };
 
-    const formik = useFormik<INews>({
+    const formik = useFormik<News>({
         initialValues: {
             id: selectedNews.id || uuidv4(),
             title: selectedNews.title || '',
