@@ -5,5 +5,5 @@ export const newsActionPageValidationSchema = Yup.object({
     title: Yup.string().required('Title is required'),
     text: Yup.string().required('Text is required'),
     studyProgram: Yup.string().required('Study program is required'),
-    published: Yup.boolean().required('Required'),
+    isPublished: Yup.boolean().required('Required'),
 });

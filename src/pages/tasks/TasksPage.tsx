@@ -28,7 +28,7 @@ const TasksPage = (): JSX.Element => {
                 return (
                     loggedInUser.role.student.studyProgram === task.studyProgram &&
                     loggedInUser.role.student.year >= task.year &&
-                    task.published === true
+                    task.isPublished === true
                 );
 
             return false;

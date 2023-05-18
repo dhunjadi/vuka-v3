@@ -7,6 +7,11 @@ export const userRole: Record<string, UserRole['type']> = {
     admin: 'Admin',
 };
 
+export const studyPrograms: Record<string, StudyProgram> = {
+    hospitality: 'Hospitality',
+    mechatronics: 'Mechatronics',
+};
+
 export type StudyProgram = 'Hospitality' | 'Mechatronics';
 export type StudyType = 'Full time' | 'Part time';
 

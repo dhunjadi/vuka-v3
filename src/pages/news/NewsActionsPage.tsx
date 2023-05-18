@@ -31,7 +31,7 @@ const NewsActionsPage = (): JSX.Element => {
             title: selectedNews.title || '',
             text: selectedNews.text || '',
             studyProgram: selectedNews.studyProgram || '',
-            published: selectedNews.published || false,
+            isPublished: selectedNews.isPublished || false,
         },
         validationSchema: newsActionPageValidationSchema,
         onSubmit: () => {
@@ -72,8 +72,8 @@ const NewsActionsPage = (): JSX.Element => {
                             </select>
                             {formik.touched.studyProgram && formik.errors.studyProgram && <p>{formik.errors.studyProgram}</p>}
                             Published:
-                            <ToggleSwitch id="published" isOn={formik.values.published} {...formik.getFieldProps('published')} />
-                            {formik.touched.published && formik.errors.published && <p>{formik.errors.published}</p>}
+                            <ToggleSwitch id="published" isOn={formik.values.isPublished} {...formik.getFieldProps('isPublished')} />
+                            {formik.touched.isPublished && formik.errors.isPublished && <p>{formik.errors.isPublished}</p>}
                         </div>
 
                         <div className="p-actions__form_buttons">

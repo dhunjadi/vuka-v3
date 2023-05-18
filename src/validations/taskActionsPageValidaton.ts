@@ -7,5 +7,5 @@ export const taskActionsPageValidationSchema = Yup.object({
     studyProgram: Yup.string().required('Study program is required'),
     subject: Yup.string().required('Subject program is required'),
     year: Yup.number().required('Year is required'),
-    published: Yup.boolean().required('Required'),
+    isPublished: Yup.boolean().required('Required'),
 });

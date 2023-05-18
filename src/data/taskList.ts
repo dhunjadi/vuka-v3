@@ -15,7 +15,7 @@ export const taskList: ITask[] = [
         studyProgram: 'Hospitality',
         subject: 'economics',
         year: 1,
-        published: true,
+        isPublished: true,
     },
     {
         id: '2',
@@ -24,7 +24,7 @@ export const taskList: ITask[] = [
         studyProgram: 'Hospitality',
         subject: 'tourism',
         year: 1,
-        published: true,
+        isPublished: true,
     },
     {
         id: '3',
@@ -33,7 +33,7 @@ export const taskList: ITask[] = [
         studyProgram: 'Mechatronics',
         subject: 'mechanics',
         year: 1,
-        published: true,
+        isPublished: true,
     },
     {
         id: '4',
@@ -42,7 +42,7 @@ export const taskList: ITask[] = [
         studyProgram: 'Mechatronics',
         subject: 'mechanics',
         year: 1,
-        published: true,
+        isPublished: true,
     },
     {
         id: '5',
@@ -51,7 +51,7 @@ export const taskList: ITask[] = [
         studyProgram: 'Hospitality',
         subject: 'economics',
         year: 3,
-        published: true,
+        isPublished: true,
     },
     {
         id: '6',
@@ -60,7 +60,7 @@ export const taskList: ITask[] = [
         studyProgram: 'Hospitality',
         subject: 'economics',
         year: 2,
-        published: true,
+        isPublished: true,
     },
     {
         id: '7',
@@ -69,7 +69,7 @@ export const taskList: ITask[] = [
         studyProgram: 'Mechatronics',
         subject: 'mechanics',
         year: 1,
-        published: true,
+        isPublished: true,
     },
     {
         id: '8',
@@ -78,7 +78,7 @@ export const taskList: ITask[] = [
         studyProgram: 'Mechatronics',
         subject: 'mechanics',
         year: 3,
-        published: true,
+        isPublished: true,
     },
     {
         id: '9',
@@ -87,7 +87,7 @@ export const taskList: ITask[] = [
         studyProgram: 'Mechatronics',
         subject: 'mechanics',
         year: 2,
-        published: true,
+        isPublished: true,
     },
     {
         id: '10',
@@ -96,7 +96,7 @@ export const taskList: ITask[] = [
         studyProgram: 'Hospitality',
         subject: 'economics',
         year: 1,
-        published: true,
+        isPublished: true,
     },
 ];
 

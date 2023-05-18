@@ -9,7 +9,7 @@ export interface newsReducerState {
 
 const initialState = {
     newsList: newsList,
-    selectedNews: {id: '', title: '', text: '', studyProgram: 'General' as const, published: false, read: false},
+    selectedNews: {id: '', title: '', text: '', studyProgram: 'General' as const, isPublished: false, read: false},
 };
 
 export const newsReducer = (state: newsReducerState = initialState, action: AnyAction): newsReducerState => {

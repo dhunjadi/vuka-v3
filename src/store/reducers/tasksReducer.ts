@@ -9,7 +9,7 @@ export interface tasksReducerState {
 
 const initialState = {
     taskList: taskList,
-    selectedTask: {id: '', title: '', text: '', studyProgram: 'General' as const, subject: '', year: 1, published: false},
+    selectedTask: {id: '', title: '', text: '', studyProgram: 'General' as const, subject: '', year: 1, isPublished: false},
 };
 
 export const tasksReducer = (state: tasksReducerState = initialState, action: AnyAction): tasksReducerState => {

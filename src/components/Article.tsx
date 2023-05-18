@@ -10,13 +10,13 @@ interface ArticleProps {
     studyProgram: string;
     subject?: string;
     year?: number;
-    published: boolean;
+    isPublished: boolean;
     handleSelectToEdit?: () => void;
     handleSelectToDelete?: () => void;
 }
 
 const Article = (props: ArticleProps): JSX.Element => {
-    const {title, text, subject, studyProgram, published, handleSelectToEdit, handleSelectToDelete} = props;
+    const {title, text, subject, studyProgram, isPublished, handleSelectToEdit, handleSelectToDelete} = props;
     const {loggedInUser} = useSelector((state: StoreState) => state.userReducer);
 
     return (
@@ -36,7 +36,7 @@ const Article = (props: ArticleProps): JSX.Element => {
                         )}
 
                         <div className="c-article__info_pair">
-                            <span>{published ? 'Published' : 'Not published'} </span>
+                            <span>{isPublished ? 'Published' : 'Not published'} </span>
                         </div>
                     </div>
                 )}

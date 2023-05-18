@@ -28,7 +28,7 @@ const TaskActionsPage = (): JSX.Element => {
             studyProgram: selectedTask.studyProgram || '',
             subject: selectedTask.subject || '',
             year: selectedTask.year || 1,
-            published: selectedTask.published || false,
+            isPublished: selectedTask.isPublished || false,
         },
         validationSchema: taskActionsPageValidationSchema,
         onSubmit: () => {
@@ -84,7 +84,7 @@ const TaskActionsPage = (): JSX.Element => {
                                 <option value={'def'}>def</option>
                             </select>
                             Published:
-                            <ToggleSwitch id="published" isOn={formik.values.published} {...formik.getFieldProps('published')} />
+                            <ToggleSwitch id="isPublished" isOn={formik.values.isPublished} {...formik.getFieldProps('isPublished')} />
                         </div>
 
                         <div className="p-actions__form_buttons">
