@@ -2,18 +2,10 @@ import React from 'react';
 import {useDispatch} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
 import {selectClassAction} from '../store/actions/userActions';
+import {Class} from '../data/userList';
 
-interface GradeCardProps {
-    studentId: string;
-    id: string;
-    title: string;
-    semester: number;
-    ects: number;
-    exam1: number | undefined;
-    exam2: number | undefined;
-    essay: number | undefined;
-    presentation: number | undefined;
-    showButtons?: boolean;
+interface GradeCardProps extends Class {
+    showButtons: boolean;
 }
 
 const GradeCard = ({studentId, id, title, ects, semester, exam1, exam2, essay, presentation, showButtons}: GradeCardProps): JSX.Element => {

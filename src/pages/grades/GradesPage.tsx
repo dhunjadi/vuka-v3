@@ -54,7 +54,7 @@ const GradesPage = (): JSX.Element => {
                 <div className="p-grades__classes">
                     {isStudent(loggedInUser) &&
                         loggedInUser.role.student.classes
-                            .filter((clas) => clas.semester === Number(currentSemester))
+                            .filter((clas) => clas.semester === currentSemester)
                             .map((clas) => {
                                 return <GradeCard key={clas.id} {...clas} />;
                             })}

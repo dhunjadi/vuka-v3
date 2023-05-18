@@ -37,12 +37,12 @@ const initialState: userReducerState = {
         studentId: '',
         id: '',
         title: '',
-        semester: 1,
+        semester: '1',
         exam1: undefined,
         exam2: undefined,
         essay: undefined,
         presentation: undefined,
-        ects: 0,
+        ects: '0',
     },
 };
 
