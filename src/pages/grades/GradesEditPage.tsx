@@ -9,7 +9,7 @@ import {editClassAction} from '../../store/actions/userActions';
 import {useKeyPress} from '../../utils/UseKeyPress';
 import {isAdmin} from '../../utils/userUtils';
 import {useFormik} from 'formik';
-import * as Yup from 'yup';
+import {gradesEditPageValidationSchema} from '../../validations/gradesEditPageValidation';
 
 const GradesEditPage = (): JSX.Element => {
     const {loggedInUser} = useSelector((state: StoreState) => state.userReducer);
@@ -26,27 +26,9 @@ const GradesEditPage = (): JSX.Element => {
 
     const formik = useFormik<Class>({
         initialValues: {
-            studentId: selectedClass.studentId,
-            id: selectedClass.id,
-            title: selectedClass.title,
-            semester: selectedClass.semester,
-            ects: selectedClass.ects,
-            exam1: selectedClass.exam1,
-            exam2: selectedClass.exam2,
-            essay: selectedClass.essay,
-            presentation: selectedClass.presentation,
+            ...selectedClass,
         },
-        validationSchema: Yup.object({
-            studentId: Yup.string().required('Unknown Student ID'),
-            id: Yup.string().required('Unknown ID'),
-            title: Yup.string().required('Unknown Title'),
-            semester: Yup.number().required('Unknows Semester'),
-            ects: Yup.number().required('Unknows ECTS'),
-            exam1: Yup.number().required('Unknows Exam1'),
-            exam2: Yup.number().required('Unknows Exam2'),
-            essay: Yup.number().required('Unknows Essay'),
-            presentation: Yup.number().required('Unknows Presentation'),
-        }),
+        validationSchema: gradesEditPageValidationSchema,
         onSubmit: () => {
             dispatch(editClassAction(formik.values));
             navigate(`/grades/${selectedClass.studentId}`);

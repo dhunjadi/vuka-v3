@@ -5,7 +5,7 @@ import logo from '../../assets/logo.png';
 import userList, {User, UserRole} from '../../data/userList';
 import {userLoginAction} from '../../store/actions/userActions';
 import {useFormik} from 'formik';
-import * as Yup from 'yup';
+import {loginPageValidationSchema} from '../../validations/loginPageValidation';
 
 interface ILoginForm {
     email: string;
@@ -21,10 +21,7 @@ const LoginPage = (): JSX.Element => {
             email: '',
             password: '',
         },
-        validationSchema: Yup.object({
-            email: Yup.string().email('Invalid email').required('Email is required'),
-            password: Yup.string().required('Password is required'),
-        }),
+        validationSchema: loginPageValidationSchema,
         onSubmit: () => {
             const found = userList.find(
                 (user: User<UserRole>) => user.email === formik.values.email && user.password === formik.values.password

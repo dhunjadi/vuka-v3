@@ -9,7 +9,7 @@ import {ITask} from '../../data/taskList';
 import {addNewTaskAction, clearSelectedTaskAction, editTaskAction} from '../../store/actions/tasksActions';
 import {StoreState} from '../../store/reducers/rootReducer';
 import {useFormik} from 'formik';
-import * as Yup from 'yup';
+import {taskActionsPageValidationSchema} from '../../validations/taskActionsPageValidaton';
 
 const TaskActionsPage = (): JSX.Element => {
     const dispatch = useDispatch();
@@ -30,15 +30,7 @@ const TaskActionsPage = (): JSX.Element => {
             year: selectedTask.year || 1,
             published: selectedTask.published || false,
         },
-        validationSchema: Yup.object({
-            id: Yup.string().required('Unknown ID'),
-            title: Yup.string().required('Title is required'),
-            text: Yup.string().required('Text is required'),
-            studyProgram: Yup.string().required('Study program is required'),
-            subject: Yup.string().required('Subject program is required'),
-            year: Yup.number().required('Year is required'),
-            published: Yup.boolean().required('Required'),
-        }),
+        validationSchema: taskActionsPageValidationSchema,
         onSubmit: () => {
             if (isEditing) {
                 dispatch(editTaskAction(formik.values));

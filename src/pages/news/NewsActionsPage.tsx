@@ -9,7 +9,7 @@ import {v4 as uuidv4} from 'uuid';
 import {StoreState} from '../../store/reducers/rootReducer';
 import {News} from '../../data/newsList';
 import {useFormik} from 'formik';
-import * as Yup from 'yup';
+import {newsActionPageValidationSchema} from '../../validations/newsActionsPageValidation';
 
 const NewsActionsPage = (): JSX.Element => {
     const dispatch = useDispatch();
@@ -33,13 +33,7 @@ const NewsActionsPage = (): JSX.Element => {
             studyProgram: selectedNews.studyProgram || '',
             published: selectedNews.published || false,
         },
-        validationSchema: Yup.object({
-            id: Yup.string().required('Unknown ID'),
-            title: Yup.string().required('Title is required'),
-            text: Yup.string().required('Text is required'),
-            studyProgram: Yup.string().required('Study program is required'),
-            published: Yup.boolean().required('Required'),
-        }),
+        validationSchema: newsActionPageValidationSchema,
         onSubmit: () => {
             if (isEditing) {
                 dispatch(editNewsAricleAction(formik.values));
