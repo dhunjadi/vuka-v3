@@ -1,14 +1,26 @@
-import React from 'react';
-import {useSelector} from 'react-redux';
-import {useParams} from 'react-router-dom';
+import React, {useState} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 import {StoreState} from '../store/reducers/rootReducer';
 import Navbar from './navbar/Navbar';
+import {cancelBookReservationAction, makeABookReservationAction} from '../store/actions/bookActions';
+import Modal from './Modal';
 
 const Book = (): JSX.Element => {
-    const {bookList} = useSelector((state: StoreState) => state.bookReducer);
+    const {loggedInUser} = useSelector((state: StoreState) => state.userReducer);
+    const {selectedBook} = useSelector((state: StoreState) => state.bookReducer);
+    const reservationMade = selectedBook.reservations.includes(loggedInUser.id);
+    const dispatch = useDispatch();
 
-    const {id} = useParams();
-    const selectedBook = bookList.find((news) => news.id === id);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handleClick = (): void => {
+        setIsModalOpen(true);
+    };
+
+    const handleConfirm = (): void => {
+        !reservationMade ? dispatch(makeABookReservationAction(loggedInUser.id)) : dispatch(cancelBookReservationAction(loggedInUser.id));
+        setIsModalOpen(false);
+    };
 
     return (
         <>
@@ -38,14 +50,28 @@ const Book = (): JSX.Element => {
                         Copies Availiable: <p>{selectedBook?.copiesAvailiable}</p>
                     </div>
                     <div className="c-book__btns">
-                        <button className="btn">Make a reservation</button>
+                        <button className="btn btn--primary" onClick={handleClick}>
+                            {!reservationMade ? 'Make a reservation' : 'Cancel reservation'}
+                        </button>
                     </div>
                 </div>
             </div>
+            <Modal
+                isOpen={isModalOpen}
+                onCancel={() => setIsModalOpen(false)}
+                onConfirm={handleConfirm}
+                header={!reservationMade ? 'Make a reservation' : 'Cancel reservation'}
+                showConfirm
+                showCancel
+                confirmText="Confirm"
+                cancelText="Cancel"
+            >
+                {reservationMade
+                    ? `Are you sure you want to make a reservation for ${selectedBook.title} by ${selectedBook.author}?`
+                    : `Are you sure you want to cancel the reservation for  ${selectedBook.title} by ${selectedBook.author}?`}
+            </Modal>
         </>
     );
 };
 
 export default Book;
-
-Book.defaultProps = {};

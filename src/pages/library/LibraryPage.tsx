@@ -1,13 +1,15 @@
 import React, {useState} from 'react';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
 import Card from '../../components/Card';
 import Navbar from '../../components/navbar/Navbar';
 import {StoreState} from '../../store/reducers/rootReducer';
+import {selectBookAction} from '../../store/actions/bookActions';
 
 const LibraryPage = (): JSX.Element => {
     const {bookList} = useSelector((state: StoreState) => state.bookReducer);
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const [searchText, setSearchText] = useState<string>('');
 
@@ -39,7 +41,10 @@ const LibraryPage = (): JSX.Element => {
                                         info={[`${book.author}`]}
                                         imgSrc={book.imgSrc}
                                         cursorPointer
-                                        onClick={() => navigate(`/library/books/${book.id}`)}
+                                        onClick={() => {
+                                            dispatch(selectBookAction(book));
+                                            navigate(`/library/books/${book.id}`);
+                                        }}
                                     />
                                 );
                             })}

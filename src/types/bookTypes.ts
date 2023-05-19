@@ -5,8 +5,9 @@ export interface Book {
     imgSrc: string;
     language: string;
     link: string;
-    pages: number;
+    pages: string;
     title: string;
-    year: number;
-    copiesAvailiable: number;
+    year: string;
+    copiesAvailiable: string;
+    reservations: string[];
 }
