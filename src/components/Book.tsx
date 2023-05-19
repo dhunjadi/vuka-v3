@@ -7,8 +7,10 @@ import Modal from './Modal';
 
 const Book = (): JSX.Element => {
     const {loggedInUser} = useSelector((state: StoreState) => state.userReducer);
-    const {selectedBook} = useSelector((state: StoreState) => state.bookReducer);
-    const reservationMade = selectedBook.reservations.includes(loggedInUser.id);
+    const {
+        selectedBook: {imgSrc, title, author, language, pages, year, copiesAvailable, reservations},
+    } = useSelector((state: StoreState) => state.bookReducer);
+    const reservationMade = reservations.includes(loggedInUser.id);
     const dispatch = useDispatch();
 
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -27,30 +29,30 @@ const Book = (): JSX.Element => {
             <Navbar />
             <div className="c-book">
                 <div className="c-book__img">
-                    <img src={selectedBook?.imgSrc} alt="" />
+                    <img src={imgSrc} alt="" />
                 </div>
 
                 <div className="c-book__info">
                     <div className="c-book__info_pair">
-                        Title: <p>{selectedBook?.title}</p>
+                        Title: <p>{title}</p>
                     </div>
                     <div className="c-book__info_pair">
-                        Author: <p>{selectedBook?.author}</p>
+                        Author: <p>{author}</p>
                     </div>
                     <div className="c-book__info_pair">
-                        Language: <p>{selectedBook?.language}</p>
+                        Language: <p>{language}</p>
                     </div>
                     <div className="c-book__info_pair">
-                        Pages: <p>{selectedBook?.pages}</p>
+                        Pages: <p>{pages}</p>
                     </div>
                     <div className="c-book__info_pair">
-                        Year: <p>{selectedBook?.year}</p>
+                        Year: <p>{year}</p>
                     </div>
                     <div className="c-book__info_pair">
-                        Copies Availiable: <p>{selectedBook?.copiesAvailiable}</p>
+                        Copies Availiable: <p>{copiesAvailable}</p>
                     </div>
                     <div className="c-book__btns">
-                        <button className="btn btn--primary" onClick={handleClick}>
+                        <button className="btn btn--primary" onClick={handleClick} disabled={!reservationMade && copiesAvailable === 0}>
                             {!reservationMade ? 'Make a reservation' : 'Cancel reservation'}
                         </button>
                     </div>
@@ -67,8 +69,8 @@ const Book = (): JSX.Element => {
                 cancelText="Cancel"
             >
                 {reservationMade
-                    ? `Are you sure you want to make a reservation for ${selectedBook.title} by ${selectedBook.author}?`
-                    : `Are you sure you want to cancel the reservation for  ${selectedBook.title} by ${selectedBook.author}?`}
+                    ? `Are you sure you want to make a reservation for ${title} by ${author}?`
+                    : `Are you sure you want to cancel the reservation for  ${title} by ${author}?`}
             </Modal>
         </>
     );

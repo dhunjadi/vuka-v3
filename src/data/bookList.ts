@@ -11,7 +11,7 @@ export const bookList: Book[] = [
         pages: '209',
         title: 'Things Fall Apart',
         year: '1958',
-        copiesAvailiable: '1',
+        copiesAvailable: 1,
         reservations: [],
     },
     {
@@ -24,7 +24,7 @@ export const bookList: Book[] = [
         pages: '784',
         title: 'Fairy tales',
         year: '1836',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -37,7 +37,7 @@ export const bookList: Book[] = [
         pages: '928',
         title: 'The Divine Comedy',
         year: '1315',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -50,7 +50,7 @@ export const bookList: Book[] = [
         pages: '160',
         title: 'The Epic Of Gilgamesh',
         year: '-170',
-        copiesAvailiable: '50',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -63,7 +63,7 @@ export const bookList: Book[] = [
         pages: '176',
         title: 'The Book Of Job',
         year: '-600',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -76,7 +76,7 @@ export const bookList: Book[] = [
         pages: '288',
         title: 'One Thousand and One Nights',
         year: '1200',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -89,7 +89,7 @@ export const bookList: Book[] = [
         pages: '226',
         title: 'Pride and Prejudice',
         year: '1813',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -102,7 +102,7 @@ export const bookList: Book[] = [
         pages: '256',
         title: 'Molloy, Malone Dies, The Unnamable, the trilogy',
         year: '1952',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -115,7 +115,7 @@ export const bookList: Book[] = [
         pages: '1024',
         title: 'The Decameron',
         year: '1351',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -128,7 +128,7 @@ export const bookList: Book[] = [
         pages: '224',
         title: 'Ficciones',
         year: '1965',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -141,7 +141,7 @@ export const bookList: Book[] = [
         pages: '342',
         title: 'Wuthering Heights',
         year: '1847',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -154,7 +154,7 @@ export const bookList: Book[] = [
         pages: '185',
         title: 'The Stranger',
         year: '1942',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -167,7 +167,7 @@ export const bookList: Book[] = [
         pages: '320',
         title: 'Poems',
         year: '1952',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -180,7 +180,7 @@ export const bookList: Book[] = [
         pages: '505',
         title: 'Journey to the End of the Night',
         year: '1932',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -193,7 +193,7 @@ export const bookList: Book[] = [
         pages: '1056',
         title: 'Don Quijote De La Mancha',
         year: '1610',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -206,7 +206,7 @@ export const bookList: Book[] = [
         pages: '544',
         title: 'The Canterbury Tales',
         year: '1450',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -219,7 +219,7 @@ export const bookList: Book[] = [
         pages: '194',
         title: 'Stories',
         year: '1886',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -232,7 +232,7 @@ export const bookList: Book[] = [
         pages: '320',
         title: 'Nostromo',
         year: '1904',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -245,7 +245,7 @@ export const bookList: Book[] = [
         pages: '194',
         title: 'Great Expectations',
         year: '1861',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -258,7 +258,7 @@ export const bookList: Book[] = [
         pages: '596',
         title: 'Jacques the Fatalist',
         year: '1796',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -271,7 +271,7 @@ export const bookList: Book[] = [
         pages: '600',
         title: 'Berlin Alexanderplatz',
         year: '1929',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -284,7 +284,7 @@ export const bookList: Book[] = [
         pages: '551',
         title: 'Crime and Punishment',
         year: '1866',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -297,7 +297,7 @@ export const bookList: Book[] = [
         pages: '656',
         title: 'The Idiot',
         year: '1869',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -310,7 +310,7 @@ export const bookList: Book[] = [
         pages: '768',
         title: 'The Possessed',
         year: '1872',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -323,7 +323,7 @@ export const bookList: Book[] = [
         pages: '824',
         title: 'The Brothers Karamazov',
         year: '1880',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -336,7 +336,7 @@ export const bookList: Book[] = [
         pages: '800',
         title: 'Middlemarch',
         year: '1871',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -349,7 +349,7 @@ export const bookList: Book[] = [
         pages: '581',
         title: 'Invisible Man',
         year: '1952',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -362,7 +362,7 @@ export const bookList: Book[] = [
         pages: '104',
         title: 'Medea',
         year: '-431',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -375,7 +375,7 @@ export const bookList: Book[] = [
         pages: '313',
         title: 'Absalom, Absalom!',
         year: '1936',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -388,7 +388,7 @@ export const bookList: Book[] = [
         pages: '326',
         title: 'The Sound and the Fury',
         year: '1929',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -401,7 +401,7 @@ export const bookList: Book[] = [
         pages: '528',
         title: 'Madame Bovary',
         year: '1857',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -414,7 +414,7 @@ export const bookList: Book[] = [
         pages: '606',
         title: 'Sentimental Education',
         year: '1869',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -427,7 +427,7 @@ export const bookList: Book[] = [
         pages: '218',
         title: 'Gypsy Ballads',
         year: '1928',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -440,7 +440,7 @@ export const bookList: Book[] = [
         pages: '417',
         title: 'One Hundred Years of Solitude',
         year: '1967',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -453,7 +453,7 @@ export const bookList: Book[] = [
         pages: '368',
         title: 'Love in the Time of Cholera',
         year: '1985',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -466,7 +466,7 @@ export const bookList: Book[] = [
         pages: '158',
         title: 'Faust',
         year: '1832',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -479,7 +479,7 @@ export const bookList: Book[] = [
         pages: '432',
         title: 'Dead Souls',
         year: '1842',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -492,7 +492,7 @@ export const bookList: Book[] = [
         pages: '600',
         title: 'The Tin Drum',
         year: '1959',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -505,7 +505,7 @@ export const bookList: Book[] = [
         pages: '494',
         title: 'The Devil to Pay in the Backlands',
         year: '1956',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -518,7 +518,7 @@ export const bookList: Book[] = [
         pages: '176',
         title: 'Hunger',
         year: '1890',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -531,7 +531,7 @@ export const bookList: Book[] = [
         pages: '128',
         title: 'The Old Man and the Sea',
         year: '1952',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -544,7 +544,7 @@ export const bookList: Book[] = [
         pages: '608',
         title: 'Iliad',
         year: '-735',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -557,7 +557,7 @@ export const bookList: Book[] = [
         pages: '374',
         title: 'Odyssey',
         year: '-800',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -570,7 +570,7 @@ export const bookList: Book[] = [
         pages: '68',
         title: "A Doll's House",
         year: '1879',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -583,7 +583,7 @@ export const bookList: Book[] = [
         pages: '228',
         title: 'Ulysses',
         year: '1922',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -596,7 +596,7 @@ export const bookList: Book[] = [
         pages: '488',
         title: 'Stories',
         year: '1924',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -609,7 +609,7 @@ export const bookList: Book[] = [
         pages: '160',
         title: 'The Trial',
         year: '1925',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -622,7 +622,7 @@ export const bookList: Book[] = [
         pages: '352',
         title: 'The Castle',
         year: '1926',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -635,7 +635,7 @@ export const bookList: Book[] = [
         pages: '147',
         title: 'The recognition of Shakuntala',
         year: '150',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -648,7 +648,7 @@ export const bookList: Book[] = [
         pages: '288',
         title: 'The Sound of the Mountain',
         year: '1954',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -661,7 +661,7 @@ export const bookList: Book[] = [
         pages: '368',
         title: 'Zorba the Greek',
         year: '1946',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -674,7 +674,7 @@ export const bookList: Book[] = [
         pages: '432',
         title: 'Sons and Lovers',
         year: '1913',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -687,7 +687,7 @@ export const bookList: Book[] = [
         pages: '470',
         title: 'Independent People',
         year: '1934',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -700,7 +700,7 @@ export const bookList: Book[] = [
         pages: '184',
         title: 'Poems',
         year: '1818',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -713,7 +713,7 @@ export const bookList: Book[] = [
         pages: '688',
         title: 'The Golden Notebook',
         year: '1962',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -726,7 +726,7 @@ export const bookList: Book[] = [
         pages: '160',
         title: 'Pippi Longstocking',
         year: '1945',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -739,7 +739,7 @@ export const bookList: Book[] = [
         pages: '389',
         title: 'Diary of a Madman',
         year: '1918',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -752,7 +752,7 @@ export const bookList: Book[] = [
         pages: '355',
         title: 'Children of Gebelawi',
         year: '1959',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -765,7 +765,7 @@ export const bookList: Book[] = [
         pages: '736',
         title: 'Buddenbrooks',
         year: '1901',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -778,7 +778,7 @@ export const bookList: Book[] = [
         pages: '720',
         title: 'The Magic Mountain',
         year: '1924',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -791,7 +791,7 @@ export const bookList: Book[] = [
         pages: '378',
         title: 'Moby Dick',
         year: '1851',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -804,7 +804,7 @@ export const bookList: Book[] = [
         pages: '404',
         title: 'Essays',
         year: '1595',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -817,7 +817,7 @@ export const bookList: Book[] = [
         pages: '600',
         title: 'History',
         year: '1974',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -830,7 +830,7 @@ export const bookList: Book[] = [
         pages: '321',
         title: 'Beloved',
         year: '1987',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -843,7 +843,7 @@ export const bookList: Book[] = [
         pages: '1360',
         title: 'The Tale of Genji',
         year: '1006',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -856,7 +856,7 @@ export const bookList: Book[] = [
         pages: '365',
         title: 'The Man Without Qualities',
         year: '1931',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -869,7 +869,7 @@ export const bookList: Book[] = [
         pages: '317',
         title: 'Lolita',
         year: '1955',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -882,7 +882,7 @@ export const bookList: Book[] = [
         pages: '272',
         title: 'Nineteen Eighty-Four',
         year: '1949',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -895,7 +895,7 @@ export const bookList: Book[] = [
         pages: '576',
         title: 'Metamorphoses',
         year: '100',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -908,7 +908,7 @@ export const bookList: Book[] = [
         pages: '272',
         title: 'The Book of Disquiet',
         year: '1928',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -921,7 +921,7 @@ export const bookList: Book[] = [
         pages: '842',
         title: 'Tales',
         year: '1950',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -934,7 +934,7 @@ export const bookList: Book[] = [
         pages: '2408',
         title: 'In Search of Lost Time',
         year: '1920',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -947,7 +947,7 @@ export const bookList: Book[] = [
         pages: '623',
         title: 'Gargantua and Pantagruel',
         year: '1533',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -960,7 +960,7 @@ export const bookList: Book[] = [
         pages: '124',
         title: 'Pedro P\u00e1ramo',
         year: '1955',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -973,7 +973,7 @@ export const bookList: Book[] = [
         pages: '438',
         title: 'The Masnavi',
         year: '1236',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -986,7 +986,7 @@ export const bookList: Book[] = [
         pages: '536',
         title: "Midnight's Children",
         year: '1981',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -999,7 +999,7 @@ export const bookList: Book[] = [
         pages: '298',
         title: 'Bostan',
         year: '1257',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -1012,7 +1012,7 @@ export const bookList: Book[] = [
         pages: '139',
         title: 'Season of Migration to the North',
         year: '1966',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -1025,7 +1025,7 @@ export const bookList: Book[] = [
         pages: '352',
         title: 'Blindness',
         year: '1995',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -1038,7 +1038,7 @@ export const bookList: Book[] = [
         pages: '432',
         title: 'Hamlet',
         year: '1603',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -1051,7 +1051,7 @@ export const bookList: Book[] = [
         pages: '384',
         title: 'King Lear',
         year: '1608',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -1064,7 +1064,7 @@ export const bookList: Book[] = [
         pages: '314',
         title: 'Othello',
         year: '1609',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -1077,7 +1077,7 @@ export const bookList: Book[] = [
         pages: '88',
         title: 'Oedipus the King',
         year: '-430',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -1090,7 +1090,7 @@ export const bookList: Book[] = [
         pages: '576',
         title: 'The Red and the Black',
         year: '1830',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -1103,7 +1103,7 @@ export const bookList: Book[] = [
         pages: '640',
         title: 'The Life And Opinions of Tristram Shandy',
         year: '1760',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -1116,7 +1116,7 @@ export const bookList: Book[] = [
         pages: '412',
         title: 'Confessions of Zeno',
         year: '1923',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -1129,7 +1129,7 @@ export const bookList: Book[] = [
         pages: '178',
         title: "Gulliver's Travels",
         year: '1726',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -1142,7 +1142,7 @@ export const bookList: Book[] = [
         pages: '1296',
         title: 'War and Peace',
         year: '1867',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -1155,7 +1155,7 @@ export const bookList: Book[] = [
         pages: '864',
         title: 'Anna Karenina',
         year: '1877',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -1168,7 +1168,7 @@ export const bookList: Book[] = [
         pages: '92',
         title: 'The Death of Ivan Ilyich',
         year: '1886',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -1181,7 +1181,7 @@ export const bookList: Book[] = [
         pages: '224',
         title: 'The Adventures of Huckleberry Finn',
         year: '1884',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -1194,7 +1194,7 @@ export const bookList: Book[] = [
         pages: '152',
         title: 'Ramayana',
         year: '-450',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -1207,7 +1207,7 @@ export const bookList: Book[] = [
         pages: '442',
         title: 'The Aeneid',
         year: '-23',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -1220,7 +1220,7 @@ export const bookList: Book[] = [
         pages: '276',
         title: 'Mahabharata',
         year: '-700',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -1233,7 +1233,7 @@ export const bookList: Book[] = [
         pages: '152',
         title: 'Leaves of Grass',
         year: '1855',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -1246,7 +1246,7 @@ export const bookList: Book[] = [
         pages: '216',
         title: 'Mrs Dalloway',
         year: '1925',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -1259,7 +1259,7 @@ export const bookList: Book[] = [
         pages: '209',
         title: 'To the Lighthouse',
         year: '1927',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
     {
@@ -1272,7 +1272,7 @@ export const bookList: Book[] = [
         pages: '408',
         title: 'Memoirs of Hadrian',
         year: '1951',
-        copiesAvailiable: '5',
+        copiesAvailable: 5,
         reservations: [],
     },
 ];

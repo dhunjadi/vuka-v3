@@ -20,7 +20,7 @@ const initialState = {
         pages: '',
         title: '',
         year: '',
-        copiesAvailiable: '',
+        copiesAvailable: 0,
         reservations: [],
     },
 };
@@ -37,6 +37,7 @@ export const bookReducer = (state: bookReducerState = initialState, action: AnyA
                 ...state,
                 selectedBook: {
                     ...state.selectedBook,
+                    copiesAvailable: state.selectedBook.copiesAvailable - 1,
                     reservations: [...state.selectedBook.reservations, action.userId],
                 },
             };
@@ -45,6 +46,7 @@ export const bookReducer = (state: bookReducerState = initialState, action: AnyA
                 ...state,
                 selectedBook: {
                     ...state.selectedBook,
+                    copiesAvailable: state.selectedBook.copiesAvailable + 1,
                     reservations: state.selectedBook.reservations.filter((userId) => userId !== action.userId),
                 },
             };

@@ -8,6 +8,6 @@ export interface Book {
     pages: string;
     title: string;
     year: string;
-    copiesAvailiable: string;
+    copiesAvailable: number;
     reservations: string[];
 }
