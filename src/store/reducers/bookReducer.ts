@@ -1,5 +1,6 @@
 import {AnyAction} from 'redux';
-import {Book, bookList} from '../../data/bookList';
+import {bookList} from '../../data/bookList';
+import {Book} from '../../types/bookTypes';
 
 export interface bookReducerState {
     bookList: Book[];

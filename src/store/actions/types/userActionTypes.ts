@@ -1,5 +1,6 @@
-import {Class, User, UserRole} from '../../../data/userList';
+import {User, UserRole} from '../../../types/userTypes';
 import {EDIT_CLASS, SELECT_CLASS, SELECT_USER, USER_LOGIN, USER_LOGOUT} from '../userActions';
+import {Class} from '../../../types/classTypes';
 
 export interface IUserLoginAction {
     type: typeof USER_LOGIN;

@@ -1,4 +1,4 @@
-import {ITask} from '../../data/taskList';
+import {Task} from '../../types/taskTypes';
 import {IAddNewTaskAction, IClearSelectedTaskAction, IDeleteTaskAction, IEditTaskAction, ISelectTaskAction} from './types/tasksActionTypes';
 
 export const ADD_NEW_TASK = 'ADD_NEW_TASK';
@@ -7,7 +7,7 @@ export const SELECT_TASK = 'SELECT_TASK';
 export const EDIT_TASK = 'EDIT_TASK';
 export const CLEAR_SELECTED_TASK = 'CLEAR_SELECTED_TASK';
 
-export const addNewTaskAction = (task: ITask): IAddNewTaskAction => ({
+export const addNewTaskAction = (task: Task): IAddNewTaskAction => ({
     type: ADD_NEW_TASK,
     task,
 });
@@ -17,12 +17,12 @@ export const deleteTaskAction = (id: string): IDeleteTaskAction => ({
     id,
 });
 
-export const selectTaskAction = (task: ITask): ISelectTaskAction => ({
+export const selectTaskAction = (task: Task): ISelectTaskAction => ({
     type: SELECT_TASK,
     task,
 });
 
-export const editTaskAction = (task: ITask): IEditTaskAction => ({
+export const editTaskAction = (task: Task): IEditTaskAction => ({
     type: EDIT_TASK,
     task,
 });

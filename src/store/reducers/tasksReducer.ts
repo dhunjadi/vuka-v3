@@ -1,10 +1,11 @@
 import {AnyAction} from 'redux';
-import {taskList, ITask} from '../../data/taskList';
+import {taskList} from '../../data/taskList';
 import {ADD_NEW_TASK, CLEAR_SELECTED_TASK, DELETE_TASK, EDIT_TASK, SELECT_TASK} from '../actions/tasksActions';
+import {Task} from '../../types/taskTypes';
 
 export interface tasksReducerState {
-    taskList: ITask[];
-    selectedTask: ITask;
+    taskList: Task[];
+    selectedTask: Task;
 }
 
 const initialState = {

@@ -2,10 +2,11 @@ import React, {useState} from 'react';
 import {useDispatch} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
 import logo from '../../assets/logo.png';
-import userList, {User, UserRole} from '../../data/userList';
+import userList from '../../data/userList';
 import {userLoginAction} from '../../store/actions/userActions';
 import {useFormik} from 'formik';
 import {loginPageValidationSchema} from '../../validations/loginPageValidation';
+import {User, UserRole} from '../../types/userTypes';
 
 interface ILoginForm {
     email: string;

@@ -1,13 +1,6 @@
-import {StudyProgram} from './userList';
-
 /* eslint-disable max-len */
-export interface News {
-    id: string;
-    title: string;
-    text: string;
-    studyProgram: StudyProgram | 'General';
-    isPublished: boolean;
-}
+
+import {News} from '../types/newsTypes';
 
 export const newsList: News[] = [
     {

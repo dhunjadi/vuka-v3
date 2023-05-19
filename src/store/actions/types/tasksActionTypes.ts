@@ -1,9 +1,9 @@
-import {ITask} from '../../../data/taskList';
+import {Task} from '../../../types/taskTypes';
 import {ADD_NEW_TASK, CLEAR_SELECTED_TASK, DELETE_TASK, EDIT_TASK, SELECT_TASK} from '../tasksActions';
 
 export interface IAddNewTaskAction {
     type: typeof ADD_NEW_TASK;
-    task: ITask;
+    task: Task;
 }
 
 export interface IDeleteTaskAction {
@@ -13,12 +13,12 @@ export interface IDeleteTaskAction {
 
 export interface ISelectTaskAction {
     type: typeof SELECT_TASK;
-    task: ITask;
+    task: Task;
 }
 
 export interface IEditTaskAction {
     type: typeof EDIT_TASK;
-    task: ITask;
+    task: Task;
 }
 
 export interface IClearSelectedTaskAction {

@@ -1,6 +1,8 @@
 import {AnyAction} from 'redux';
-import userList, {Class, StudentRole, User, UserRole} from '../../data/userList';
+import userList from '../../data/userList';
 import {EDIT_CLASS, SELECT_CLASS, SELECT_USER, USER_LOGIN, USER_LOGOUT} from '../actions/userActions';
+import {StudentRole, User, UserRole} from '../../types/userTypes';
+import {Class} from '../../types/classTypes';
 
 export interface userReducerState {
     loggedInUser: User<UserRole>;

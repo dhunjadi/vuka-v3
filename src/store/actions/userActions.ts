@@ -1,4 +1,5 @@
-import {Class, User, UserRole} from '../../data/userList';
+import {User, UserRole} from '../../types/userTypes';
+import {Class} from '../../types/classTypes';
 import {IEditClassAction, ISelectClassAction, ISelectStudentAction, IUserLoginAction, IUserLogoutAction} from './types/userActionTypes';
 
 export const USER_LOGIN = 'USER_LOGIN';

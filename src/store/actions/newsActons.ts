@@ -1,4 +1,4 @@
-import {News} from '../../data/newsList';
+import {News} from '../../types/newsTypes';
 import {
     IAddNewsArticleAction,
     IClearSelectedNewsAction,

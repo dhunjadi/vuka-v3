@@ -7,7 +7,7 @@ import {studyProgramOptions} from '../../data/constants';
 import Navbar from '../../components/navbar/Navbar';
 import {v4 as uuidv4} from 'uuid';
 import {StoreState} from '../../store/reducers/rootReducer';
-import {News} from '../../data/newsList';
+import {News} from '../../types/newsTypes';
 import {useFormik} from 'formik';
 import {newsActionPageValidationSchema} from '../../validations/newsActionsPageValidation';
 

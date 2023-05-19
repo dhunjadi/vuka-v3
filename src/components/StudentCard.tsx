@@ -1,6 +1,5 @@
 import React from 'react';
-import {StudyType, User, UserRole, StudyProgram} from '../data/userList';
-
+import {User, UserRole, StudyProgram, StudyType} from '../types/userTypes';
 interface StudentCardProps extends Pick<User<UserRole>, 'email' | 'fName' | 'lName' | 'imgSrc'> {
     onClick?: () => void;
     studyProgram: StudyProgram;

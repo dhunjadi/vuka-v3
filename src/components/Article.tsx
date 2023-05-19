@@ -1,7 +1,7 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 import {StoreState} from '../store/reducers/rootReducer';
-import {userRole} from '../data/userList';
+import {userRole} from '../types/userTypes';
 
 interface ArticleProps {
     id: string;

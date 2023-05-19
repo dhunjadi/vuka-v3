@@ -4,7 +4,7 @@ import {useNavigate} from 'react-router-dom';
 import {gradeOptions, semesterOptions} from '../../data/constants';
 import Navbar from '../../components/navbar/Navbar';
 import {StoreState} from '../../store/reducers/rootReducer';
-import {Class} from '../../data/userList';
+import {Class} from '../../types/classTypes';
 import {editClassAction} from '../../store/actions/userActions';
 import {useKeyPress} from '../../utils/UseKeyPress';
 import {isAdmin} from '../../utils/userUtils';

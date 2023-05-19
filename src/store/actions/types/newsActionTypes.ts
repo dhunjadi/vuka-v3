@@ -1,4 +1,4 @@
-import {News} from '../../../data/newsList';
+import {News} from '../../../types/newsTypes';
 import {ADD_NEWS_ARTICLE, CLEAR_SELECTED_NEWS, DELETE_NEWS_ARTICLE, EDIT_NEWS_ARTICLE, SELECT_NEWS_ARTICLE} from '../newsActons';
 
 export interface IAddNewsArticleAction {

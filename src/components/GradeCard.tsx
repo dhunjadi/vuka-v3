@@ -2,7 +2,7 @@ import React from 'react';
 import {useDispatch} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
 import {selectClassAction} from '../store/actions/userActions';
-import {Class} from '../data/userList';
+import {Class} from '../types/classTypes';
 
 interface GradeCardProps extends Class {
     showButtons: boolean;

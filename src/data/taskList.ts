@@ -1,13 +1,8 @@
 /* eslint-disable max-len */
 
-import {News} from './newsList';
+import {Task} from '../types/taskTypes';
 
-export interface ITask extends News {
-    subject: string;
-    year: number;
-}
-
-export const taskList: ITask[] = [
+export const taskList: Task[] = [
     {
         id: '1',
         title: 'task title1',

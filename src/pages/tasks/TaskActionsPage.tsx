@@ -5,7 +5,7 @@ import ToggleSwitch from '../../components/ToggleSwitch';
 import {studyProgramOptions} from '../../data/constants';
 import Navbar from '../../components/navbar/Navbar';
 import {v4 as uuidv4} from 'uuid';
-import {ITask} from '../../data/taskList';
+import {Task} from '../../types/taskTypes';
 import {addNewTaskAction, clearSelectedTaskAction, editTaskAction} from '../../store/actions/tasksActions';
 import {StoreState} from '../../store/reducers/rootReducer';
 import {useFormik} from 'formik';
@@ -20,7 +20,7 @@ const TaskActionsPage = (): JSX.Element => {
 
     const isEditing = pathname.includes('edit');
 
-    const formik = useFormik<ITask>({
+    const formik = useFormik<Task>({
         initialValues: {
             id: selectedTask.id || uuidv4(),
             title: selectedTask.title || '',

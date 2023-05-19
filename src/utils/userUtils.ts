@@ -1,4 +1,4 @@
-import {User, StudentRole, UserRole, AdminRole} from '../data/userList';
+import {User, StudentRole, UserRole, AdminRole} from '../types/userTypes';
 
 export const isStudent = (selectedUser: User<UserRole>): selectedUser is User<StudentRole> => {
     return selectedUser.role.type === 'Student';
