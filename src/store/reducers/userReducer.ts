@@ -87,7 +87,7 @@ export const userReducer = (state: userReducerState = initialState, action: AnyA
 
                 return {
                     ...state,
-                    userList: state.userList.map((user) => (user.id === action.clas.studentId ? editedUser : user)),
+                    selectedUser: state.selectedUser.id === action.clas.studentId ? editedUser : state.selectedUser,
                 };
             }
 
