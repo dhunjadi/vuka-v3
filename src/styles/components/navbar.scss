@@ -103,7 +103,7 @@
 
         &_news {
             &::before {
-                content: url('../../assets/navbar/home.svg');
+                content: url('../../../assets/home.svg');
             }
 
             &.active::before {
