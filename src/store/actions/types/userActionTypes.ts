@@ -1,10 +1,10 @@
-import {User, UserRole} from '../../../types/userTypes';
+import {User} from '../../../types/userTypes';
 import {EDIT_CLASS, SELECT_CLASS, SELECT_USER, USER_LOGIN, USER_LOGOUT} from '../userActions';
 import {Class} from '../../../types/classTypes';
 
 export interface UserLoginAction {
     type: typeof USER_LOGIN;
-    user: User<UserRole>;
+    user: User;
 }
 
 export interface UserLogoutAction {
@@ -13,7 +13,7 @@ export interface UserLogoutAction {
 
 export interface SelectStudentAction {
     type: typeof SELECT_USER;
-    student: User<UserRole>;
+    student: User;
 }
 
 export interface SelectClassAction {

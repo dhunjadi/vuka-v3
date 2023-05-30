@@ -1,50 +1,33 @@
 import {AnyAction} from 'redux';
 import userList from '../../data/userList';
-import {EDIT_CLASS, SELECT_CLASS, SELECT_USER, USER_LOGIN, USER_LOGOUT} from '../actions/userActions';
-import {StudentRole, User, UserRole} from '../../types/userTypes';
-import {Class} from '../../types/classTypes';
+import {SELECT_USER, USER_LOGIN, USER_LOGOUT} from '../actions/userActions';
+import {User, UserRole} from '../../types/userTypes';
 
 export interface userReducerState {
-    loggedInUser: User<UserRole>;
-    userList: User<UserRole>[];
-    selectedUser: User<UserRole>;
-    selectedClass: Class;
+    loggedInUser: User;
+    userList: User[];
+    selectedUser: User;
 }
 
 const initialState: userReducerState = {
     loggedInUser: {
-        id: '',
+        userId: '',
         fName: '',
         lName: '',
         email: '',
         password: '',
         imgSrc: '',
-        role: {
-            type: 'Admin',
-        },
+        role: UserRole.student,
     },
     userList: userList,
     selectedUser: {
-        id: '',
+        userId: '',
         fName: '',
         lName: '',
         email: '',
         password: '',
         imgSrc: '',
-        role: {
-            type: 'Admin',
-        },
-    },
-    selectedClass: {
-        studentId: '',
-        id: '',
-        title: '',
-        semester: '1',
-        exam1: undefined,
-        exam2: undefined,
-        essay: undefined,
-        presentation: undefined,
-        ects: '0',
+        role: UserRole.student,
     },
 };
 
@@ -62,39 +45,6 @@ export const userReducer = (state: userReducerState = initialState, action: AnyA
                 ...state,
                 selectedUser: action.student,
             };
-
-        case SELECT_CLASS:
-            return {
-                ...state,
-                selectedClass: action.clas,
-            };
-
-        case EDIT_CLASS: {
-            const index = state.userList.findIndex((user) => user.id === action.clas.studentId);
-            const users = [...state.userList];
-
-            if (users[index].role.type === 'Student') {
-                const editedUser = {
-                    ...users[index],
-                    role: {
-                        ...users[index].role,
-                        student: {
-                            ...(users[index].role as StudentRole).student,
-                            classes: (users[index].role as StudentRole).student.classes.map((clas) =>
-                                clas.id === action.clas.id ? action.clas : clas
-                            ),
-                        },
-                    },
-                };
-
-                return {
-                    ...state,
-                    selectedUser: state.selectedUser.id === action.clas.studentId ? editedUser : state.selectedUser,
-                };
-            }
-
-            return state;
-        }
 
         default:
             return state;

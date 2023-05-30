@@ -1,4 +1,4 @@
-import {User, UserRole} from '../../types/userTypes';
+import {User} from '../../types/userTypes';
 import {Class} from '../../types/classTypes';
 import {EditClassAction, SelectClassAction, SelectStudentAction, UserLoginAction, UserLogoutAction} from './types/userActionTypes';
 
@@ -8,7 +8,7 @@ export const SELECT_USER = 'SELECT_USER';
 export const SELECT_CLASS = 'SELECT_CLASS';
 export const EDIT_CLASS = 'EDIT_CLASS';
 
-export const userLoginAction = (user: User<UserRole>): UserLoginAction => ({
+export const userLoginAction = (user: User): UserLoginAction => ({
     type: USER_LOGIN,
     user,
 });
@@ -17,7 +17,7 @@ export const userLogoutAction = (): UserLogoutAction => ({
     type: USER_LOGOUT,
 });
 
-export const selectStudentAction = (student: User<UserRole>): SelectStudentAction => ({
+export const selectStudentAction = (student: User): SelectStudentAction => ({
     type: SELECT_USER,
     student,
 });

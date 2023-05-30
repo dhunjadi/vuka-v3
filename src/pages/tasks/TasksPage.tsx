@@ -6,11 +6,12 @@ import Article from '../../components/Article';
 import {deleteTaskAction, selectTaskAction} from '../../store/actions/tasksActions';
 import {StoreState} from '../../store/reducers/rootReducer';
 import Modal from '../../components/Modal';
-import {isStudent} from '../../utils/userUtils';
+import {findStudentProps} from '../../utils/userUtils';
 
 const TasksPage = (): JSX.Element => {
     const {loggedInUser} = useSelector((state: StoreState) => state.userReducer);
     const {taskList, selectedTask} = useSelector((state: StoreState) => state.tasksReducer);
+    const studentProps = findStudentProps(loggedInUser.userId);
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -24,10 +25,10 @@ const TasksPage = (): JSX.Element => {
 
     const tasksStudentsSee = taskList
         .filter((task) => {
-            if (isStudent(loggedInUser))
+            if (studentProps)
                 return (
-                    loggedInUser.role.student.studyProgram === task.studyProgram &&
-                    loggedInUser.role.student.year >= task.year &&
+                    studentProps.studyProgram === task.studyProgram &&
+                    studentProps.year >= task.year.toString() &&
                     task.isPublished === true
                 );
 
@@ -65,7 +66,7 @@ const TasksPage = (): JSX.Element => {
         <>
             <Navbar />
             <div className="p-tasks">
-                {!isStudent(loggedInUser) && (
+                {/* {!isStudent(loggedInUser) && (
                     <div className="p-tasks__header">
                         <div className="p-tasks__header_buttons">
                             <button className="btn btn--primary" onClick={() => navigate(`/tasks/new`)}>
@@ -73,8 +74,8 @@ const TasksPage = (): JSX.Element => {
                             </button>
                         </div>
                     </div>
-                )}
-                {isStudent(loggedInUser) ? tasksStudentsSee : tasksProfAndAdminSee}
+                )} */}
+                {studentProps ? tasksStudentsSee : tasksProfAndAdminSee}
             </div>
 
             <Modal

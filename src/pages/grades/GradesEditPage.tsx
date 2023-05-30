@@ -7,9 +7,9 @@ import {StoreState} from '../../store/reducers/rootReducer';
 import {Class} from '../../types/classTypes';
 import {editClassAction} from '../../store/actions/userActions';
 import {useKeyPress} from '../../utils/UseKeyPress';
-import {isAdmin} from '../../utils/userUtils';
 import {useFormik} from 'formik';
 import {gradesEditPageValidationSchema} from '../../validations/gradesEditPageValidation';
+import {UserRole} from '../../types/userTypes';
 
 const GradesEditPage = (): JSX.Element => {
     const {loggedInUser} = useSelector((state: StoreState) => state.userReducer);
@@ -22,7 +22,7 @@ const GradesEditPage = (): JSX.Element => {
         if (isEscPressed) navigate(`/grades/${selectedClass.studentId}`);
     }, [isEscPressed, navigate]);
 
-    const {selectedClass} = useSelector((state: StoreState) => state.userReducer);
+    const {selectedClass} = useSelector((state: StoreState) => state.classReducer);
 
     const formik = useFormik<Class>({
         initialValues: {
@@ -45,7 +45,7 @@ const GradesEditPage = (): JSX.Element => {
                         <input
                             type="text"
                             placeholder="Enter Article Title..."
-                            disabled={!isAdmin(loggedInUser)}
+                            disabled={loggedInUser.role !== UserRole.admin}
                             {...formik.getFieldProps('title')}
                         />
 

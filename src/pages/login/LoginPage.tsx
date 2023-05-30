@@ -6,7 +6,7 @@ import userList from '../../data/userList';
 import {userLoginAction} from '../../store/actions/userActions';
 import {useFormik} from 'formik';
 import {loginPageValidationSchema} from '../../validations/loginPageValidation';
-import {User, UserRole} from '../../types/userTypes';
+import {User} from '../../types/userTypes';
 
 interface ILoginForm {
     email: string;
@@ -24,9 +24,7 @@ const LoginPage = (): JSX.Element => {
         },
         validationSchema: loginPageValidationSchema,
         onSubmit: () => {
-            const found = userList.find(
-                (user: User<UserRole>) => user.email === formik.values.email && user.password === formik.values.password
-            );
+            const found = userList.find((user: User) => user.email === formik.values.email && user.password === formik.values.password);
 
             if (!found) {
                 setShowWrongCredentialsError(true);

@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 
 import {News} from '../types/newsTypes';
+import {StudyProgram} from '../types/userTypes';
 
 export const newsList: News[] = [
     {
@@ -21,28 +22,28 @@ export const newsList: News[] = [
         id: '3',
         title: 'news title 3',
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quasi mollitia possimus a temporibus ipsam laboriosam in aperiam quos maxime est illo dicta corporis, id quia consectetur magnam, error quisquam totam eum perferendis, quo ea enim? Ipsam iste totam dignissimos laborum quo perferendis recusandae ut, quasi vitae hic nostrum ullam?',
-        studyProgram: 'Hospitality',
+        studyProgram: StudyProgram.HOSPITALITY,
         isPublished: true,
     },
     {
         id: '4',
         title: 'news title 4',
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quasi mollitia possimus a temporibus ipsam laboriosam in aperiam quos maxime est illo dicta corporis, id quia consectetur magnam, error quisquam totam eum perferendis, quo ea enim? Ipsam iste totam dignissimos laborum quo perferendis recusandae ut, quasi vitae hic nostrum ullam?',
-        studyProgram: 'Mechatronics',
+        studyProgram: StudyProgram.MECHATRONICS,
         isPublished: true,
     },
     {
         id: '5',
         title: 'news title 5',
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quasi mollitia possimus a temporibus ipsam laboriosam in aperiam quos maxime est illo dicta corporis, id quia consectetur magnam, error quisquam totam eum perferendis, quo ea enim? Ipsam iste totam dignissimos laborum quo perferendis recusandae ut, quasi vitae hic nostrum ullam?',
-        studyProgram: 'Mechatronics',
+        studyProgram: StudyProgram.MECHATRONICS,
         isPublished: true,
     },
     {
         id: '6',
         title: 'news title 6',
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quasi mollitia possimus a temporibus ipsam laboriosam in aperiam quos maxime est illo dicta corporis, id quia consectetur magnam, error quisquam totam eum perferendis, quo ea enim? Ipsam iste totam dignissimos laborum quo perferendis recusandae ut, quasi vitae hic nostrum ullam?',
-        studyProgram: 'Hospitality',
+        studyProgram: StudyProgram.HOSPITALITY,
         isPublished: true,
     },
     {
@@ -63,14 +64,14 @@ export const newsList: News[] = [
         id: '9',
         title: 'news title 9',
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quasi mollitia possimus a temporibus ipsam laboriosam in aperiam quos maxime est illo dicta corporis, id quia consectetur magnam, error quisquam totam eum perferendis, quo ea enim? Ipsam iste totam dignissimos laborum quo perferendis recusandae ut, quasi vitae hic nostrum ullam?',
-        studyProgram: 'Hospitality',
+        studyProgram: StudyProgram.HOSPITALITY,
         isPublished: true,
     },
     {
         id: '10',
         title: 'news title 10',
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quasi mollitia possimus a temporibus ipsam laboriosam in aperiam quos maxime est illo dicta corporis, id quia consectetur magnam, error quisquam totam eum perferendis, quo ea enim? Ipsam iste totam dignissimos laborum quo perferendis recusandae ut, quasi vitae hic nostrum ullam?',
-        studyProgram: 'Mechatronics',
+        studyProgram: StudyProgram.MECHATRONICS,
         isPublished: true,
     },
     {
@@ -91,7 +92,7 @@ export const newsList: News[] = [
         id: '13',
         title: 'news title 13',
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quasi mollitia possimus a temporibus ipsam laboriosam in aperiam quos maxime est illo dicta corporis, id quia consectetur magnam, error quisquam totam eum perferendis, quo ea enim? Ipsam iste totam dignissimos laborum quo perferendis recusandae ut, quasi vitae hic nostrum ullam?',
-        studyProgram: 'Hospitality',
+        studyProgram: StudyProgram.HOSPITALITY,
         isPublished: true,
     },
     {
@@ -105,28 +106,28 @@ export const newsList: News[] = [
         id: '15',
         title: 'news title 15',
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quasi mollitia possimus a temporibus ipsam laboriosam in aperiam quos maxime est illo dicta corporis, id quia consectetur magnam, error quisquam totam eum perferendis, quo ea enim? Ipsam iste totam dignissimos laborum quo perferendis recusandae ut, quasi vitae hic nostrum ullam?',
-        studyProgram: 'Mechatronics',
+        studyProgram: StudyProgram.MECHATRONICS,
         isPublished: true,
     },
     {
         id: '16',
         title: 'news title 16',
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quasi mollitia possimus a temporibus ipsam laboriosam in aperiam quos maxime est illo dicta corporis, id quia consectetur magnam, error quisquam totam eum perferendis, quo ea enim? Ipsam iste totam dignissimos laborum quo perferendis recusandae ut, quasi vitae hic nostrum ullam?',
-        studyProgram: 'Mechatronics',
+        studyProgram: StudyProgram.MECHATRONICS,
         isPublished: true,
     },
     {
         id: '17',
         title: 'news title 17',
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quasi mollitia possimus a temporibus ipsam laboriosam in aperiam quos maxime est illo dicta corporis, id quia consectetur magnam, error quisquam totam eum perferendis, quo ea enim? Ipsam iste totam dignissimos laborum quo perferendis recusandae ut, quasi vitae hic nostrum ullam?',
-        studyProgram: 'Mechatronics',
+        studyProgram: StudyProgram.MECHATRONICS,
         isPublished: true,
     },
     {
         id: '18',
         title: 'news title 18',
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quasi mollitia possimus a temporibus ipsam laboriosam in aperiam quos maxime est illo dicta corporis, id quia consectetur magnam, error quisquam totam eum perferendis, quo ea enim? Ipsam iste totam dignissimos laborum quo perferendis recusandae ut, quasi vitae hic nostrum ullam?',
-        studyProgram: 'Hospitality',
+        studyProgram: StudyProgram.HOSPITALITY,
         isPublished: true,
     },
 ];

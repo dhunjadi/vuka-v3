@@ -6,19 +6,19 @@ import Tabs from '../../components/Tabs';
 import Navbar from '../../components/navbar/Navbar';
 import Modal from '../../components/Modal';
 import {StoreState} from '../../store/reducers/rootReducer';
-import {isStudent} from '../../utils/userUtils';
 import {deleteNewsAricleAction, selectNewsAricleAction} from '../../store/actions/newsActons';
+import {findStudentProps} from '../../utils/userUtils';
 
 const NewsPage = (): JSX.Element => {
     const {loggedInUser} = useSelector<StoreState, StoreState['userReducer']>((state) => state.userReducer);
     const {newsList, selectedNews} = useSelector<StoreState, StoreState['newsReducer']>((state) => state.newsReducer);
 
-    const isLoggedInStudent = isStudent(loggedInUser);
+    const studentProps = findStudentProps(loggedInUser.userId);
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const newsTypes = isLoggedInStudent ? ['General', loggedInUser.role.student.studyProgram] : ['Student News'];
+    const newsTypes = studentProps ? ['General', studentProps.studyProgram] : ['Student News'];
     const [selectedNewsType, setSelectedNewsType] = useState(newsTypes[0]);
     const [isDeleteNewsModalOpen, setIsDeleteNewsModalOpen] = useState<boolean>(false);
 
@@ -28,7 +28,7 @@ const NewsPage = (): JSX.Element => {
     }, [dispatch, selectedNews.id]);
 
     const filteredNewsList = newsList.filter((news) => {
-        if (isLoggedInStudent) {
+        if (studentProps) {
             return news.studyProgram === selectedNewsType && news.isPublished === true;
         }
         return true;
@@ -43,7 +43,7 @@ const NewsPage = (): JSX.Element => {
                     selectedTab={selectedNewsType}
                     handleSelect={(tab) => setSelectedNewsType(tab)}
                     buttons={
-                        !isLoggedInStudent ? (
+                        !studentProps ? (
                             <button className="btn btn--primary" onClick={() => navigate(`/news/new`)}>
                                 Add news
                             </button>

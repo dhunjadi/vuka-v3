@@ -1,60 +1,53 @@
-import {Book} from './bookTypes';
-import {Class} from './classTypes';
+export enum UserRole {
+    student = 'Student',
+    professor = 'Professor',
+    admin = 'Admin',
+}
 
-export const userRole: Record<string, UserRole['type']> = {
-    student: 'Student',
-    professor: 'Professor',
-    admin: 'Admin',
-};
+export enum StudyProgram {
+    HOSPITALITY = 'Hospitality',
+    MECHATRONICS = 'Mechatronics',
+}
 
-export const studyPrograms: Record<string, StudyProgram> = {
-    hospitality: 'Hospitality',
-    mechatronics: 'Mechatronics',
-};
+export enum StudyType {
+    FULL_TIME = 'Full time',
+    PART_TIME = 'Part time',
+}
 
-export type StudyProgram = 'Hospitality' | 'Mechatronics';
-export type StudyType = 'Full time' | 'Part time';
+export enum ProfessorRank {
+    DISTINGUISHED = 'Distinguished Professor',
+    PROFESSOR = 'Professor',
+    ASSOCIATE = 'Associate Professor',
+    ASSISTANT_PROFESSOR = 'Assistant Professor',
+    POSTDOC = 'Postdoctoral Fellow/Researcher',
+    TEACHING_ASSISTANT = 'Teaching/Research Assistant',
+    SENIOR_LECTURER = 'Senior Lecturer',
+    LECTURER = 'Lecturer',
+}
 
-type ProfessorRank =
-    | 'Distinguished Professor'
-    | 'Professor'
-    | 'Associate Professor'
-    | 'Assistant professor'
-    | 'Postdoctoral Fellow/Researcher'
-    | 'Teaching/Research Assistant'
-    | 'Senior Lecturer'
-    | 'Lecturer';
-
-export type User<TUser extends UserRole> = {
-    id: string;
+export type User = {
+    userId: string;
     fName: string;
     lName: string;
     email: string;
     password: string;
     imgSrc: string;
-    role: TUser;
+    role: UserRole;
 };
 
-export type StudentRole = {
-    type: 'Student';
-    student: {
-        studyProgram: StudyProgram;
-        studyType: StudyType;
-        year: number;
-        books: Pick<Book, 'author' | 'title' | 'year' | 'imgSrc'>[];
-        classes: Class[];
-    };
+export type StudentProps = {
+    userId: string;
+    studyProgram: StudyProgram;
+    studyType: StudyType;
+    year: string;
 };
 
-export type ProfessorRole = {
-    type: 'Professor';
-    professor: {
-        rank: ProfessorRank;
-    };
+export type ProfessorProps = {
+    userId: string;
+    rank: ProfessorRank;
 };
 
-export type AdminRole = {
+export type AdminProps = {
+    userId: string;
     type: 'Admin';
 };
-
-export type UserRole = StudentRole | ProfessorRole | AdminRole;

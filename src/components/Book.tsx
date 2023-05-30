@@ -10,7 +10,7 @@ const Book = (): JSX.Element => {
     const {
         selectedBook: {imgSrc, title, author, language, pages, year, copiesAvailable, reservations},
     } = useSelector((state: StoreState) => state.bookReducer);
-    const reservationMade = reservations.includes(loggedInUser.id);
+    const reservationMade = reservations.includes(loggedInUser.userId);
     const dispatch = useDispatch();
 
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -20,7 +20,9 @@ const Book = (): JSX.Element => {
     };
 
     const handleConfirm = (): void => {
-        !reservationMade ? dispatch(makeABookReservationAction(loggedInUser.id)) : dispatch(cancelBookReservationAction(loggedInUser.id));
+        !reservationMade
+            ? dispatch(makeABookReservationAction(loggedInUser.userId))
+            : dispatch(cancelBookReservationAction(loggedInUser.userId));
         setIsModalOpen(false);
     };
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import {User, UserRole, StudyProgram, StudyType} from '../types/userTypes';
-interface StudentCardProps extends Pick<User<UserRole>, 'email' | 'fName' | 'lName' | 'imgSrc'> {
+import {User, StudyProgram, StudyType} from '../types/userTypes';
+interface StudentCardProps extends Pick<User, 'email' | 'fName' | 'lName' | 'imgSrc'> {
     onClick?: () => void;
     studyProgram: StudyProgram;
     studyType: StudyType;
@@ -9,6 +9,7 @@ interface StudentCardProps extends Pick<User<UserRole>, 'email' | 'fName' | 'lNa
 
 const StudentCard = (props: StudentCardProps): JSX.Element => {
     const {imgSrc, fName, lName, email, studyProgram, studyType, year, onClick} = props;
+
     return (
         <div className="c-studentCard cursor-p" onClick={onClick}>
             <div className="c-studentCard__img">
