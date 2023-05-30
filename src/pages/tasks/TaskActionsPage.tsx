@@ -80,6 +80,7 @@ const TaskActionsPage = (): JSX.Element => {
                         <div className="p-actions__form_pair p-actions__form_pair--grid">
                             Subject:
                             <select {...formik.getFieldProps('subject')}>
+                                <option value={''}>---</option>
                                 <option value={'abc'}>abc</option>
                                 <option value={'def'}>def</option>
                             </select>

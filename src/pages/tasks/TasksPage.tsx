@@ -66,7 +66,7 @@ const TasksPage = (): JSX.Element => {
         <>
             <Navbar />
             <div className="p-tasks">
-                {/* {!isStudent(loggedInUser) && (
+                {!studentProps && (
                     <div className="p-tasks__header">
                         <div className="p-tasks__header_buttons">
                             <button className="btn btn--primary" onClick={() => navigate(`/tasks/new`)}>
@@ -74,7 +74,7 @@ const TasksPage = (): JSX.Element => {
                             </button>
                         </div>
                     </div>
-                )} */}
+                )}
                 {studentProps ? tasksStudentsSee : tasksProfAndAdminSee}
             </div>
 

@@ -70,7 +70,7 @@ const Book = (): JSX.Element => {
                 confirmText="Confirm"
                 cancelText="Cancel"
             >
-                {reservationMade
+                {!reservationMade
                     ? `Are you sure you want to make a reservation for ${title} by ${author}?`
                     : `Are you sure you want to cancel the reservation for  ${title} by ${author}?`}
             </Modal>

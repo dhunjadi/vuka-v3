@@ -30,7 +30,10 @@ const GradesPage = (): JSX.Element => {
                         return (
                             student && (
                                 <StudentCard
-                                    key={student.userId}
+                                    key={user.userId}
+                                    fName={user.fName}
+                                    lName={user.lName}
+                                    email={user.email}
                                     studyProgram={student.studyProgram}
                                     studyType={student.studyType}
                                     year={Number(student.year)}
